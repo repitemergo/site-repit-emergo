@@ -367,6 +367,8 @@ const translations = {
     'staff.banner.tag': 'Notre équipe',
     'staff.banner.text': 'Des centaines d\'accompagnateur·rice·s dévoué·e·s depuis 50 ans',
     'photos.album': 'Voir l\'album photo',
+    'album.cta.title': '50 ans de souvenirs',
+    'album.cta.text': 'Des milliers de sourires, d\'aventures et de moments magiques. Parcourez notre album photo!',
 
     // Timeline
     'history.1976': 'Fondation du Camp Emergo, premier camp d\'été pour personnes autistes au Québec, par des parents de l\'Association des enfants autistiques du Québec.',
@@ -723,6 +725,8 @@ const translations = {
     'staff.banner.tag': 'Our Team',
     'staff.banner.text': 'Hundreds of dedicated support workers for 50 years',
     'photos.album': 'View photo album',
+    'album.cta.title': '50 years of memories',
+    'album.cta.text': 'Thousands of smiles, adventures and magical moments. Browse our photo album!',
 
     // Timeline
     'history.1976': 'Founding of Camp Emergo, the first summer camp for autistic individuals in Quebec, by parents from the Association des enfants autistiques du Québec.',
