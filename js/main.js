@@ -1292,7 +1292,7 @@ function toggleTheme() {
 
 // ═══ DONATE BUTTON MAGIC ═══
 (function() {
-  const PARTICLES = ['✨','⭐','💛','🌟','😊','💫','🎉','❤️','🙏','Merci!','💝','🎆'];
+  const PARTICLES = ['✨','⭐','💛','🌟','😊','💫','🎉','❤️','🙏','Merci!','💝'];
   const COLORS = ['#FFD700','#FFA500','#FF6B6B','#FF85A2','#9B59B6','#3498DB','#2ECC71','#F39C12'];
 
   function createParticle(btn) {
