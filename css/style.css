@@ -264,6 +264,16 @@ p { margin-bottom: 1em; color: var(--text-mid); }
 .team-card h4 { font-size: 1rem; margin-bottom: 2px; }
 .team-card p { font-size: .85rem; color: var(--text-light); margin: 0; }
 
+/* Board grid: always 2 cols on mobile */
+#board .grid-4 { gap: 16px; }
+@media (max-width: 600px) {
+  #board .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  #board .team-card-photo { width: 56px !important; height: 56px !important; margin-bottom: 8px; }
+  #board .avatar-initials { font-size: .85rem !important; }
+  #board .team-card h4 { font-size: .85rem; }
+  #board .team-card p { font-size: .75rem; }
+}
+
 /* ═══ CALENDAR SECTION ═══ */
 .cal-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
