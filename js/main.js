@@ -1289,3 +1289,116 @@ function toggleTheme() {
     }, 200);
   });
 })();
+
+// ═══ DONATE BUTTON MAGIC ═══
+(function() {
+  const PARTICLES = ['✨','⭐','💛','🌟','😊','💫','🎉','❤️','🙏','Merci!','💝','🎆'];
+  const COLORS = ['#FFD700','#FFA500','#FF6B6B','#FF85A2','#9B59B6','#3498DB','#2ECC71','#F39C12'];
+
+  function createParticle(btn) {
+    const rect = btn.getBoundingClientRect();
+    const el = document.createElement('span');
+    const isEmoji = Math.random() > 0.25;
+
+    if (isEmoji) {
+      el.textContent = PARTICLES[Math.floor(Math.random() * PARTICLES.length)];
+      el.style.fontSize = (14 + Math.random() * 18) + 'px';
+    } else {
+      // Tiny glowing dot
+      const size = 4 + Math.random() * 6;
+      el.style.width = size + 'px';
+      el.style.height = size + 'px';
+      el.style.borderRadius = '50%';
+      el.style.background = COLORS[Math.floor(Math.random() * COLORS.length)];
+      el.style.boxShadow = '0 0 6px currentColor';
+    }
+
+    el.style.cssText += `
+      position:fixed;
+      pointer-events:none;
+      z-index:99999;
+      left:${rect.left + rect.width * (0.1 + Math.random() * 0.8)}px;
+      top:${rect.top + rect.height / 2}px;
+      opacity:1;
+      transition:none;
+      will-change:transform,opacity;
+    `;
+    document.body.appendChild(el);
+
+    const angle = -30 - Math.random() * 120; // upward arc (-30 to -150 deg)
+    const speed = 60 + Math.random() * 120;
+    const vx = Math.cos(angle * Math.PI / 180) * speed;
+    const vy = Math.sin(angle * Math.PI / 180) * speed;
+    const spin = (Math.random() - 0.5) * 720;
+    const life = 800 + Math.random() * 800;
+    const start = performance.now();
+
+    function tick(now) {
+      const t = (now - start) / life;
+      if (t > 1) { el.remove(); return; }
+      const ease = 1 - (1 - t) * (1 - t); // ease out quad
+      const gravity = t * t * 60;
+      el.style.transform = `translate(${vx * ease}px, ${vy * ease + gravity}px) rotate(${spin * ease}deg) scale(${1 - t * 0.3})`;
+      el.style.opacity = t < 0.7 ? 1 : 1 - (t - 0.7) / 0.3;
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function burstParticles(btn, count) {
+    for (let i = 0; i < count; i++) {
+      setTimeout(() => createParticle(btn), i * 40);
+    }
+  }
+
+  // Add glow + particles to all "Faire un don" buttons
+  document.addEventListener('DOMContentLoaded', () => {
+    // Style injection for glow effect
+    const style = document.createElement('style');
+    style.textContent = `
+      .donate-magic { position:relative; overflow:visible; transition: transform .3s ease, box-shadow .3s ease; }
+      .donate-magic:hover {
+        transform: scale(1.08);
+        box-shadow: 0 0 20px rgba(255,215,0,.5), 0 0 40px rgba(255,215,0,.25), 0 4px 16px rgba(0,0,0,.15);
+      }
+      .donate-magic::after {
+        content:'';
+        position:absolute;
+        inset:-4px;
+        border-radius:inherit;
+        background: linear-gradient(45deg, #FFD700, #FF6B6B, #9B59B6, #3498DB, #FFD700);
+        background-size:300% 300%;
+        opacity:0;
+        z-index:-1;
+        transition: opacity .3s ease;
+        filter:blur(8px);
+      }
+      .donate-magic:hover::after {
+        opacity:.6;
+        animation: donate-rainbow 2s ease infinite;
+      }
+      @keyframes donate-rainbow {
+        0%,100% { background-position:0% 50%; }
+        50% { background-position:100% 50%; }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Target donate links (fondationemergo.com) + nav-cta donate
+    const donateLinks = document.querySelectorAll('a[href*="fondationemergo"], .nav-cta[data-i18n="nav.donate"]');
+    donateLinks.forEach(btn => {
+      btn.classList.add('donate-magic');
+      let interval = null;
+
+      btn.addEventListener('mouseenter', () => {
+        burstParticles(btn, 8); // initial burst
+        interval = setInterval(() => burstParticles(btn, 3), 400); // continuous stream
+      });
+
+      btn.addEventListener('mouseleave', () => {
+        clearInterval(interval);
+        interval = null;
+      });
+    });
+  });
+})();
