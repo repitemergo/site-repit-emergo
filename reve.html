@@ -16,7 +16,7 @@
   .fade-in:nth-child(2) { transition-delay: .1s; }
   .fade-in:nth-child(3) { transition-delay: .2s; }
   .fade-in:nth-child(4) { transition-delay: .3s; }
-  .reve-hero { background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%); color: #fff; padding: 80px 0 60px; text-align: center; }
+  .reve-hero { background: linear-gradient(0deg, rgba(0,30,85,.7), rgba(0,30,85,.55)), url('images/reve-lake.jpg') center/cover no-repeat; color: #fff; padding: 100px 0 80px; text-align: center; }
   .reve-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 12px; }
   .reve-hero p { font-size: 1.15rem; opacity: .85; max-width: 560px; margin: 0 auto; }
   .reve-highlight { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-top: 28px; }
@@ -38,6 +38,7 @@
   .reve-quote cite { display: block; margin-top: 12px; font-style: normal; font-weight: 600; font-size: .85rem; color: var(--navy); }
   .reve-villa { background: var(--cream); border-radius: var(--radius-lg); padding: 32px; }
   .reve-villa-addr { font-size: .9rem; color: var(--text-mid); margin-bottom: 12px; }
+  .reve-img { width: 100%; border-radius: var(--radius-lg); object-fit: cover; box-shadow: var(--shadow-md); }
   .reve-cta-section { background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%); color: #fff; padding: 60px 0; text-align: center; }
   .reve-cta-section h2 { color: #fff; margin-bottom: 12px; }
   .reve-cta-section p { opacity: .8; max-width: 480px; margin: 0 auto 24px; }
@@ -127,6 +128,7 @@
         <p data-i18n="reve.prog.text3">Avec un encadrement attentif (3 accompagnateurs pour 9 participants), le programme offre une expérience sécuritaire et enrichissante où chacun peut s'épanouir.</p>
       </div>
       <div class="fade-in">
+        <img src="images/reve-friends.jpg" alt="Participants au programme Un rêve à réaliser" class="reve-img" style="margin-bottom:20px; max-height:280px;">
         <div class="reve-card">
           <h3 data-i18n="reve.how.title">Comment ça fonctionne</h3>
           <ul class="reve-eligible">
@@ -196,6 +198,11 @@
     </div>
   </div>
 </section>
+
+<!-- ═══════════ PHOTO KAYAK ═══════════ -->
+<div style="max-width:1000px; margin:0 auto; padding:0 24px;">
+  <img src="images/reve-kayak.jpg" alt="Kayak sur le lac" class="reve-img" style="width:100%; max-height:360px; object-fit:cover;">
+</div>
 
 <!-- ═══════════ POURQUOI EMERGO ═══════════ -->
 <section class="reve-section">
@@ -268,6 +275,7 @@
         <p data-i18n="reve.villa.text">Nichée en pleine nature dans les Laurentides, la Villa Marie-Rose offre un cadre paisible et moderne pour nos séjours. Les participants sont logés et nourris dans des installations confortables, entourés de lac, de forêt et d'espaces pour les activités extérieures.</p>
       </div>
       <div class="fade-in">
+        <img src="images/reve-villa.jpg" alt="Villa Marie-Rose, Val-des-Lacs" class="reve-img" style="margin-bottom:20px; max-height:300px;">
         <div class="reve-card">
           <h3 data-i18n="reve.who.title">À qui s'adresse le programme?</h3>
           <ul class="reve-eligible">
@@ -289,6 +297,11 @@
     </div>
   </div>
 </section>
+
+<!-- ═══════════ PHOTO GROUPE ═══════════ -->
+<div style="max-width:900px; margin:0 auto; padding:0 24px 0;">
+  <img src="images/reve-group.jpg" alt="Groupe de participants Un rêve à réaliser" class="reve-img" style="width:100%; max-height:500px; object-fit:cover; object-position:top;">
+</div>
 
 <!-- ═══════════ CTA INSCRIPTION ═══════════ -->
 <section class="reve-cta-section">
