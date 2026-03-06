@@ -349,8 +349,7 @@ const translations = {
 
     // Foundation
     'foundation.detail': 'L\'autisme ne donne pas de répit... Emergo, oui! Grâce à votre générosité, les familles reçoivent le soutien essentiel dont elles ont besoin. Nos tarifs ne représentent que 20 % du coût réel — la différence provient de vos dons et des subventions.',
-    'foundation.chart.sources': 'Sources',
-    'foundation.chart.revenue': 'de revenus',
+    'foundation.chart.sources': 'Sources de revenus',
     'foundation.chart.gov': 'Subventions gouvernementales',
     'foundation.chart.donations': 'Collecte de fonds et dons',
     'foundation.chart.fees': 'Frais de séjour des familles',
@@ -705,8 +704,7 @@ const translations = {
 
     // Foundation
     'foundation.detail': 'Autism gives no respite... Emergo does! Thanks to your generosity, families receive the essential support they need. Our rates represent only 20% of the actual cost — the difference comes from your donations and grants.',
-    'foundation.chart.sources': 'Revenue',
-    'foundation.chart.revenue': 'sources',
+    'foundation.chart.sources': 'Revenue sources',
     'foundation.chart.gov': 'Government grants',
     'foundation.chart.donations': 'Fundraising and donations',
     'foundation.chart.fees': 'Family stay fees',
