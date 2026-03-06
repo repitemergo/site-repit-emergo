@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emplois étudiants — Répit Emergo</title>
+<meta name="description" content="Rejoignez l'équipe de Répit Emergo comme accompagnateur·rice de personnes autistes. Emplois étudiants, camps d'été et répits scolaires. Logé, nourri, bourses d'études.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/qie5ffr.css">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .fade-in { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  .fade-in:nth-child(2) { transition-delay: .1s; }
+  .fade-in:nth-child(3) { transition-delay: .2s; }
+  .fade-in:nth-child(4) { transition-delay: .3s; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<header class="navbar">
+  <div class="container">
+    <a href="index.html" class="navbar-brand">
+      <img src="https://repitemergo.com/wp-content/uploads/2025/02/cropped-cropped-cropped-Repit_Emergo-Logotype_Horizontal_Bleu_Ciel-RGB.png" alt="Répit Emergo" class="navbar-logo">
+    </a>
+    <div class="nav-links">
+      <a href="index.html#services" data-i18n="nav.services">Nos services</a>
+      <a href="index.html#programs" data-i18n="nav.programs">Programmes</a>
+      <a href="index.html#calendar" data-i18n="nav.calendar">Calendrier et coûts</a>
+      <a href="index.html#about" data-i18n="nav.about">À propos</a>
+      <a href="emplois.html" class="active" data-i18n="nav.jobs">Emplois</a>
+      <a href="index.html#contact" data-i18n="nav.contact">Nous joindre</a>
+      <a href="https://fondationemergo.com/" class="nav-cta" target="_blank" data-i18n="nav.donate">Faire un don</a>
+      <a href="javascript:void(0)" class="lang-switch" onclick="toggleLang()" data-i18n="nav.lang">EN</a>
+      <button class="dark-toggle" onclick="toggleTheme()" aria-label="Mode jour/nuit">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ═══ FLOATING SPHERES ═══ -->
+<div class="sphere-deco sphere-deco-1" aria-hidden="true"></div>
+<div class="sphere-deco sphere-deco-2" aria-hidden="true"></div>
+<div class="sphere-deco sphere-deco-3" aria-hidden="true"></div>
+
+<!-- ═══════════ HERO EMPLOIS ═══════════ -->
+<section class="hero" id="top" style="padding:60px 0 80px;">
+  <div class="container">
+    <div class="grid-2">
+      <div>
+        <span class="section-label" data-i18n="ejobs.label">Emplois étudiants</span>
+        <h1 data-i18n="ejobs.hero.title">Accompagnateur·rice·s de personnes autistes</h1>
+        <p class="lead" data-i18n="ejobs.hero.lead">Vous êtes étudiant·e·s et cherchez un travail à fort impact social? Notre mission chez Emergo est d'offrir aux personnes autistes une expérience de camp inoubliable. Venez nous aider à la réaliser!</p>
+        <p style="color:var(--text-mid); font-size:.95rem;" data-i18n="ejobs.hero.sub">Répit Emergo est l'endroit où votre énergie, votre passion et votre empathie seront pleinement valorisées. Nous accueillons des accompagnateur·rice·s de toutes les disciplines académiques!</p>
+        <div class="hero-cta">
+          <a href="mailto:recrutement@repitemergo.com" class="btn btn-primary" data-i18n="ejobs.hero.cta">Postuler maintenant</a>
+          <a href="#summer" class="btn btn-secondary" data-i18n="ejobs.hero.cta2">Voir les postes</a>
+        </div>
+      </div>
+      <div class="hero-video-wrap">
+        <video class="hero-video" autoplay muted loop playsinline controls poster="https://repitemergo.com/wp-content/uploads/2025/02/cropped-cropped-cropped-Repit_Emergo-Logotype_Horizontal_Bleu_Ciel-RGB.png">
+          <source src="https://repitemergo.com/wp-content/uploads/2025/01/Decouvrez-Emergo-_-soutenir-les-familles-denfants-et-dadultes-autistes-au-Quebec.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 3 SELLING POINTS ═══════════ -->
+<div class="section-alt" style="padding:60px 0;">
+  <div class="container">
+    <div class="grid-3">
+      <div class="card fade-in" style="text-align:center; border-top:4px solid var(--blue);">
+        <div class="icon-wrap icon-wrap-blue" style="margin-bottom:12px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" width="40" height="40"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
+        <h3 data-i18n="ejobs.expertise.title">Expertise reconnue</h3>
+        <p data-i18n="ejobs.expertise.text">Rejoignez la référence en matière d'accueil et d'accompagnement des personnes autistes. Vous serez soutenu par une organisation qui transforme des vies depuis 50 ans.</p>
+      </div>
+      <div class="card fade-in" style="text-align:center; border-top:4px solid var(--gold);">
+        <div class="icon-wrap icon-wrap-gold" style="margin-bottom:12px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" width="40" height="40"><path d="M12 22V8"/><path d="M5 12l7-8 7 8"/><path d="M3 17l9-7 9 7"/></svg></div>
+        <h3 data-i18n="ejobs.adventure.title">Sortir de sa zone de confort</h3>
+        <p data-i18n="ejobs.adventure.text">Chaque jour est une nouvelle aventure. Vous serez guidé par une équipe dévouée qui fera de chaque moment une expérience mémorable en pleine nature.</p>
+      </div>
+      <div class="card fade-in" style="text-align:center; border-top:4px solid var(--green);">
+        <div class="icon-wrap icon-wrap-green" style="margin-bottom:12px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" width="40" height="40"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div>
+        <h3 data-i18n="ejobs.environment.title">Un environnement unique</h3>
+        <p data-i18n="ejobs.environment.text">Contribuez à une cause importante. Découvrez la richesse de l'entraide et évoluez dans un environnement où chacun compte!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ SUMMER JOBS ═══════════ -->
+<section class="section" id="summer">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px;">
+      <span class="section-label" data-i18n="ejobs.summer.label">Été 2026</span>
+      <h2 data-i18n="ejobs.summer.title">Les répits estivaux (juin à août)</h2>
+    </div>
+
+    <!-- Émergence -->
+    <div class="card fade-in" style="padding:0; overflow:hidden; margin-bottom:32px;">
+      <div style="background:linear-gradient(135deg, #5B9BD5 0%, #001E55 100%); padding:24px 28px;">
+        <h3 style="color:#FFFFFF; margin:0;">Programme Émergence — 50 postes</h3>
+        <p style="color:rgba(255,255,255,.7); margin:8px 0 0; font-size:.9rem;">Notre programme principal! Au Camp de Grandpré, Otterburn Park.</p>
+      </div>
+      <div style="padding:28px;">
+        <div class="grid-2" style="gap:32px; align-items:start;">
+          <div>
+            <h4 style="margin-bottom:12px;" data-i18n="ejobs.summer.dates.title">Dates des séjours 2026 (5 séjours de 10 jours)</h4>
+            <table style="width:100%; font-size:.85rem; border-collapse:collapse;">
+              <tbody>
+                <tr style="border-bottom:1px solid #f0f0f0; background:var(--gold-light);"><td style="padding:8px;">Formation (obligatoire)</td><td style="text-align:right; font-weight:600;">1 au 5 juin et 10-11 juin</td></tr>
+                <tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px;">Séjour 1</td><td style="text-align:right;">12 au 21 juin</td></tr>
+                <tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px;">Séjour 2</td><td style="text-align:right;">26 juin au 5 juillet</td></tr>
+                <tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px;">Séjour 3</td><td style="text-align:right;">10 au 19 juillet</td></tr>
+                <tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:8px;">Séjour 4</td><td style="text-align:right;">24 juillet au 2 août</td></tr>
+                <tr><td style="padding:8px;">Séjour 5</td><td style="text-align:right;">7 au 16 août</td></tr>
+              </tbody>
+            </table>
+            <p style="font-size:.85rem; color:var(--text-light); margin-top:12px;" data-i18n="ejobs.summer.conditions">Les accompagnateurs dorment sur le site et disposent d'au moins 4 jours de congé entre les séjours, 3 heures de pause par jour et 2 soirées « off » par séjour.</p>
+          </div>
+          <div>
+            <div style="background:var(--blue-pale); padding:20px 24px; border-radius:var(--radius); margin-bottom:20px;">
+              <div style="font-size:.8rem; font-weight:600; color:var(--text-light); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Salaire brut</div>
+              <div style="font-size:1.1rem; font-weight:700; color:var(--navy); margin-bottom:4px;">Forfaitaire par séjour : 1 256,25 $</div>
+              <div style="font-size:.85rem; color:var(--text-mid); margin-bottom:12px;">Salaire brut été complet :</div>
+              <table style="width:100%; font-size:.82rem; border-collapse:collapse;">
+                <tr style="border-bottom:1px solid rgba(0,30,85,.08);"><td style="padding:4px 0;">Formation</td><td style="text-align:right;">586,25 $</td></tr>
+                <tr style="border-bottom:1px solid rgba(0,30,85,.08);"><td style="padding:4px 0;">5 séjours</td><td style="text-align:right;">6 381,25 $</td></tr>
+                <tr style="border-bottom:1px solid rgba(0,30,85,.08);"><td style="padding:4px 0;">Veilles</td><td style="text-align:right;">100 $</td></tr>
+                <tr style="border-bottom:1px solid rgba(0,30,85,.08);"><td style="padding:4px 0;">Jours fériés</td><td style="text-align:right;">Variable</td></tr>
+                <tr style="border-bottom:1px solid rgba(0,30,85,.08);"><td style="padding:4px 0;">Bonus été complet</td><td style="text-align:right;">300 $</td></tr>
+                <tr style="font-weight:700;"><td style="padding:8px 0; color:var(--navy);">Total</td><td style="text-align:right; color:var(--navy); font-size:1.1rem;">Plus de 7 400 $</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Postes Émergence -->
+        <h4 style="margin:24px 0 12px;">Postes au programme Émergence</h4>
+        <div class="grid-3" style="gap:12px;">
+          <div class="jobs-position-card">
+            <div class="jobs-position-count">1</div>
+            <div>Chargé·e de programme</div>
+          </div>
+          <div class="jobs-position-card">
+            <div class="jobs-position-count">6</div>
+            <div>Coordonnateur·rice·s d'équipe</div>
+          </div>
+          <div class="jobs-position-card">
+            <div class="jobs-position-count">2</div>
+            <div>Coordonnateur·rice·s aux soins de santé</div>
+          </div>
+          <div class="jobs-position-card">
+            <div class="jobs-position-count">1</div>
+            <div>Coordonnateur·rice aux activités</div>
+          </div>
+          <div class="jobs-position-card">
+            <div class="jobs-position-count">35</div>
+            <div>Accompagnateur·rice·s</div>
+          </div>
+          <div class="jobs-position-card">
+            <div class="jobs-position-count">4</div>
+            <div>Chauve-Souris</div>
+          </div>
+          <div class="jobs-position-card">
+            <div class="jobs-position-count">4</div>
+            <div>Animateur·rice·s</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- iDÉFIx / Adaptatou — Full width -->
+    <div class="card fade-in" style="padding:0; overflow:hidden; margin-bottom:32px;">
+      <div style="background:linear-gradient(135deg, #D4A843 0%, #001E55 100%); padding:24px 28px;">
+        <h3 style="color:#FFFFFF; margin:0;">Programmes iDÉFIx et Adaptatou — Camp de Grandpré</h3>
+        <p style="color:rgba(255,255,255,.7); margin:8px 0 0; font-size:.9rem;">Encadrement soutenu et intégration, au même site que le programme Émergence.</p>
+      </div>
+      <div style="padding:28px;">
+        <div class="grid-2" style="gap:12px;">
+          <div class="jobs-position-card">
+            <div class="jobs-position-count">1-2</div>
+            <div>Coordonnateur·rice</div>
+          </div>
+          <div class="jobs-position-card">
+            <div class="jobs-position-count">4-12</div>
+            <div>Accompagnateur·rice·s</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Un Rêve à Réaliser — Full width -->
+    <div class="card fade-in" style="padding:0; overflow:hidden; margin-bottom:32px;">
+      <div style="background:linear-gradient(135deg, #C0504D 0%, #001E55 100%); padding:24px 28px;">
+        <h3 style="color:#FFFFFF; margin:0;">Programme Un Rêve à Réaliser — Villa Marie-Rose</h3>
+        <p style="color:rgba(255,255,255,.7); margin:8px 0 0; font-size:.9rem;">9 postes — Pour les personnes autistes autonomes de 16 ans et plus. Val-des-Lacs.</p>
+      </div>
+      <div style="padding:28px;">
+        <div class="grid-2" style="gap:32px; align-items:start;">
+          <div>
+            <h4 style="margin-bottom:12px;">Dates des séjours 2026 (4 séjours de 10 jours)</h4>
+            <table style="width:100%; font-size:.85rem; border-collapse:collapse; margin-bottom:16px;">
+              <tbody>
+                <tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:6px 0;">Séjour 1 (anglophone)</td><td style="text-align:right;">26 juin au 6 juillet</td></tr>
+                <tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:6px 0;">Séjour 2</td><td style="text-align:right;">10 au 20 juillet</td></tr>
+                <tr style="border-bottom:1px solid #f0f0f0;"><td style="padding:6px 0;">Séjour 3</td><td style="text-align:right;">24 juillet au 3 août</td></tr>
+                <tr><td style="padding:6px 0;">Séjour 4</td><td style="text-align:right;">7 au 17 août</td></tr>
+              </tbody>
+            </table>
+            <p style="font-size:.82rem; color:var(--text-light);">Les frais de repas et d'hébergement sur le site du camp sont assumés par l'organisme.</p>
+          </div>
+          <div>
+            <div class="grid-3" style="gap:8px;">
+              <div class="jobs-position-card"><div class="jobs-position-count">1</div><div>Chargé·e de programme</div></div>
+              <div class="jobs-position-card"><div class="jobs-position-count">1</div><div>Coord. activités et soins</div></div>
+              <div class="jobs-position-card"><div class="jobs-position-count">6</div><div>Accompagnateur·rice·s</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SCHOOL YEAR RESPITE ═══════════ -->
+<section class="section section-cream" id="school">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px;">
+      <span class="section-label" data-i18n="ejobs.school.label">Année scolaire</span>
+      <h2 data-i18n="ejobs.school.title">Répits scolaires (septembre à mai)</h2>
+      <p class="lead mx-auto" data-i18n="ejobs.school.lead">Des fins de semaine de répit au Camp de Grandpré, en pleine nature. Horaire au choix — conciliez vos études!</p>
+    </div>
+    <div class="grid-2" style="gap:32px; align-items:start;">
+      <div>
+        <div class="card fade-in" style="padding:0; overflow:hidden;">
+          <div style="background:var(--navy); padding:20px 24px;">
+            <h3 style="color:#FFFFFF; margin:0; font-size:1.1rem;">Salaire accompagnateur — Répits scolaires</h3>
+          </div>
+          <div style="padding:24px;">
+            <div class="grid-3" style="gap:12px; margin-bottom:16px;">
+              <div style="text-align:center; padding:16px; background:var(--blue-pale); border-radius:var(--radius);">
+                <div style="font-size:1.5rem; font-weight:800; color:var(--navy);">310 $</div>
+                <div style="font-size:.75rem; color:var(--text-light);">Répit 2 nuits</div>
+              </div>
+              <div style="text-align:center; padding:16px; background:var(--gold-light); border-radius:var(--radius);">
+                <div style="font-size:1.5rem; font-weight:800; color:var(--navy);">428 $</div>
+                <div style="font-size:.75rem; color:var(--text-light);">Répit 3 nuits</div>
+              </div>
+              <div style="text-align:center; padding:16px; background:var(--green-light); border-radius:var(--radius);">
+                <div style="font-size:1.5rem; font-weight:800; color:var(--navy);">725 $</div>
+                <div style="font-size:.75rem; color:var(--text-light);">Répit de Noël (5 nuits)</div>
+              </div>
+            </div>
+            <div style="background:var(--cream); padding:16px 20px; border-radius:var(--radius); text-align:center;">
+              <div style="font-size:1.8rem; font-weight:800; color:var(--navy);">9 409 $</div>
+              <div style="font-size:.85rem; color:var(--text-mid);">Salaire total pour une personne qui fait tous les répits</div>
+              <div style="font-size:.8rem; color:var(--text-light); margin-top:4px;">Bonus de 175 $ pour 8 répits complétés + 30 $/répit supplémentaire</div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:24px;">
+          <p style="font-size:.9rem; color:var(--text-mid);">On prévoit accueillir <strong>20 participants</strong> et une <strong>trentaine de staff</strong> par répit!</p>
+        </div>
+      </div>
+      <div>
+        <h3 style="margin-bottom:16px;" data-i18n="ejobs.school.logistics.title">Logistique</h3>
+        <div class="card fade-in" style="margin-bottom:16px;">
+          <p style="font-size:.9rem; margin-bottom:12px;"><strong>Transport fourni</strong> — Les répits commencent le vendredi à 16h30. Nous fournissons le transport entre nos bureaux à Montréal et le Camp De Grandpré.</p>
+          <p style="font-size:.9rem; margin-bottom:12px;"><strong>Logé et nourri</strong> — Vous serez logés dans des grands chalets modernes et aurez accès à une cafétéria avec option végétarienne.</p>
+          <p style="font-size:.9rem; margin-bottom:12px;"><strong>Retour</strong> — Le retour à Montréal est prévu pour 16h le dimanche.</p>
+          <p style="font-size:.9rem; margin-bottom:0;"><strong>Horaire flexible</strong> — Vous choisissez vos fins de semaine en fonction de vos disponibilités.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ DAILY SCHEDULE ═══════════ -->
+<section class="section blob-bg" id="schedule">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px;">
+      <span class="section-label" data-i18n="ejobs.schedule.label">Journée type</span>
+      <h2 data-i18n="ejobs.schedule.title">Le samedi d'un répit scolaire</h2>
+    </div>
+    <div style="max-width:800px; margin:0 auto;">
+      <div class="timeline">
+        <div class="timeline-item fade-in"><div class="timeline-year">8h</div><div class="timeline-dot"></div><div class="timeline-content">Réveil des participant·e·s. Courte période d'hygiène, puis direction cafétéria.</div></div>
+        <div class="timeline-item fade-in"><div class="timeline-year">8h30</div><div class="timeline-dot"></div><div class="timeline-content">Déjeuner. Suivi du temps d'intérêt : activités stimulantes ou reposantes. Préparation pour le rassemblement (maquillage, costumes).</div></div>
+        <div class="timeline-item fade-in"><div class="timeline-year">9h45</div><div class="timeline-dot" style="background:var(--gold); box-shadow:0 0 0 2px var(--gold);"></div><div class="timeline-content" style="font-weight:600;">Le rassemblement! Chansons, danses, déguisements et histoires!</div></div>
+        <div class="timeline-item fade-in"><div class="timeline-year">10h</div><div class="timeline-dot"></div><div class="timeline-content">Activités! Jeux de table, jeux extérieurs, jeux sensoriels, marche dans la forêt, etc. On favorise la participation et on adapte au besoin.</div></div>
+        <div class="timeline-item fade-in"><div class="timeline-year">12h</div><div class="timeline-dot"></div><div class="timeline-content">Dîner à la cafétéria.</div></div>
+        <div class="timeline-item fade-in"><div class="timeline-year">13h</div><div class="timeline-dot"></div><div class="timeline-content">Temps d'intérêt — tranquille ou plein de mouvement! Écriture dans le journal du participant. Relais entre accompagnateurs.</div></div>
+        <div class="timeline-item fade-in"><div class="timeline-year">14h30</div><div class="timeline-dot"></div><div class="timeline-content">Collation sous le préau.</div></div>
+        <div class="timeline-item fade-in"><div class="timeline-year">15h</div><div class="timeline-dot"></div><div class="timeline-content">Encore plein d'activités!</div></div>
+        <div class="timeline-item fade-in"><div class="timeline-year">17h</div><div class="timeline-dot"></div><div class="timeline-content">Souper à la cafétéria.</div></div>
+        <div class="timeline-item fade-in"><div class="timeline-year">18h30</div><div class="timeline-dot" style="background:var(--gold); box-shadow:0 0 0 2px var(--gold);"></div><div class="timeline-content" style="font-weight:600;">Activité de groupe : feu de camp, soirée party, soirée film...</div></div>
+        <div class="timeline-item fade-in"><div class="timeline-year">19h15</div><div class="timeline-dot"></div><div class="timeline-content">Routine du coucher. Soins d'hygiène, activités calmes (lecture, jeux de table).</div></div>
+        <div class="timeline-item fade-in"><div class="timeline-year">20h15</div><div class="timeline-dot"></div><div class="timeline-content">Les veilleurs de nuit prennent le relais. À 20h30, les accompagnateurs quittent vers leur chalet.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ TEAMS & WORK ═══════════ -->
+<section class="section section-alt" id="teams">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px;">
+      <span class="section-label" data-i18n="ejobs.teams.label">Le travail</span>
+      <h2 data-i18n="ejobs.teams.title">Les équipes et le fonctionnement</h2>
+    </div>
+    <div class="grid-2" style="gap:32px;">
+      <div class="fade-in">
+        <p style="font-size:.95rem;">Nous formons des <strong>équipes de trois accompagnateur·rice·s pour trois participants</strong>. Le ratio est d'un pour un, avec des rotations toutes les quatre heures.</p>
+        <p style="font-size:.95rem;">Vous ferez partie d'une équipe allant <strong>jusqu'à 30 accompagnateurs</strong>, épaulés par une équipe de gestion dynamique. Tous les employés sont des étudiants universitaires ou du CEGEP.</p>
+        <p style="font-size:.95rem;">En tant que membre de notre équipe, vous aurez l'occasion de travailler avec des enfants, des adolescents et des adultes autistes. Vous serez responsable de :</p>
+        <ul class="jobs-list" style="margin-top:12px;">
+          <li>L'aide aux personnes autistes dans leur quotidien</li>
+          <li>L'adaptation des activités de groupe</li>
+          <li>Les soins personnels (ex. donner une douche)</li>
+          <li>La sécurité et le bien-être des participants</li>
+        </ul>
+      </div>
+      <div class="fade-in">
+        <div class="card" style="border-left:4px solid var(--blue);">
+          <p style="font-size:.95rem; font-style:italic;">Vous ferez face à des situations parfois complexes, où il faut composer avec les émotions fortes des participants. Vous serez soutenus dans tous ces moments grâce aux connaissances des coordonnateurs et de la multitude de conseils et d'informations contenues dans les plans d'intervention individualisés, qui sont lus en équipe avant l'arrivée du participant.</p>
+        </div>
+        <div style="margin-top:20px; padding:20px 24px; background:var(--white); border-radius:var(--radius); box-shadow:var(--shadow-sm);">
+          <div style="font-weight:700; color:var(--navy); margin-bottom:8px;">Ce qu'on offre :</div>
+          <p style="font-size:.9rem; margin-bottom:8px;">Logé et nourri dans des bâtiments modernes, en pleine nature, avec des collègues qui sont là pour les bonnes raisons.</p>
+          <p style="font-size:.9rem; margin-bottom:0;"><strong>La connaissance de l'autisme n'est pas un prérequis.</strong> C'est important de se renseigner, mais on vous formera sur place!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PERKS ═══════════ -->
+<section class="section blob-bg blob-bg-green" id="perks">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px;">
+      <span class="section-label" data-i18n="ejobs.perks.label">Avantages</span>
+      <h2 data-i18n="ejobs.perks.title">Bien plus qu'un emploi d'été</h2>
+    </div>
+    <div class="grid-4">
+      <div class="card fade-in" style="text-align:center;">
+        <div class="icon-wrap icon-wrap-blue" style="margin-bottom:12px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" width="40" height="40"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <h4>Bourses d'études</h4>
+        <p style="font-size:.85rem;">La Fondation Emergo offre des bourses de 1 000 $ à 1 750 $ aux employés assidus. 20 000 $ distribués en 2024-2025!</p>
+      </div>
+      <div class="card fade-in" style="text-align:center;">
+        <div class="icon-wrap icon-wrap-gold" style="margin-bottom:12px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" width="40" height="40"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg></div>
+        <h4>Heures reconnues</h4>
+        <p style="font-size:.85rem;">Possibilité de faire reconnaître vos heures pour monter d'échelon dans les organismes publics (commissions scolaires, CSSS, CRDITED, etc.).</p>
+      </div>
+      <div class="card fade-in" style="text-align:center;">
+        <div class="icon-wrap icon-wrap-green" style="margin-bottom:12px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" width="40" height="40"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></div>
+        <h4>Récompense de recommandation</h4>
+        <p style="font-size:.85rem;">Chèque-cadeau pour chaque candidat recommandé qui rejoint l'équipe!</p>
+      </div>
+      <div class="card fade-in" style="text-align:center;">
+        <div class="icon-wrap icon-wrap-blue" style="margin-bottom:12px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" width="40" height="40"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <h4>CV distinctif</h4>
+        <p style="font-size:.85rem;">As-tu Emergo dans ton CV? Une expérience valorisée par les employeurs du milieu social et éducatif.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ STAFF TESTIMONIALS ═══════════ -->
+<section class="section section-cream" id="testimonials">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px;">
+      <span class="section-label" data-i18n="ejobs.testimonials.label">Témoignages</span>
+      <h2 data-i18n="ejobs.testimonials.title">Ce que notre staff dit</h2>
+      <p class="lead mx-auto" style="font-style:italic; color:var(--text-light);">« C'est un endroit où je peux faire une différence »</p>
+    </div>
+    <div class="grid-2" style="gap:24px;">
+      <div class="testimonial fade-in">
+        <p>Emergo est bien plus qu'un simple milieu de travail, mais un milieu de vie où chacun peut s'épanouir. J'y ai gagné et développé plusieurs qualités interpersonnelles : celle du sens de la responsabilité, du souci du détail, du travail d'équipe, de la communication et du leadership. Emergo m'a permis de devenir un meilleur individu sur le plan personnel et professionnel.</p>
+        <p class="author">— Nelson Coto (Neptune), Polytechnique Montréal — Génie biomédical</p>
+      </div>
+      <div class="testimonial fade-in">
+        <p>J'avais le goût d'en apprendre plus sur la relation d'aide et l'intervention. J'ai décidé de changer de programme et je suis allée étudier en psychoéducation à l'Université de Montréal. Je ne sais pas encore quelle carrière je veux, mais je sais que je m'épanouis en ce moment, autant dans mon travail ici que dans mes études.</p>
+        <p class="author">— Laurie Dufour (Bambou), Université de Montréal — Psychoéducation</p>
+      </div>
+      <div class="testimonial fade-in">
+        <p>Sans ces révélations et sans la fascination pour l'autisme que nos campeurs ont fait germer en moi, je n'aurais peut-être jamais développé autant mon intérêt pour la psychiatrie, qui apparaît aujourd'hui comme la spécialité que j'aimerais le plus exercer. En espérant qu'Emergo saura révéler vos passions à vous aussi!</p>
+        <p class="author">— Alexis Robidoux (Fuego), Université de Sherbrooke — Médecine</p>
+      </div>
+      <div class="testimonial fade-in">
+        <p>Je suis étudiante en sciences comptables et mon domaine d'étude n'a pas de lien avec mon travail de monitrice. Je quitte Gatineau chaque vendredi à 13h pour arriver à l'heure pour les répits. Tout cela prouve à quel point je tiens à Emergo. Je ne peux parler de cet amour sans parler des campeurs — j'ai toujours le sourire aux lèvres quand je les vois arriver au camp.</p>
+        <p class="author">— Fatou Diop (Question), Université du Québec en Outaouais — Sciences comptables</p>
+      </div>
+      <div class="testimonial fade-in">
+        <p>Arrivée à Emergo, j'ai tout de suite ressenti ce sentiment d'appartenance qui se faisait ressentir autant des jeunes que des familles, tellement d'empathie et de reconnaissance. J'ai maintenant dans la tête et dans le cœur des amitiés sincères, des souvenirs inoubliables.</p>
+        <p class="author">— Daphnée Martin (Pyjama), UQAM — Travail social</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SCHOLARSHIPS ═══════════ -->
+<section class="section blob-bg blob-bg-warm" id="scholarships">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px;">
+      <span class="section-label" data-i18n="ejobs.scholarships.label">Bourses d'études</span>
+      <h2 data-i18n="ejobs.scholarships.title">Programme de bourses de la Fondation Emergo</h2>
+      <p class="lead mx-auto">La Fondation Emergo est fière d'annoncer qu'une somme de <strong>20 000 $</strong> a été mise à disposition pour honorer le parcours académique et l'engagement du personnel étudiant de Répit Emergo.</p>
+    </div>
+    <div style="background:var(--blue-pale); padding:24px 32px; border-radius:var(--radius-lg); margin-bottom:32px;">
+      <h4 style="margin-bottom:12px;">Critères d'admissibilité :</h4>
+      <ul class="jobs-list">
+        <li>Avoir complété au moins 3 séjours durant l'été</li>
+        <li>Être engagé·e à participer à des répits scolaires pour l'année en cours</li>
+        <li>Être inscrit·e à temps plein dans un programme collégial ou universitaire</li>
+      </ul>
+    </div>
+    <h3 style="text-align:center; margin-bottom:24px;">Boursiers 2024-2025</h3>
+    <div class="grid-4" style="gap:16px;">
+      <div class="card fade-in" style="text-align:center; padding:20px;">
+        <div style="font-size:1.3rem; font-weight:800; color:var(--gold);">1 750 $</div>
+        <h4 style="font-size:.9rem; margin:8px 0 4px;">Marie-Alice Naud</h4>
+        <p style="font-size:.75rem; margin:0;">Université McGill — Chant classique</p>
+      </div>
+      <div class="card fade-in" style="text-align:center; padding:20px;">
+        <div style="font-size:1.3rem; font-weight:800; color:var(--gold);">1 750 $</div>
+        <h4 style="font-size:.9rem; margin:8px 0 4px;">Laurie Dufour</h4>
+        <p style="font-size:.75rem; margin:0;">UdeM — Maîtrise en Psychoéducation</p>
+      </div>
+      <div class="card fade-in" style="text-align:center; padding:20px;">
+        <div style="font-size:1.3rem; font-weight:800; color:var(--gold);">1 750 $</div>
+        <h4 style="font-size:.9rem; margin:8px 0 4px;">Daphnée Martin</h4>
+        <p style="font-size:.75rem; margin:0;">UQAM — Travail social</p>
+      </div>
+      <div class="card fade-in" style="text-align:center; padding:20px;">
+        <div style="font-size:1.3rem; font-weight:800; color:var(--gold);">1 750 $</div>
+        <h4 style="font-size:.9rem; margin:8px 0 4px;">Sahar El Abbassi</h4>
+        <p style="font-size:.75rem; margin:0;">ÉNA — Ingénierie aérospatiale</p>
+      </div>
+      <div class="card fade-in" style="text-align:center; padding:20px;">
+        <div style="font-size:1.3rem; font-weight:800; color:var(--gold);">1 750 $</div>
+        <h4 style="font-size:.9rem; margin:8px 0 4px;">Louis Boutin</h4>
+        <p style="font-size:.75rem; margin:0;">Cégep du Vieux-Montréal — Éd. spécialisée</p>
+      </div>
+      <div class="card fade-in" style="text-align:center; padding:20px;">
+        <div style="font-size:1.3rem; font-weight:800; color:var(--gold);">1 750 $</div>
+        <h4 style="font-size:.9rem; margin:8px 0 4px;">Jeanne Lambert</h4>
+        <p style="font-size:.75rem; margin:0;">Cégep André-Laurendeau — Soins infirmiers</p>
+      </div>
+      <div class="card fade-in" style="text-align:center; padding:20px;">
+        <div style="font-size:1.3rem; font-weight:800; color:var(--gold);">1 750 $</div>
+        <h4 style="font-size:.9rem; margin:8px 0 4px;">Dimitri Boussac</h4>
+        <p style="font-size:.75rem; margin:0;">UdeM — Enseignement</p>
+      </div>
+      <div class="card fade-in" style="text-align:center; padding:20px;">
+        <div style="font-size:1.3rem; font-weight:800; color:var(--gold);">1 750 $</div>
+        <h4 style="font-size:.9rem; margin:8px 0 4px;">Convolbo Rihanata</h4>
+        <p style="font-size:.75rem; margin:0;">CFP Léonard-De Vinci — Soutien informatique</p>
+      </div>
+    </div>
+    <div class="grid-3" style="gap:16px; margin-top:16px;">
+      <div class="card fade-in" style="text-align:center; padding:16px;">
+        <div style="font-size:1.1rem; font-weight:800; color:var(--blue);">1 000 $</div>
+        <h4 style="font-size:.85rem; margin:6px 0 2px;">Annie Fleurent</h4>
+        <p style="font-size:.72rem; margin:0;">UdeM — Adaptation scolaire</p>
+      </div>
+      <div class="card fade-in" style="text-align:center; padding:16px;">
+        <div style="font-size:1.1rem; font-weight:800; color:var(--blue);">1 000 $</div>
+        <h4 style="font-size:.85rem; margin:6px 0 2px;">Laurie Paquette</h4>
+        <p style="font-size:.72rem; margin:0;">McGill — Psychologie</p>
+      </div>
+      <div class="card fade-in" style="text-align:center; padding:16px;">
+        <div style="font-size:1.1rem; font-weight:800; color:var(--blue);">1 000 $</div>
+        <h4 style="font-size:.85rem; margin:6px 0 2px;">Ariane Moreau</h4>
+        <p style="font-size:.72rem; margin:0;">UQAM — Cert. psychologie</p>
+      </div>
+      <div class="card fade-in" style="text-align:center; padding:16px;">
+        <div style="font-size:1.1rem; font-weight:800; color:var(--blue);">1 000 $</div>
+        <h4 style="font-size:.85rem; margin:6px 0 2px;">Raphaelle Dumont-Ramel</h4>
+        <p style="font-size:.72rem; margin:0;">UdeM — Psychologie-Sociologie</p>
+      </div>
+      <div class="card fade-in" style="text-align:center; padding:16px;">
+        <div style="font-size:1.1rem; font-weight:800; color:var(--blue);">1 000 $</div>
+        <h4 style="font-size:.85rem; margin:6px 0 2px;">Frédérique Clément</h4>
+        <p style="font-size:.72rem; margin:0;">UdeM — Médecine</p>
+      </div>
+      <div class="card fade-in" style="text-align:center; padding:16px;">
+        <div style="font-size:1.1rem; font-weight:800; color:var(--blue);">1 000 $</div>
+        <h4 style="font-size:.85rem; margin:6px 0 2px;">Fatou Diop</h4>
+        <p style="font-size:.72rem; margin:0;">UQO — Sciences comptables</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FIELDS OF STUDY ═══════════ -->
+<section class="section section-alt" id="fields">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:32px;">
+      <span class="section-label" data-i18n="ejobs.fields.label">Tous les domaines</span>
+      <h2 data-i18n="ejobs.fields.title">Domaines d'études de notre équipe</h2>
+      <p class="lead mx-auto" style="font-style:italic;">Tous les domaines et les niveaux d'études sont les bienvenus!</p>
+    </div>
+    <div class="fields-cloud fields-cloud-animated">
+      <span class="field-tag field-blue">Adaptation scolaire</span>
+      <span class="field-tag field-gold">Administration des affaires</span>
+      <span class="field-tag field-green">Arts visuels</span>
+      <span class="field-tag field-purple">Criminologie</span>
+      <span class="field-tag field-gold">Design / multimédia</span>
+      <span class="field-tag field-blue">Éducation</span>
+      <span class="field-tag field-blue">Éducation spécialisée</span>
+      <span class="field-tag field-blue field-highlight">Enseignement</span>
+      <span class="field-tag field-green">Ergothérapie</span>
+      <span class="field-tag field-green">Exercise Science</span>
+      <span class="field-tag field-gold">Génie</span>
+      <span class="field-tag field-gold">Génie aérospatial</span>
+      <span class="field-tag field-gold">Gestion de commerce</span>
+      <span class="field-tag field-purple field-highlight">Médecine</span>
+      <span class="field-tag field-green">Métiers d'art</span>
+      <span class="field-tag field-green">Musique</span>
+      <span class="field-tag field-purple field-highlight">Neuroscience cognitive</span>
+      <span class="field-tag field-green">Physiothérapie</span>
+      <span class="field-tag field-blue field-highlight">Psychoéducation</span>
+      <span class="field-tag field-blue field-highlight">Psychologie</span>
+      <span class="field-tag field-navy">Relations humaines</span>
+      <span class="field-tag field-purple">Sciences biomédicales</span>
+      <span class="field-tag field-gold">Sciences comptables</span>
+      <span class="field-tag field-green">Sciences de la nature</span>
+      <span class="field-tag field-purple">Sciences de la santé</span>
+      <span class="field-tag field-navy">Sciences humaines</span>
+      <span class="field-tag field-navy">Sciences politiques</span>
+      <span class="field-tag field-navy">Sciences sociales</span>
+      <span class="field-tag field-purple field-highlight">Soins infirmiers</span>
+      <span class="field-tag field-navy">Sociologie</span>
+      <span class="field-tag field-blue field-highlight">Travail social</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ HOW TO APPLY ═══════════ -->
+<section class="section" id="apply">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:48px;">
+      <span class="section-label" data-i18n="ejobs.apply.label">Postuler</span>
+      <h2 data-i18n="ejobs.apply.title">Comment postuler?</h2>
+    </div>
+    <div style="max-width:700px; margin:0 auto;">
+      <div class="card fade-in" style="margin-bottom:24px;">
+        <h3 style="margin-bottom:16px;">Envoyez-nous un courriel</h3>
+        <p>Écrivez à <a href="mailto:recrutement@repitemergo.com" style="font-weight:700;">recrutement@repitemergo.com</a> en indiquant :</p>
+        <ul class="jobs-list" style="margin-top:12px;">
+          <li>Vos coordonnées</li>
+          <li>Vos disponibilités</li>
+          <li>Les programmes et les postes qui vous intéressent (par exemple : accompagnateur au programme Émergence, les fins de semaine et l'été)</li>
+        </ul>
+      </div>
+      <div class="card fade-in" style="margin-bottom:24px; background:var(--blue-pale); border:none;">
+        <h4 style="margin-bottom:8px;">Pour l'entretien</h4>
+        <p style="font-size:.9rem;">On demande de consulter notre site internet pour avoir des bonnes questions à nous poser. On veut que vous soyez au courant et à l'aise avec tous les détails concernant l'emploi.</p>
+      </div>
+      <div class="card fade-in" style="background:var(--gold-light); border:none;">
+        <h4 style="margin-bottom:8px;">Bon à savoir</h4>
+        <p style="font-size:.9rem; margin-bottom:0;">C'est tout de même important de vous renseigner sur l'autisme pour en apprendre un peu sur notre clientèle, mais <strong>la connaissance de l'autisme n'est pas un prérequis</strong> pour travailler à Emergo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CTA ═══════════ -->
+<section class="cta-section">
+  <div class="container" style="position:relative; z-index:1;">
+    <h2>Prêt·e à vivre l'expérience Emergo?</h2>
+    <p style="color:rgba(255,255,255,.7); max-width:560px; margin:0 auto 2rem;">Rejoignez une équipe passionnée et faites une différence dans la vie des personnes autistes et de leurs familles.</p>
+    <a href="mailto:recrutement@repitemergo.com" class="btn btn-primary" style="background:var(--gold); color:var(--navy);">Postuler maintenant — recrutement@repitemergo.com</a>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-title" style="font-size:1.2rem; font-weight:700; color:#FFFFFF;">Répit Emergo</div>
+        <p data-i18n="footer.desc">Service de répit spécialisé en autisme depuis 1976. Un environnement sécuritaire, stimulant et adapté pour les personnes autistes de tous âges.</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer.links">Liens rapides</h4>
+        <ul>
+          <li><a href="index.html#programs" data-i18n="nav.programs">Programmes</a></li>
+          <li><a href="index.html#calendar" data-i18n="nav.calendar">Calendrier et coûts</a></li>
+          <li><a href="index.html#member" data-i18n="nav.member">Devenir membre</a></li>
+          <li><a href="index.html#about" data-i18n="nav.history">Notre histoire</a></li>
+          <li><a href="emplois.html" data-i18n="nav.jobs">Emplois</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer.contact">Contact</h4>
+        <ul>
+          <li><a href="tel:5149312882">514 931-2882</a></li>
+          <li><a href="mailto:info@repitemergo.com">info@repitemergo.com</a></li>
+          <li style="margin-top:8px; font-size:.8rem; color:rgba(255,255,255,.4);">1862, rue Jolicoeur<br>Montréal H4E 1X2</li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer.follow">Suivez-nous</h4>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/repitemergo/" target="_blank" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="20" height="20"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://www.facebook.com/repitemergo" target="_blank" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.youtube.com/user/RepitEmergo" target="_blank" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="white"/></svg></a>
+          <a href="https://ca.linkedin.com/company/repitemergo" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.copyright">© 2026 Répit Emergo. Tous droits réservés.</span>
+      <span data-i18n="footer.neq">NEQ : 891299398RR0001</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
