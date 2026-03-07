@@ -610,6 +610,12 @@ const translations = {
     'ejobs.field.sociologie': 'Sociologie',
     'ejobs.field.travailSocial': 'Travail social',
 
+    // Institutions
+    'ejobs.institutions.title': 'Nos étudiants proviennent de...',
+    'ejobs.institutions.subtitle': 'Plus de 25 établissements représentés',
+    'ejobs.institutions.universities': 'Universités',
+    'ejobs.institutions.cegeps': 'CEGEPs',
+
     // How to Apply
     'ejobs.apply.email.title': 'Envoyez-nous un courriel',
     'ejobs.apply.email.text': 'Écrivez à <a href="mailto:recrutement@repitemergo.com" style="font-weight:700;">recrutement@repitemergo.com</a> en indiquant :',
@@ -1346,6 +1352,12 @@ const translations = {
     'ejobs.field.soinsInfirmiers': 'Nursing',
     'ejobs.field.sociologie': 'Sociology',
     'ejobs.field.travailSocial': 'Social Work',
+
+    // Institutions
+    'ejobs.institutions.title': 'Our students come from...',
+    'ejobs.institutions.subtitle': 'Over 25 institutions represented',
+    'ejobs.institutions.universities': 'Universities',
+    'ejobs.institutions.cegeps': 'CEGEPs',
 
     // How to Apply
     'ejobs.apply.email.title': 'Send us an email',
@@ -2567,5 +2579,91 @@ function toggleTheme() {
         burstFieldEmojis(tag, emojis, 2);
       });
     });
+  });
+})();
+
+// ═══ INSTITUTION TAGS ═══
+(function() {
+  var UNIVERSITIES = [
+    {name:'Université de Montréal', nameEN:'Université de Montréal'},
+    {name:'UQAM', nameEN:'UQAM'},
+    {name:'McGill', nameEN:'McGill University'},
+    {name:'Concordia', nameEN:'Concordia University'},
+    {name:'Université d\'Ottawa', nameEN:'University of Ottawa'},
+    {name:'UQO', nameEN:'UQO'},
+    {name:'UQTR', nameEN:'UQTR'},
+    {name:'Polytechnique Montréal', nameEN:'Polytechnique Montréal'},
+    {name:'Université de Sherbrooke', nameEN:'Université de Sherbrooke'},
+    {name:'ENAP', nameEN:'ENAP'}
+  ];
+
+  var CEGEPS = [
+    {name:'Cégep de Maisonneuve', nameEN:'Cégep de Maisonneuve'},
+    {name:'Cégep du Vieux-Montréal', nameEN:'Cégep du Vieux-Montréal'},
+    {name:'Cégep de Saint-Laurent', nameEN:'Cégep de Saint-Laurent'},
+    {name:'Collège Ahuntsic', nameEN:'Collège Ahuntsic'},
+    {name:'Cégep de Bois-de-Boulogne', nameEN:'Cégep de Bois-de-Boulogne'},
+    {name:'Cégep André-Laurendeau', nameEN:'Cégep André-Laurendeau'},
+    {name:'Cégep de Lanaudière', nameEN:'Cégep de Lanaudière'},
+    {name:'Cégep de Saint-Jérôme', nameEN:'Cégep de Saint-Jérôme'},
+    {name:'Collège André-Grasset', nameEN:'Collège André-Grasset'},
+    {name:'Cégep Marie-Victorin', nameEN:'Cégep Marie-Victorin'},
+    {name:'John Abbott College', nameEN:'John Abbott College'},
+    {name:'Collège Marianopolis', nameEN:'Marianopolis College'},
+    {name:'Cégep de Rosemont', nameEN:'Cégep de Rosemont'},
+    {name:'Collège Montmorency', nameEN:'Collège Montmorency'},
+    {name:'Cégep Édouard-Montpetit', nameEN:'Cégep Édouard-Montpetit'},
+    {name:'Cégep Lionel-Groulx', nameEN:'Cégep Lionel-Groulx'}
+  ];
+
+  function createTags(container, items, cssClass) {
+    if (!container) return;
+    var lang = document.documentElement.lang || 'fr';
+    items.forEach(function(inst, i) {
+      var tag = document.createElement('span');
+      tag.className = 'inst-tag ' + cssClass;
+      tag.textContent = lang === 'en' ? inst.nameEN : inst.name;
+      tag.setAttribute('data-inst-fr', inst.name);
+      tag.setAttribute('data-inst-en', inst.nameEN);
+      tag.style.transitionDelay = (i * 0.03) + 's';
+      container.appendChild(tag);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var uniCloud = document.getElementById('inst-cloud-uni');
+    var cegepCloud = document.getElementById('inst-cloud-cegep');
+    if (!uniCloud && !cegepCloud) return;
+
+    createTags(uniCloud, UNIVERSITIES, 'inst-tag-uni');
+    createTags(cegepCloud, CEGEPS, 'inst-tag-cegep');
+
+    // Scroll-triggered staggered animation
+    var section = document.getElementById('institutions-section');
+    if (section) {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var tags = section.querySelectorAll('.inst-tag');
+            tags.forEach(function(t, i) {
+              setTimeout(function() { t.classList.add('visible'); }, i * 35);
+            });
+            observer.unobserve(section);
+          }
+        });
+      }, { threshold: 0.15 });
+      observer.observe(section);
+    }
+
+    // Update labels on language switch
+    var origSetLang = window.setLang;
+    if (origSetLang) {
+      window.setLang = function(lang) {
+        origSetLang(lang);
+        document.querySelectorAll('.inst-tag').forEach(function(tag) {
+          tag.textContent = lang === 'en' ? tag.getAttribute('data-inst-en') : tag.getAttribute('data-inst-fr');
+        });
+      };
+    }
   });
 })();

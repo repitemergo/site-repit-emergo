@@ -17,6 +17,26 @@
   .fade-in:nth-child(2) { transition-delay: .1s; }
   .fade-in:nth-child(3) { transition-delay: .2s; }
   .fade-in:nth-child(4) { transition-delay: .3s; }
+
+  /* ═══ INSTITUTION TAGS ═══ */
+  .institutions-section { margin-top:56px; padding-top:40px; border-top:1px solid rgba(0,0,0,.06); }
+  .institutions-legend { display:flex; justify-content:center; gap:24px; margin-bottom:16px; font-size:.85rem; color:var(--text-mid); }
+  .legend-dot { display:inline-block; width:12px; height:12px; border-radius:50%; margin-right:6px; vertical-align:middle; }
+  .legend-dot-uni { background:var(--blue); }
+  .legend-dot-cegep { background:#00796B; }
+  .inst-group { margin-bottom:20px; }
+  .inst-group-label { font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--text-mid); margin-bottom:10px; padding-left:4px; }
+  .inst-cloud { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; }
+  .inst-tag { padding:8px 18px; border-radius:100px; font-size:.85rem; font-weight:500; cursor:default; transition:transform .25s ease, box-shadow .25s ease; opacity:0; transform:translateY(12px); }
+  .inst-tag.visible { opacity:1; transform:translateY(0); }
+  .inst-tag:hover { transform:translateY(-2px); box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+  .inst-tag-uni { background:var(--blue-pale); color:var(--blue); }
+  .inst-tag-cegep { background:#E0F2F1; color:#00796B; }
+  [data-theme="dark"] .institutions-section { border-top-color:rgba(255,255,255,.08); }
+  [data-theme="dark"] .inst-tag-uni { background:#15253D; color:#7BB8E8; }
+  [data-theme="dark"] .inst-tag-cegep { background:#152A28; color:#4DB6AC; }
+  [data-theme="dark"] .legend-dot-uni { background:#7BB8E8; }
+  [data-theme="dark"] .legend-dot-cegep { background:#4DB6AC; }
 </style>
 </head>
 <body>
@@ -553,6 +573,23 @@
       <span class="field-tag field-navy" data-i18n="ejobs.field.sociologie">Sociologie</span>
       <span class="field-tag field-blue field-highlight" data-i18n="ejobs.field.travailSocial">Travail social</span>
     </div>
+
+    <!-- Institution Tags -->
+    <div class="institutions-section" id="institutions-section">
+      <div class="text-center" style="margin-bottom:28px;">
+        <h3 data-i18n="ejobs.institutions.title">Nos étudiants proviennent de...</h3>
+        <p class="lead mx-auto" style="font-size:.95rem; opacity:.8;" data-i18n="ejobs.institutions.subtitle">Plus de 25 établissements représentés</p>
+      </div>
+      <div class="inst-group">
+        <div class="inst-group-label text-center"><span class="legend-dot legend-dot-uni"></span> <span data-i18n="ejobs.institutions.universities">Universités</span></div>
+        <div class="inst-cloud" id="inst-cloud-uni"></div>
+      </div>
+      <div class="inst-group">
+        <div class="inst-group-label text-center"><span class="legend-dot legend-dot-cegep"></span> <span data-i18n="ejobs.institutions.cegeps">CEGEPs</span></div>
+        <div class="inst-cloud" id="inst-cloud-cegep"></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
