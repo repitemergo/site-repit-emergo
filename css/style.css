@@ -979,7 +979,7 @@ p { margin-bottom: 1em; color: var(--text-mid); }
   background: transparent; cursor: pointer; margin-left: 6px;
   transition: all var(--transition); color: var(--text-mid);
 }
-.dark-toggle { color: #1A2744; }
+.dark-toggle { color: #0A1228; }
 .dark-toggle:hover { background: var(--blue-pale); color: var(--navy); border-color: var(--blue); }
 .dark-toggle svg { width: 18px; height: 18px; transition: transform .3s ease; }
 .dark-toggle:hover svg { transform: scale(1.15); }
