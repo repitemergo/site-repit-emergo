@@ -402,7 +402,7 @@ const translations = {
     'hero.title1': 'Autism gives',
     'hero.title2': 'no respite...',
     'hero.title3': 'Emergo does!',
-    'hero.lead': 'Since 1976, we have been offering specialized respite services to families living with autistic individuals. A safe, stimulating and adapted environment — so every family can breathe.',
+    'hero.lead': 'You carry a lot. The constant worry, the deep fatigue, the doubt that anyone else could truly understand your child. For 50 years, that\'s exactly the reality that drives us — so that you can, finally, breathe.',
     'hero.cta1': 'Become a Member',
     'hero.cta2': 'Discover Our Programs',
 
@@ -426,7 +426,7 @@ const translations = {
     // Programs
     'programs.label': 'Our Programs',
     'programs.title': 'Stays adapted to every need',
-    'programs.lead': 'Four specialized programs to welcome autistic individuals of all ages and autonomy levels.',
+    'programs.lead': 'Quebec\'s first respite service in a vacation camp format in the heart of nature — four specialized programs welcoming autistic individuals of all ages and autonomy levels.',
     'prog.emergence.name': 'Émergence',
     'prog.emergence.tag': 'Socialization',
     'prog.emergence.ratio': 'Ratio 1:1 to 1:2',
@@ -444,6 +444,18 @@ const translations = {
     'prog.reve.ratio': 'Ratio 1:3',
     'prog.reve.desc': 'For autonomous autistic individuals aged 16 and over. Living in small groups and participating in daily activities in a normalizing environment.',
     'prog.reve.link': 'Learn more →',
+
+    // Trust
+    'trust.label': 'We understand',
+    'trust.title': 'You\'re asking yourself these questions. That\'s normal.',
+    'trust.lead': 'Parents often reach out to us when exhaustion outweighs doubt. We know this, because we\'ve been walking alongside them for 50 years.',
+    'trust.q1': '"Will my child be okay without me, with strangers?"',
+    'trust.a1': 'Every person is welcomed as they are. Our counselors are trained to decode, understand and adapt to your child\'s unique needs — regardless of their level of autonomy.',
+    'trust.q2': '"Will they be accepted, no matter their challenges?"',
+    'trust.a2': 'Unconditionally. We welcome people of all ages, across the entire autism spectrum. It\'s been our specialization since 1976, and it\'s what makes us unique.',
+    'trust.q3': '"Who are these people? What do they know about autism?"',
+    'trust.a3': 'Quebec\'s first specialized autism respite service. 50 years of expertise, hundreds of trained counselors, a board of directors made up of parents who live this reality every day.',
+    'trust.promise': 'Our promise is simple: to relieve families. Because autism doesn\'t give respite — but Emergo does.',
 
     // Testimonials
     'testimonials.label': 'Testimonials',
@@ -476,8 +488,8 @@ const translations = {
 
     // Foundation
     'foundation.label': 'Emergo Foundation',
-    'foundation.title': 'Support the mission',
-    'foundation.text': 'Created in 2011, the Emergo Foundation ensures the financial sustainability of Répit Emergo through fundraising and partnership development.',
+    'foundation.title': 'Your donations relieve families',
+    'foundation.text': 'Living with an autistic person means the weight of daily care, deep fatigue, sometimes isolation. To avoid burnout — or even psychological distress — these families need to be able to entrust all care to a specialized third party. That\'s exactly what you make possible.',
     'foundation.cta': 'Make a Donation',
 
     // Contact
@@ -590,14 +602,14 @@ const translations = {
 
     // Jobs
     'jobs.label': 'Student Jobs',
-    'jobs.title': 'Join our team!',
-    'jobs.lead': 'Are you a student looking for a high-impact social job? Our mission at Emergo is to offer autistic individuals an unforgettable camp experience. Come help us make it happen!',
-    'jobs.expertise.title': 'Recognized Expertise',
-    'jobs.expertise.text': 'Join the reference in welcoming and supporting autistic individuals. You will be supported by an organization that has been transforming lives for 50 years.',
-    'jobs.adventure.title': 'Step out of your comfort zone',
-    'jobs.adventure.text': 'Every day is a new adventure. You will be guided by a dedicated team that will make every moment a memorable experience in nature.',
-    'jobs.environment.title': 'A unique environment',
-    'jobs.environment.text': 'Contribute to an important cause. Discover the richness of mutual aid and grow in an environment where everyone counts!',
+    'jobs.title': 'A story where you could be the hero',
+    'jobs.lead': 'Working at Emergo can be a shock. Because communicating with an autistic person is different, because it takes energy, creativity and heart. But it\'s also one of the most transformative experiences of a lifetime. No specialization needed — if it speaks to you, we\'ll teach you.',
+    'jobs.expertise.title': 'Help relieve families',
+    'jobs.expertise.text': 'You\'ll give families a well-deserved break. Your responsibilities: the well-being and safety of your participant, in a fun outdoor setting. You\'ll be supported by 50 years of expertise.',
+    'jobs.adventure.title': 'Accept to grow',
+    'jobs.adventure.text': 'You\'ll need to revisit your perceptions, show creativity and patience. But you\'ll never be alone — a team will always be there to help when you step outside your comfort zone.',
+    'jobs.environment.title': 'A reciprocal commitment',
+    'jobs.environment.text': 'We ask for reliability and kindness. In return, we commit to giving you a unique experience, connecting you with people who share your values, and building skills that will serve you for life.',
     'jobs.summer.title': 'Summer respite (June to August)',
     'jobs.summer.emergence': 'Émergence Program — 50 positions',
     'jobs.summer.emergence.desc': '5 stays of 10 days at Camp de Grandpré (Otterburn Park). Mandatory training June 1-5 and June 10-11. Room and board provided. Minimum 4 days off between stays.',
@@ -706,7 +718,7 @@ const translations = {
     'cal.school.footer': 'Friday 6 PM to Sunday 4 PM (Monday 4 PM for holiday weekends)',
 
     // Foundation
-    'foundation.detail': 'Autism gives no respite... Emergo does! Thanks to your generosity, families receive the essential support they need. Our rates represent only 20% of the actual cost — the difference comes from your donations and grants.',
+    'foundation.detail': 'Thanks to your generosity, families receive the essential support they need. Our fees represent only 20% of the actual cost — the difference comes from your donations and grants. You\'re not funding a camp: you\'re giving a parent the chance to breathe, and an autistic person the chance to grow.',
     'foundation.chart.sources': 'Revenue',
     'foundation.chart.revenue': 'sources',
     'foundation.chart.gov': 'Government grants',
@@ -881,7 +893,23 @@ function getSystemTheme() {
   return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
 
+// Returns true between 18h and 8h, heure de Montréal
+function isNightInMontreal() {
+  const hour = parseInt(new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Toronto',
+    hour: 'numeric',
+    hour12: false
+  }).format(new Date()), 10) % 24;
+  return hour >= 18 || hour < 8;
+}
+
+function applyTheme(theme) {
+  // Apply without saving (for automatic/time-based theme)
+  document.documentElement.setAttribute('data-theme', theme);
+}
+
 function setTheme(theme) {
+  // Apply and save (for manual toggles)
   document.documentElement.setAttribute('data-theme', theme);
   localStorage?.setItem?.('emergo-theme', theme);
 }
@@ -990,14 +1018,20 @@ function toggleTheme() {
   }
 }
 
-// Init theme: saved > system preference
+// Init theme: nuit montréal → sombre forcé / jour → sauvegardé ou système
 (function() {
-  const saved = localStorage?.getItem?.('emergo-theme');
-  setTheme(saved || getSystemTheme());
-  // Listen for system changes
+  if (isNightInMontreal()) {
+    // Nuit (18h–8h) : mode sombre pour tout le monde, sans sauvegarder
+    applyTheme('dark');
+  } else {
+    // Jour : préférence sauvegardée ou préférence système
+    const saved = localStorage?.getItem?.('emergo-theme');
+    applyTheme(saved || getSystemTheme());
+  }
+  // Réagir aux changements système (seulement le jour, sans préférence sauvegardée)
   window.matchMedia?.('(prefers-color-scheme: dark)')?.addEventListener?.('change', (e) => {
-    if (!localStorage?.getItem?.('emergo-theme')) {
-      setTheme(e.matches ? 'dark' : 'light');
+    if (!isNightInMontreal() && !localStorage?.getItem?.('emergo-theme')) {
+      applyTheme(e.matches ? 'dark' : 'light');
     }
   });
 })();

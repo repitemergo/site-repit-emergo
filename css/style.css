@@ -269,12 +269,12 @@ p { margin-bottom: 1em; color: var(--text-mid); }
   background: #fff; border-radius: 4px;
   padding: 8px 8px 28px; box-shadow: 0 4px 20px rgba(0,0,0,.3);
   transform: rotate(var(--rot));
-  opacity: .45;
-  transition: opacity .5s ease, transform .5s ease;
+  opacity: 1;
+  transition: transform .5s ease;
   animation: pol-float 4s ease-in-out infinite;
   animation-delay: var(--delay);
 }
-.album-cta-link:hover .album-pol { opacity: .65; }
+.album-cta-link:hover .album-pol { opacity: 1; }
 .album-pol:nth-child(1) { left: 1%; top: 8%; }
 .album-pol:nth-child(2) { left: 12%; bottom: 4%; }
 .album-pol:nth-child(3) { left: 24%; top: -8%; }
@@ -306,7 +306,7 @@ p { margin-bottom: 1em; color: var(--text-mid); }
   transition: transform .3s ease, background .3s ease;
 }
 .album-cta-link:hover .album-cta-icon {
-  transform: scale(1.1) rotate(-5deg);
+  transform: scale(1.1);
   background: rgba(255,215,0,.25);
 }
 .album-cta-text h3 {
@@ -325,8 +325,12 @@ p { margin-bottom: 1em; color: var(--text-mid); }
   transition: gap .3s ease, box-shadow .3s ease, transform .3s ease;
 }
 .album-cta-link:hover .album-cta-btn {
-  gap: 12px; transform: scale(1.05);
+  transform: scale(1.05);
   box-shadow: 0 4px 20px rgba(255,215,0,.4);
+}
+.album-cta-link:hover .album-cta-btn svg:last-child {
+  transform: translateX(4px);
+  transition: transform .3s ease;
 }
 @media (max-width: 768px) {
   .album-pol { width: 90px; height: 105px; padding: 5px 5px 18px; }
