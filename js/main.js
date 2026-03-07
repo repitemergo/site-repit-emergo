@@ -935,7 +935,7 @@ const translations = {
     'hero.title1': 'Autism gives',
     'hero.title2': 'no respite...',
     'hero.title3': 'Emergo does!',
-    'hero.lead': 'You carry a lot. The constant worry, the deep fatigue, the doubt that anyone else could truly understand your child. For 50 years, that\'s exactly the reality that drives us — so that you can, finally, breathe.',
+    'hero.lead': 'Since 1976, we have been offering specialized respite services to families living with autistic individuals. A safe, stimulating and adapted environment — so that every family can breathe.',
     'hero.cta1': 'Become a Member',
     'hero.cta2': 'Discover Our Programs',
 
