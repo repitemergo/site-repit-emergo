@@ -662,7 +662,10 @@ p { margin-bottom: 1em; color: var(--text-mid); }
   }
   .nav-toggle { display: block; }
   .nav-dropdown > a::after { display: none; }
-  .nav-dropdown-menu { display: block; position: static; box-shadow: none; border: none; padding: 0 0 0 16px; margin-top: 0; min-width: 0; background: transparent; }
+  .nav-dropdown-menu {
+    opacity: 1; visibility: visible; pointer-events: auto; transform: none; transition: none;
+    position: static; box-shadow: none; border: none; padding: 0 0 0 16px; margin-top: 0; min-width: 0; background: transparent;
+  }
   .nav-dropdown-menu a { padding: 8px 14px; font-size: .85rem; }
   .grid-3 { grid-template-columns: 1fr; }
   .grid-4 { grid-template-columns: 1fr; }
