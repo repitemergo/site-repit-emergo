@@ -616,6 +616,9 @@ const translations = {
     'ejobs.institutions.universities': 'Universités',
     'ejobs.institutions.cegeps': 'CEGEPs',
 
+    // Photos
+    'ejobs.photo.team2024': 'L\'équipe Emergo — Été 2024',
+
     // How to Apply
     'ejobs.apply.email.title': 'Envoyez-nous un courriel',
     'ejobs.apply.email.text': 'Écrivez à <a href="mailto:recrutement@repitemergo.com" style="font-weight:700;">recrutement@repitemergo.com</a> en indiquant :',
@@ -1358,6 +1361,9 @@ const translations = {
     'ejobs.institutions.subtitle': 'Over 25 institutions represented',
     'ejobs.institutions.universities': 'Universities',
     'ejobs.institutions.cegeps': 'CEGEPs',
+
+    // Photos
+    'ejobs.photo.team2024': 'The Emergo Team — Summer 2024',
 
     // How to Apply
     'ejobs.apply.email.title': 'Send us an email',
