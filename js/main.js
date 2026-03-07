@@ -37,6 +37,8 @@ const translations = {
     'nav.contact': 'Nous joindre',
     'nav.donate': 'Faire un don',
     'nav.member': 'Devenir membre',
+    'nav.info': 'Renseignements',
+    'nav.reports': 'Rapports et documents',
     'nav.lang': 'EN',
 
     // Hero
@@ -561,6 +563,8 @@ const translations = {
     'nav.contact': 'Contact Us',
     'nav.donate': 'Donate',
     'nav.member': 'Become a Member',
+    'nav.info': 'Information',
+    'nav.reports': 'Reports & Documents',
     'nav.lang': 'FR',
 
     // Hero
