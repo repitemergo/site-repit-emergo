@@ -209,7 +209,7 @@ body.picto-active .text-content {
   color: var(--navy);
 }
 [data-theme="dark"] .picto-section-header h2 {
-  color: var(--sky) !important;
+  color: #E8EDF4 !important;
 }
 
 /* ═══ PICTO SCHEDULE ═══ */
