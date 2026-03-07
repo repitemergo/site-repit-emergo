@@ -421,6 +421,15 @@ body.picto-active .text-content {
   text-align: center;
   margin-bottom: 20px;
 }
+[data-theme="dark"] .hero .picto-content h2 {
+  color: rgba(255,255,255,.95);
+}
+[data-theme="dark"] .hero .picto-content .picto-sentence .picto-word span {
+  color: rgba(255,255,255,.9);
+}
+[data-theme="dark"] .hero .picto-content .picto-story-text {
+  color: rgba(255,255,255,.8);
+}
 
 /* ═══ CREDIT ARASAAC ═══ */
 .arasaac-credit {
