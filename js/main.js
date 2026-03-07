@@ -2426,3 +2426,146 @@ function toggleTheme() {
     });
   });
 })();
+
+// ═══ FIELD TAG EMOJI MAGIC ═══
+(function() {
+  const FIELD_EMOJIS = {
+    'adaptScolaire':    ['📚','🎒','✏️','🧩','👨‍🏫'],
+    'adminAffaires':    ['💼','📊','📈','💰','🏢'],
+    'artsVisuels':      ['🎨','🖌️','🖼️','✨','🌈'],
+    'criminologie':     ['🔍','⚖️','🕵️','📋','🧠'],
+    'designMultimedia': ['🎬','💻','🖥️','🎨','✨'],
+    'education':        ['📖','🍎','👩‍🏫','✏️','🎓'],
+    'edSpecialisee':    ['🧩','💙','🤝','🌟','👐'],
+    'enseignement':     ['👨‍🏫','📚','🍎','✨','🎓'],
+    'ergotherapie':     ['🤲','🧠','💪','🏥','🌿'],
+    'exerciseScience':  ['🏋️','💪','🏃','🔬','❤️'],
+    'genie':            ['⚙️','🔧','🏗️','📐','💡'],
+    'genieAero':        ['✈️','🚀','🛩️','⚙️','🌍'],
+    'gestionCommerce':  ['🏪','📊','💳','📦','🤝'],
+    'medecine':         ['🩺','💉','🏥','❤️','🧬'],
+    'metiersArt':       ['🎭','🪡','🏺','🎨','✨'],
+    'musique':          ['🎵','🎶','🎹','🎸','🎼'],
+    'neuroscience':     ['🧠','🔬','⚡','💡','🧬'],
+    'physiotherapie':   ['🦴','💪','🏃','🤸','🌿'],
+    'psychoeducation':  ['🧠','💙','🤝','📖','🌟'],
+    'psychologie':      ['🧠','💭','📖','🔍','💙'],
+    'relationsHum':     ['🤝','👥','💬','❤️','🌍'],
+    'sciencesBiomed':   ['🧬','🔬','🧫','💉','🔭'],
+    'sciencesCompt':    ['🧮','📊','💰','📋','✅'],
+    'sciencesNature':   ['🌿','🔬','🧪','🌍','🦋'],
+    'sciencesSante':    ['🏥','❤️','🩺','🧬','💊'],
+    'sciencesHum':      ['📚','🌍','💭','🗣️','📖'],
+    'sciencesPol':      ['🏛️','⚖️','🗳️','📜','🌍'],
+    'sciencesSoc':      ['👥','🌍','📊','🤝','📚'],
+    'soinsInfirmiers':  ['💉','🩺','❤️','🏥','🩹'],
+    'sociologie':       ['👥','🏙️','📊','🌍','🔍'],
+    'travailSocial':    ['🤝','❤️','👐','🏠','💙']
+  };
+
+  const KEY_MAP = {
+    'ejobs.field.adaptScolaire': 'adaptScolaire',
+    'ejobs.field.adminAffaires': 'adminAffaires',
+    'ejobs.field.artsVisuels': 'artsVisuels',
+    'ejobs.field.criminologie': 'criminologie',
+    'ejobs.field.designMultimedia': 'designMultimedia',
+    'ejobs.field.education': 'education',
+    'ejobs.field.edSpecialisee': 'edSpecialisee',
+    'ejobs.field.enseignement': 'enseignement',
+    'ejobs.field.ergotherapie': 'ergotherapie',
+    'ejobs.field.exerciseScience': 'exerciseScience',
+    'ejobs.field.genie': 'genie',
+    'ejobs.field.genieAero': 'genieAero',
+    'ejobs.field.gestionCommerce': 'gestionCommerce',
+    'ejobs.field.medecine': 'medecine',
+    'ejobs.field.metiersArt': 'metiersArt',
+    'ejobs.field.musique': 'musique',
+    'ejobs.field.neuroscience': 'neuroscience',
+    'ejobs.field.physiotherapie': 'physiotherapie',
+    'ejobs.field.psychoeducation': 'psychoeducation',
+    'ejobs.field.psychologie': 'psychologie',
+    'ejobs.field.relationsHum': 'relationsHum',
+    'ejobs.field.sciencesBiomed': 'sciencesBiomed',
+    'ejobs.field.sciencesCompt': 'sciencesCompt',
+    'ejobs.field.sciencesNature': 'sciencesNature',
+    'ejobs.field.sciencesSante': 'sciencesSante',
+    'ejobs.field.sciencesHum': 'sciencesHum',
+    'ejobs.field.sciencesPol': 'sciencesPol',
+    'ejobs.field.sciencesSoc': 'sciencesSoc',
+    'ejobs.field.soinsInfirmiers': 'soinsInfirmiers',
+    'ejobs.field.sociologie': 'sociologie',
+    'ejobs.field.travailSocial': 'travailSocial'
+  };
+
+  function createFieldEmoji(tag, emoji) {
+    var rect = tag.getBoundingClientRect();
+    var el = document.createElement('span');
+    el.textContent = emoji;
+    el.style.cssText =
+      'position:fixed;pointer-events:none;z-index:99999;' +
+      'font-size:' + (18 + Math.random() * 14) + 'px;' +
+      'left:' + (rect.left + rect.width * (0.1 + Math.random() * 0.8)) + 'px;' +
+      'top:' + (rect.top + rect.height * 0.3) + 'px;' +
+      'opacity:1;will-change:transform,opacity;';
+    document.body.appendChild(el);
+
+    var angle = -40 - Math.random() * 100;
+    var speed = 50 + Math.random() * 100;
+    var vx = Math.cos(angle * Math.PI / 180) * speed;
+    var vy = Math.sin(angle * Math.PI / 180) * speed;
+    var spin = (Math.random() - 0.5) * 540;
+    var life = 900 + Math.random() * 700;
+    var start = performance.now();
+
+    function tick(now) {
+      var t = (now - start) / life;
+      if (t > 1) { el.remove(); return; }
+      var ease = 1 - (1 - t) * (1 - t);
+      var gravity = t * t * 50;
+      el.style.transform = 'translate(' + (vx * ease) + 'px,' + (vy * ease + gravity) + 'px) rotate(' + (spin * ease) + 'deg) scale(' + (1 - t * 0.2) + ')';
+      el.style.opacity = t < 0.6 ? 1 : 1 - (t - 0.6) / 0.4;
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function burstFieldEmojis(tag, emojis, count) {
+    for (var i = 0; i < count; i++) {
+      (function(idx) {
+        setTimeout(function() {
+          createFieldEmoji(tag, emojis[Math.floor(Math.random() * emojis.length)]);
+        }, idx * 60);
+      })(i);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var style = document.createElement('style');
+    style.textContent =
+      '.field-tag-magic { cursor:pointer; transition:transform .2s ease,box-shadow .2s ease; user-select:none; }' +
+      '.field-tag-magic:hover { transform:scale(1.12); box-shadow:0 4px 14px rgba(0,0,0,.15); z-index:2; position:relative; }' +
+      '.field-tag-magic:active { transform:scale(0.95); }' +
+      '.field-tag-magic.popping { animation:field-pop .4s ease; }' +
+      '@keyframes field-pop { 0%{transform:scale(1)} 30%{transform:scale(1.25)} 60%{transform:scale(0.9)} 100%{transform:scale(1)} }';
+    document.head.appendChild(style);
+
+    document.querySelectorAll('.field-tag[data-i18n]').forEach(function(tag) {
+      tag.classList.add('field-tag-magic');
+      var i18nKey = tag.getAttribute('data-i18n');
+      var emojiKey = KEY_MAP[i18nKey];
+      var emojis = emojiKey ? FIELD_EMOJIS[emojiKey] : ['✨','🎓','📚','💡','🌟'];
+
+      tag.addEventListener('click', function(e) {
+        e.preventDefault();
+        tag.classList.remove('popping');
+        void tag.offsetWidth;
+        tag.classList.add('popping');
+        burstFieldEmojis(tag, emojis, 6 + Math.floor(Math.random() * 4));
+      });
+
+      tag.addEventListener('mouseenter', function() {
+        burstFieldEmojis(tag, emojis, 2);
+      });
+    });
+  });
+})();
