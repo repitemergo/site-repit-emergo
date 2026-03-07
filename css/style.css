@@ -979,13 +979,10 @@ p { margin-bottom: 1em; color: var(--text-mid); }
   background: transparent; cursor: pointer; margin-left: 6px;
   transition: all var(--transition); color: var(--text-mid);
 }
+.dark-toggle { color: #1A2744; }
 .dark-toggle:hover { background: var(--blue-pale); color: var(--navy); border-color: var(--blue); }
-.dark-toggle svg { width: 18px; height: 18px; animation: theme-idle 3s ease-in-out infinite; }
-.dark-toggle:hover svg { animation: none; transform: rotate(20deg) scale(1.15); transition: transform .3s ease; }
-@keyframes theme-idle {
-  0%, 100% { transform: rotate(0deg) scale(1); opacity: .7; }
-  50%      { transform: rotate(15deg) scale(1.1); opacity: 1; }
-}
+.dark-toggle svg { width: 18px; height: 18px; transition: transform .3s ease; }
+.dark-toggle:hover svg { transform: scale(1.15); }
 
 /* View Transitions — expanding sphere for theme toggle */
 ::view-transition-old(root),
@@ -1004,8 +1001,8 @@ p { margin-bottom: 1em; color: var(--text-mid); }
   ::view-transition-old(root),
   ::view-transition-new(root) { animation: none !important; }
 }
-.dark-toggle .icon-moon { display: none; }
-.dark-toggle .icon-sun { display: block; }
+.dark-toggle .icon-moon { display: block; }
+.dark-toggle .icon-sun { display: none; }
 
 /* ═══ DARK MODE THEME ═══ */
 [data-theme="dark"] {
@@ -1047,8 +1044,8 @@ p { margin-bottom: 1em; color: var(--text-mid); }
 [data-theme="dark"] .footer-bottom { border-top-color: rgba(255,255,255,.06); }
 [data-theme="dark"] .dark-toggle { border-color: rgba(255,255,255,.15); color: #E8C060; }
 [data-theme="dark"] .dark-toggle:hover { background: rgba(232,192,96,.15); }
-[data-theme="dark"] .dark-toggle .icon-moon { display: block; }
-[data-theme="dark"] .dark-toggle .icon-sun { display: none; }
+[data-theme="dark"] .dark-toggle .icon-moon { display: none; }
+[data-theme="dark"] .dark-toggle .icon-sun { display: block; }
 [data-theme="dark"] .nav-links a { color: #B0BDD0; }
 [data-theme="dark"] .nav-links a:hover { background: #1E3A5F; color: #E8EDF4; }
 [data-theme="dark"] .nav-dropdown-menu { background: #152035; border-color: rgba(255,255,255,.06); }
