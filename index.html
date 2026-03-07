@@ -22,6 +22,27 @@
   .fade-in:nth-child(2) { transition-delay: .1s; }
   .fade-in:nth-child(3) { transition-delay: .2s; }
   .fade-in:nth-child(4) { transition-delay: .3s; }
+
+  /* ═══ MEMBERSHIP MODAL ═══ */
+  .membership-modal-overlay { position:fixed; inset:0; z-index:1000; background:rgba(0,0,0,0.5); display:flex; align-items:center; justify-content:center; padding:24px; opacity:0; visibility:hidden; transition:opacity .25s ease, visibility .25s ease; }
+  .membership-modal-overlay.active { opacity:1; visibility:visible; }
+  .membership-modal { background:var(--white, #fff); border-radius:var(--radius-lg, 20px); padding:36px; max-width:750px; width:100%; max-height:80vh; overflow-y:auto; box-shadow:0 20px 60px rgba(0,0,0,0.25); position:relative; transform:translateY(20px) scale(0.97); transition:transform .25s ease; }
+  .membership-modal-overlay.active .membership-modal { transform:translateY(0) scale(1); }
+  .membership-modal-close { position:absolute; top:16px; right:20px; background:none; border:none; font-size:1.8rem; cursor:pointer; color:var(--text-light, #666); line-height:1; padding:4px 8px; border-radius:8px; transition:background .15s ease; }
+  .membership-modal-close:hover { background:var(--blue-pale, #E8F0FA); color:var(--navy, #001E55); }
+  .membership-modal h3 { color:var(--navy, #001E55); margin-bottom:12px; }
+  .membership-modal h4 { color:var(--blue, #5B9BD5); margin:24px 0 12px; font-size:1rem; }
+  .membership-modal ul { list-style:none; padding:0; margin:0 0 16px; }
+  .membership-modal li { padding:8px 0 8px 24px; position:relative; font-size:.9rem; line-height:1.5; border-bottom:1px solid rgba(0,0,0,.04); }
+  .membership-modal li::before { content:'✦'; position:absolute; left:0; color:var(--blue, #5B9BD5); font-size:.7rem; top:11px; }
+  [data-theme="dark"] .membership-modal { background:#152035; }
+  [data-theme="dark"] .membership-modal h3 { color:#7BB8E8; }
+  [data-theme="dark"] .membership-modal h4 { color:#7BB8E8; }
+  [data-theme="dark"] .membership-modal li { border-bottom-color:rgba(255,255,255,.05); }
+  #membership-card { position:relative; overflow:hidden; }
+  #membership-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:linear-gradient(90deg, var(--blue, #5B9BD5), var(--navy, #001E55)); transform:scaleX(0); transition:transform .3s ease; }
+  #membership-card:hover::after { transform:scaleX(1); }
+  @media(max-width:600px) { .membership-modal { padding:24px 20px; } }
 </style>
 </head>
 <body>
@@ -33,7 +54,12 @@
       <img src="https://repitemergo.com/wp-content/uploads/2025/02/cropped-cropped-cropped-Repit_Emergo-Logotype_Horizontal_Bleu_Ciel-RGB.png" alt="Répit Emergo" class="navbar-logo">
     </a>
     <div class="nav-links">
-      <a href="#services" data-i18n="nav.services">Nos services</a>
+      <div class="nav-dropdown">
+        <a href="#services" data-i18n="nav.services">Nos services</a>
+        <div class="nav-dropdown-menu">
+          <a href="#member" data-i18n="nav.member">Devenir membre</a>
+        </div>
+      </div>
       <a href="#programs" data-i18n="nav.programs">Programmes</a>
       <a href="#calendar" data-i18n="nav.calendar">Calendrier et coûts</a>
       <div class="nav-dropdown">
@@ -456,10 +482,11 @@
     <!-- 3 steps -->
     <h3 style="text-align:center; margin-bottom:32px; font-size:1.15rem;" data-i18n="member.steps.title">Trois étapes pour compléter l'inscription</h3>
     <div class="grid-3" style="margin-bottom:48px;">
-      <div class="card fade-in" style="text-align:center;">
+      <div class="card fade-in" id="membership-card" style="text-align:center; cursor:pointer;" onclick="document.getElementById('membership-modal').classList.add('active')">
         <div class="anim-icon anim-icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h3 data-i18n="member.step1.title">1. Adhésion</h3>
         <p data-i18n="member.step1.text">Pour avoir accès à nos services, il faut être membre de Répit Emergo. La cotisation annuelle est de 35 $. Une fois membre, vous aurez accès à toutes nos communications et pourrez procéder à l'inscription aux différentes sessions de répit.</p>
+        <span style="font-size:.75rem; color:var(--blue); font-weight:600; margin-top:8px; display:inline-block;" data-i18n="member.step1.more">Plus de détails →</span>
       </div>
       <div class="card fade-in" style="text-align:center;">
         <div class="anim-icon anim-icon-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
@@ -847,6 +874,46 @@
     </div>
   </div>
 </footer>
+
+<!-- ═══ MEMBERSHIP MODAL ═══ -->
+<div id="membership-modal" class="membership-modal-overlay" onclick="if(event.target===this)this.classList.remove('active')">
+  <div class="membership-modal">
+    <button class="membership-modal-close" onclick="document.getElementById('membership-modal').classList.remove('active')">&times;</button>
+    <h3 data-i18n="member.modal.title">Des parents aident des parents</h3>
+    <p style="font-size:.95rem; color:var(--text-mid); margin-bottom:24px; font-style:italic;" data-i18n="member.modal.intro">Emergo, c'est essentiellement et depuis toujours « des parents qui aident des parents » à reprendre leur souffle et à recharger leur batterie.</p>
+
+    <h4 data-i18n="member.modal.privileges.title">Les privilèges du parent membre d'Emergo</h4>
+    <ul>
+      <li data-i18n="member.modal.priv1">Faire partie d'un organisme fondé et administré par des parents d'enfants autistes afin d'offrir du répit aux familles vivant avec une personne autiste ou ayant un autre trouble envahissant du développement (TED).</li>
+      <li data-i18n="member.modal.priv2">Avoir accès à des services de répit auxquels il peut faire confiance, où son enfant pourra s'amuser et se faire des amis dans un environnement de plein air sécuritaire et stimulant.</li>
+      <li data-i18n="member.modal.priv3">Bénéficier pour son enfant d'un ratio d'encadrement de un à trois participants par accompagnateur bien formé et expérimenté.</li>
+      <li data-i18n="member.modal.priv4">Inscrire son enfant dans celui des quatre programmes d'Emergo qui répond le mieux à ses besoins : Émergence (socialisation), iDÉFIx (encadrement personnalisé), Adaptatou (intégration) ou Un rêve à réaliser (autonomie).</li>
+      <li data-i18n="member.modal.priv5">Obtenir les formulaires d'inscription en temps opportun afin de pouvoir planifier ses moments de liberté et des activités en couple ou en famille compliquées ou impossibles à faire avec son enfant autiste.</li>
+      <li data-i18n="member.modal.priv6">Recevoir l'infolettre par courriel pour s'assurer d'avoir toujours toute l'information pertinente rapidement.</li>
+      <li data-i18n="member.modal.priv7">Assister à l'assemblée annuelle, exercer son droit de vote, poser des questions, soumettre des idées et échanger avec les membres du conseil d'administration et de la direction, et les autres parents.</li>
+    </ul>
+
+    <h4 data-i18n="member.modal.involvement.title">L'implication du parent membre d'Emergo</h4>
+    <ul>
+      <li data-i18n="member.modal.impl1">Payer régulièrement sa cotisation pour maintenir son adhésion aux services de répit.</li>
+      <li data-i18n="member.modal.impl2">Remplir soigneusement les formulaires d'inscription, signer les formulaires de consentement requis afin que le dossier de son enfant soit complet et à jour, et payer les frais de séjour.</li>
+      <li data-i18n="member.modal.impl3">S'assurer de fournir tous les articles nécessaires au bon déroulement du séjour de son enfant (ordonnances et médicaments, vêtements adaptés à la saison, nourriture en cas de diète spéciale, etc.)</li>
+      <li data-i18n="member.modal.impl4">Donner son adresse électronique pour réduire les frais postaux et l'empreinte écologique d'Emergo.</li>
+      <li data-i18n="member.modal.impl5">Participer dans la mesure du possible aux tâches de bénévolat, à la corvée annuelle, aux événements de promotion et aux activités de financement pour soutenir Emergo et ainsi créer des liens avec les autres parents et le personnel, et développer un sentiment d'appartenance.</li>
+      <li data-i18n="member.modal.impl6">Contribuer au développement d'Emergo en travaillant au sein d'un comité ou en proposant sa candidature au conseil d'administration lors de l'assemblée annuelle.</li>
+      <li data-i18n="member.modal.impl7">Le parent membre d'Emergo devient ainsi un aidé-aidant et renforce la chaîne de solidarité qui doit unir tous les parents d'Emergo en vue d'assurer la pérennité des services de répit.</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    var m = document.getElementById('membership-modal');
+    if (m) m.classList.remove('active');
+  }
+});
+</script>
 
 <script src="js/main.js"></script>
 
