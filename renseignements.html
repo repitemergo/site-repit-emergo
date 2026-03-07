@@ -23,56 +23,79 @@
   .info-hero p { font-size: 1.15rem; max-width: 560px; margin: 0 auto; color: #fff; font-weight: 600; letter-spacing: .01em; }
 
   .info-section { padding: 60px 0; }
-  .info-subsection { margin-bottom: 32px; }
-  .info-subsection h3 { font-size: 1.2rem; color: var(--navy); margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
-  .info-subsection-icon { width: 32px; height: 32px; flex-shrink: 0; }
-  .info-subsection-icon svg { width: 100%; height: 100%; color: var(--blue); }
-  .info-subsection p, .info-subsection ul { margin: 0; color: var(--text-mid); line-height: 1.6; font-size: .95rem; }
-  .info-subsection ul { list-style: none; padding: 0; }
-  .info-subsection ul li { padding: 6px 0 6px 24px; position: relative; }
-  .info-subsection ul li::before { content: "•"; position: absolute; left: 8px; color: var(--blue); font-weight: bold; }
-
-  .info-accordion { display: flex; flex-direction: column; gap: 12px; }
-  .info-accordion-item { border: 1px solid rgba(0,30,85,.1); border-radius: var(--radius-lg); overflow: hidden; }
-  .info-accordion-trigger { display: flex; align-items: center; padding: 18px 20px; background: var(--blue-pale); font-weight: 600; color: var(--navy); }
-  .info-accordion-content { display: block; padding: 20px; background: rgba(73,119,255,.02); border-top: 1px solid rgba(0,30,85,.1); }
-  .info-accordion-content p { margin: 0 0 12px 0; color: var(--text-mid); font-size: .95rem; line-height: 1.6; }
-  .info-accordion-content p:last-child { margin-bottom: 0; }
-  .info-accordion-content ul { list-style: none; padding: 0; margin: 0; }
-  .info-accordion-content ul li { padding: 6px 0 6px 24px; position: relative; color: var(--text-mid); font-size: .95rem; line-height: 1.6; }
-  .info-accordion-content ul li::before { content: "•"; position: absolute; left: 8px; color: var(--blue); font-weight: bold; }
-
-  .info-warning { background: linear-gradient(135deg, #FFA500 0%, #FFB84D 100%); color: #3d2800; padding: 20px; border-radius: var(--radius-lg); margin-top: 20px; border-left: 4px solid #FF8C00; }
-  .info-warning strong { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: #2a1a00; }
-  .info-warning svg { width: 20px; height: 20px; flex-shrink: 0; color: #2a1a00; }
-  .info-warning p { margin: 0; font-weight: 600; font-size: .95rem; color: #3d2800; }
+  .info-title { color: var(--navy); font-size: 1.8rem; margin-bottom: 12px; }
+  .info-subtitle { color: var(--text-mid); font-size: 1rem; margin-bottom: 32px; }
 
   .info-back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--blue); text-decoration: none; font-weight: 500; margin-bottom: 20px; transition: color .2s ease; }
   .info-back-link:hover { color: var(--navy); }
   .info-back-link svg { width: 18px; height: 18px; }
 
-  .info-card { background: var(--white); border-radius: var(--radius-lg); padding: 24px; border: 1px solid rgba(0,30,85,.08); margin-bottom: 20px; }
-  .info-card h4 { color: var(--navy); margin-bottom: 12px; font-size: 1rem; }
-  .info-card p { margin: 0; color: var(--text-mid); font-size: .95rem; line-height: 1.6; }
+  /* ── New open-card design ── */
+  .info-items { display: flex; flex-direction: column; gap: 0; }
+  .info-item { padding: 28px 0; border-bottom: 1px solid rgba(0,30,85,.08); }
+  .info-item:first-child { padding-top: 0; }
+  .info-item:last-child { border-bottom: none; }
+  [data-theme="dark"] .info-item { border-color: rgba(255,255,255,.07); }
 
-  .info-address { background: var(--cream); padding: 16px; border-radius: var(--radius); margin-top: 12px; font-size: .9rem; color: var(--text-mid); }
-  .info-address strong { display: block; color: var(--navy); margin-bottom: 6px; }
+  .info-item-header { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+  .info-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .info-icon svg { width: 20px; height: 20px; }
+  .info-icon-blue { background: var(--blue-pale); color: var(--blue); }
+  .info-icon-green { background: #E8F5E9; color: #2E7D32; }
+  .info-icon-orange { background: #FFF3E0; color: #E65100; }
+  .info-icon-purple { background: #F3E5F5; color: #7B1FA2; }
+  .info-icon-teal { background: #E0F2F1; color: #00695C; }
+  .info-icon-red { background: #FFEBEE; color: #C62828; }
+  .info-icon-indigo { background: #E8EAF6; color: #283593; }
+  [data-theme="dark"] .info-icon-blue { background: #15253D; color: #7BB8E8; }
+  [data-theme="dark"] .info-icon-green { background: #1B3A1B; color: #81C784; }
+  [data-theme="dark"] .info-icon-orange { background: #3E2200; color: #FFB74D; }
+  [data-theme="dark"] .info-icon-purple { background: #2A1538; color: #CE93D8; }
+  [data-theme="dark"] .info-icon-teal { background: #152A28; color: #4DB6AC; }
+  [data-theme="dark"] .info-icon-red { background: #3E1111; color: #EF9A9A; }
+  [data-theme="dark"] .info-icon-indigo { background: #1A1F3E; color: #9FA8DA; }
 
-  .info-address-link { color: var(--blue); text-decoration: none; font-weight: 500; }
-  .info-address-link:hover { text-decoration: underline; }
+  .info-item-header h3 { font-size: 1.05rem; font-weight: 600; color: var(--navy); margin: 0; }
+  [data-theme="dark"] .info-item-header h3 { color: #fff; }
 
+  .info-item-body { padding-left: 54px; }
+  .info-item-body p { margin: 0 0 10px 0; color: var(--text-mid); font-size: .95rem; line-height: 1.65; }
+  .info-item-body p:last-child { margin-bottom: 0; }
+  .info-item-body ul { list-style: none; padding: 0; margin: 0; }
+  .info-item-body ul li { padding: 5px 0 5px 20px; position: relative; color: var(--text-mid); font-size: .95rem; line-height: 1.6; }
+  .info-item-body ul li::before { content: "·"; position: absolute; left: 4px; color: var(--blue); font-weight: bold; font-size: 1.3rem; line-height: 1.2; }
+  .info-item-body a { color: var(--blue); text-decoration: none; font-weight: 500; }
+  .info-item-body a:hover { text-decoration: underline; }
+
+  /* ── Clothing 2-column grid ── */
+  .info-clothes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
+  @media (max-width: 520px) { .info-clothes-grid { grid-template-columns: 1fr; } }
+
+  /* ── Warning box ── */
+  .info-warning { background: linear-gradient(135deg, #FFA500 0%, #FFB84D 100%); color: #3d2800; padding: 16px 20px; border-radius: 12px; margin-top: 16px; border-left: 4px solid #FF8C00; }
+  .info-warning strong { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; color: #2a1a00; }
+  .info-warning svg { width: 18px; height: 18px; flex-shrink: 0; color: #2a1a00; }
+  .info-warning p { margin: 0; font-weight: 600; font-size: .9rem; color: #3d2800; }
+
+  /* ── Map ── */
+  .info-map-embed { margin-top: 14px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); }
+  .info-map-embed iframe { width: 100%; height: 200px; border: 0; display: block; }
+  [data-theme="dark"] .info-map-embed { border-color: rgba(255,255,255,0.1); }
+
+  .info-google-rating { display: flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 0.9rem; color: var(--text); }
+  .info-google-rating strong { font-size: .95rem; }
+  .info-google-rating span { opacity: 0.7; }
+
+  /* ── Contact box ── */
   .info-contact-box { background: var(--blue-pale); padding: 20px; border-radius: var(--radius-lg); margin-top: 20px; }
   .info-contact-box h4 { color: var(--navy); margin-bottom: 12px; }
   .info-contact-box p { margin: 0 0 8px 0; color: var(--text-mid); font-size: .95rem; }
   .info-contact-box a { color: var(--blue); text-decoration: none; font-weight: 500; }
   .info-contact-box a:hover { text-decoration: underline; }
 
-  .info-title { color: var(--navy); font-size: 1.8rem; margin-bottom: 12px; }
-  .info-subtitle { color: var(--text-mid); font-size: 1rem; margin-bottom: 32px; }
-
   @media (max-width: 768px) {
-    .info-accordion-trigger { padding: 16px; }
-    .info-accordion-content { padding: 16px; }
+    .info-item-body { padding-left: 0; }
+    .info-item { padding: 22px 0; }
   }
 </style>
 </head>
@@ -143,44 +166,55 @@
   <div class="container">
     <h2 class="info-title fade-in" data-i18n="info.summer.title">Informations — Répit estival</h2>
 
-    <div class="info-accordion fade-in">
+    <div class="info-items fade-in">
+
       <!-- Lieu des séjours -->
-      <div class="info-accordion-item">
-        <button class="info-accordion-trigger">
-          <span style="display: flex; align-items: center; gap: 12px;">
-            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span data-i18n="info.summer.location.title">Lieu des séjours</span>
-          </span></button>
-        <div class="info-accordion-content">
+      <div class="info-item">
+        <div class="info-item-header">
+          <div class="info-icon info-icon-blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3 data-i18n="info.summer.location.title">Lieu des séjours</h3>
+        </div>
+        <div class="info-item-body">
           <p data-i18n="info.summer.location.label">Camp de Grandpré</p>
-          <p>756 chemin des Patriotes<br>Otterburn Park, J3H 1Z5</p>
-          <p style="margin-top: 12px;">
-            <a href="https://www.google.com/maps/search/756+chemin+des+Patriotes+Otterburn+Park+J3H+1Z5" target="_blank" class="info-address-link" data-i18n="info.summer.location.map">Voir sur Google Maps →</a>
-          </p>
+          <p>756 Chemin des Patriotes Sud, Otterburn Park, J3H 1Z5</p>
+          <div class="info-map-embed">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800!2d-73.2096079!3d45.5452577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc9aafbffaf59ed%3A0x16d53c61fe4b6159!2sR%C3%A9pit%20Emergo%20(Camp)!5e1!3m2!1sfr!2sca" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="info-google-rating">
+            <svg viewBox="0 0 24 24" fill="#FBBC04" stroke="none" width="16" height="16"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <strong>5,0</strong>
+            <span data-i18n="info.summer.location.reviews">(12 avis sur Google)</span>
+            &nbsp;·&nbsp;
+            <a href="https://maps.app.goo.gl/vVqUMvqB9f82qbNb6" target="_blank" data-i18n="info.summer.location.map">Voir sur Google Maps →</a>
+          </div>
         </div>
       </div>
 
       <!-- Heures d'arrivée et de départ -->
-      <div class="info-accordion-item">
-        <button class="info-accordion-trigger">
-          <span style="display: flex; align-items: center; gap: 12px;">
-            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span data-i18n="info.summer.hours.title">Heures d'arrivée et de départ</span>
-          </span></button>
-        <div class="info-accordion-content">
+      <div class="info-item">
+        <div class="info-item-header">
+          <div class="info-icon info-icon-indigo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 data-i18n="info.summer.hours.title">Heures d'arrivée et de départ</h3>
+        </div>
+        <div class="info-item-body">
           <p><strong data-i18n="info.summer.hours.arrival">Arrivée :</strong> Entre 14h et 17h au camp</p>
           <p><strong data-i18n="info.summer.hours.departure">Départ :</strong> Entre 11h et 12h</p>
         </div>
       </div>
 
       <!-- Médicaments -->
-      <div class="info-accordion-item">
-        <button class="info-accordion-trigger">
-          <span style="display: flex; align-items: center; gap: 12px;">
-            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
-            <span data-i18n="info.summer.meds.title">Médicaments</span>
-          </span></button>
-        <div class="info-accordion-content">
+      <div class="info-item">
+        <div class="info-item-header">
+          <div class="info-icon info-icon-red">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          </div>
+          <h3 data-i18n="info.summer.meds.title">Médicaments</h3>
+        </div>
+        <div class="info-item-body">
           <ul>
             <li data-i18n="info.summer.meds.dispill">Utilisation obligatoire du système Dispill avec copie de l'ordonnance valide</li>
             <li data-i18n="info.summer.meds.asneeded">Médicaments au besoin dans contenant original</li>
@@ -190,14 +224,15 @@
       </div>
 
       <!-- Diète spéciale -->
-      <div class="info-accordion-item">
-        <button class="info-accordion-trigger">
-          <span style="display: flex; align-items: center; gap: 12px;">
-            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <span data-i18n="info.summer.diet.title">Diète spéciale</span>
-          </span></button>
-        <div class="info-accordion-content">
-          <p data-i18n="info.summer.diet.provide">Fournir les repas et menu personnalisés selon les besoins.</p>
+      <div class="info-item">
+        <div class="info-item-header">
+          <div class="info-icon info-icon-orange">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          </div>
+          <h3 data-i18n="info.summer.diet.title">Diète spéciale</h3>
+        </div>
+        <div class="info-item-body">
+          <p data-i18n-html="info.summer.diet.provide">Les repas sont fournis par le camp. Si votre enfant a une <strong>diète spéciale</strong> (allergies, intolérances, restrictions alimentaires), vous devez fournir ses repas et collations.</p>
           <div class="info-warning">
             <strong>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3.05h16.94a2 2 0 0 0 1.71-3.05L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
@@ -209,13 +244,14 @@
       </div>
 
       <!-- Consignes santé -->
-      <div class="info-accordion-item">
-        <button class="info-accordion-trigger">
-          <span style="display: flex; align-items: center; gap: 12px;">
-            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <span data-i18n="info.summer.health.title">Consignes santé</span>
-          </span></button>
-        <div class="info-accordion-content">
+      <div class="info-item">
+        <div class="info-item-header">
+          <div class="info-icon info-icon-green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 data-i18n="info.summer.health.title">Consignes santé</h3>
+        </div>
+        <div class="info-item-body">
           <ul>
             <li data-i18n="info.summer.health.cardiac">Certificat médical requis si maladie cardiaque</li>
             <li data-i18n="info.summer.health.contagious">Informer du staff si maladie contagieuse dans les 15 jours précédentes</li>
@@ -225,13 +261,14 @@
       </div>
 
       <!-- Articles à apporter -->
-      <div class="info-accordion-item">
-        <button class="info-accordion-trigger">
-          <span style="display: flex; align-items: center; gap: 12px;">
-            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            <span data-i18n="info.summer.supplies.title">Articles à apporter</span>
-          </span></button>
-        <div class="info-accordion-content">
+      <div class="info-item">
+        <div class="info-item-header">
+          <div class="info-icon info-icon-teal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          </div>
+          <h3 data-i18n="info.summer.supplies.title">Articles à apporter</h3>
+        </div>
+        <div class="info-item-body">
           <ul>
             <li data-i18n="info.summer.supplies.sunscreen">Crème solaire FPS 30+</li>
             <li data-i18n="info.summer.supplies.insect">Chasse-moustiques</li>
@@ -243,55 +280,61 @@
         </div>
       </div>
 
-      <!-- Vêtements -->
-      <div class="info-accordion-item">
-        <button class="info-accordion-trigger">
-          <span style="display: flex; align-items: center; gap: 12px;">
-            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12v7H6z"/><path d="M9 11l-3 8h12l-3-8"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="19" r="1"/></svg>
-            <span data-i18n="info.summer.clothes.title">Vêtements</span>
-          </span></button>
-        <div class="info-accordion-content">
-          <ul>
-            <li data-i18n="info.summer.clothes.underwear">6 sous-vêtements</li>
-            <li data-i18n="info.summer.clothes.socks">6 paires de bas</li>
-            <li data-i18n="info.summer.clothes.warmsocks">2 paires de bas chauds</li>
-            <li data-i18n="info.summer.clothes.tshirts">6 t-shirts</li>
-            <li data-i18n="info.summer.clothes.longsleeves">2 chandails manches longues</li>
-            <li data-i18n="info.summer.clothes.shorts">3 pantalons courts</li>
-            <li data-i18n="info.summer.clothes.pants">2 pantalons longs</li>
-            <li data-i18n="info.summer.clothes.pajamas">2 pyjamas</li>
-            <li data-i18n="info.summer.clothes.swimsuit">1 maillot de bain</li>
-            <li data-i18n="info.summer.clothes.hat">1 chapeau ou casquette</li>
-            <li data-i18n="info.summer.clothes.windbreaker">1 coupe-vent</li>
-            <li data-i18n="info.summer.clothes.raincoat">1 imperméable</li>
-            <li data-i18n="info.summer.clothes.rainpants">1 pantalon imperméable</li>
-            <li data-i18n="info.summer.clothes.shoes">Chaussures fermées</li>
-            <li data-i18n="info.summer.clothes.sandals">Sandales ou tongs</li>
-            <li data-i18n="info.summer.clothes.slippers">Pantoufles</li>
-            <li data-i18n="info.summer.clothes.rainboots">Bottes de pluie</li>
-            <li data-i18n="info.summer.clothes.laundry">Sac pour linge sale</li>
-            <li data-i18n="info.summer.clothes.washcloths">4 débarbouillettes</li>
-            <li data-i18n="info.summer.clothes.towels">2 serviettes de bain</li>
-            <li data-i18n="info.summer.clothes.beachtowels">2 serviettes de plage</li>
-            <li data-i18n="info.summer.clothes.shampoo">Shampooing personnel</li>
-            <li data-i18n="info.summer.clothes.soap">Savon</li>
-            <li data-i18n="info.summer.clothes.deodorant">Déodorant</li>
-            <li data-i18n="info.summer.clothes.toothbrush">Brosse à dents</li>
-            <li data-i18n="info.summer.clothes.toothpaste">Dentifrice</li>
-            <li data-i18n="info.summer.clothes.brush">Brosse ou peigne</li>
-            <li data-i18n="info.summer.clothes.shaving">Crème à raser ou rasoir si nécessaire</li>
-          </ul>
+      <!-- Vêtements et articles personnels -->
+      <div class="info-item">
+        <div class="info-item-header">
+          <div class="info-icon info-icon-purple">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46L16 2 12 5 8 2 3.62 3.46a2 2 0 0 0-1.34 1.89V8l4.72 1V22h10V9l4.72-1V5.35a2 2 0 0 0-1.34-1.89z"/></svg>
+          </div>
+          <h3 data-i18n="info.summer.clothes.title">Vêtements et articles personnels</h3>
+        </div>
+        <div class="info-item-body">
+          <div class="info-clothes-grid">
+            <ul>
+              <li data-i18n="info.summer.clothes.underwear">6 sous-vêtements</li>
+              <li data-i18n="info.summer.clothes.socks">6 paires de bas</li>
+              <li data-i18n="info.summer.clothes.warmsocks">2 paires de bas chauds</li>
+              <li data-i18n="info.summer.clothes.tshirts">6 t-shirts</li>
+              <li data-i18n="info.summer.clothes.longsleeves">2 chandails manches longues</li>
+              <li data-i18n="info.summer.clothes.shorts">3 pantalons courts</li>
+              <li data-i18n="info.summer.clothes.pants">2 pantalons longs</li>
+              <li data-i18n="info.summer.clothes.pajamas">2 pyjamas</li>
+              <li data-i18n="info.summer.clothes.swimsuit">1 maillot de bain</li>
+              <li data-i18n="info.summer.clothes.hat">1 chapeau ou casquette</li>
+              <li data-i18n="info.summer.clothes.windbreaker">1 coupe-vent</li>
+              <li data-i18n="info.summer.clothes.raincoat">1 imperméable</li>
+              <li data-i18n="info.summer.clothes.rainpants">1 pantalon imperméable</li>
+              <li data-i18n="info.summer.clothes.shoes">Chaussures fermées</li>
+            </ul>
+            <ul>
+              <li data-i18n="info.summer.clothes.sandals">Sandales ou tongs</li>
+              <li data-i18n="info.summer.clothes.slippers">Pantoufles</li>
+              <li data-i18n="info.summer.clothes.rainboots">Bottes de pluie</li>
+              <li data-i18n="info.summer.clothes.laundry">Sac pour linge sale</li>
+              <li data-i18n="info.summer.clothes.washcloths">4 débarbouillettes</li>
+              <li data-i18n="info.summer.clothes.towels">2 serviettes de bain</li>
+              <li data-i18n="info.summer.clothes.beachtowels">2 serviettes de plage</li>
+              <li data-i18n="info.summer.clothes.shampoo">Shampooing personnel</li>
+              <li data-i18n="info.summer.clothes.soap">Savon</li>
+              <li data-i18n="info.summer.clothes.deodorant">Déodorant</li>
+              <li data-i18n="info.summer.clothes.toothbrush">Brosse à dents</li>
+              <li data-i18n="info.summer.clothes.toothpaste">Dentifrice</li>
+              <li data-i18n="info.summer.clothes.brush">Brosse ou peigne</li>
+              <li data-i18n="info.summer.clothes.shaving">Crème à raser ou rasoir si nécessaire</li>
+            </ul>
+          </div>
         </div>
       </div>
 
       <!-- Rappels importants -->
-      <div class="info-accordion-item">
-        <button class="info-accordion-trigger">
-          <span style="display: flex; align-items: center; gap: 12px;">
-            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            <span data-i18n="info.summer.reminders.title">Rappels importants</span>
-          </span></button>
-        <div class="info-accordion-content">
+      <div class="info-item">
+        <div class="info-item-header">
+          <div class="info-icon info-icon-blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </div>
+          <h3 data-i18n="info.summer.reminders.title">Rappels importants</h3>
+        </div>
+        <div class="info-item-body">
           <ul>
             <li data-i18n="info.summer.reminders.label">Tous les effets personnels doivent être identifiés avec le nom</li>
             <li data-i18n="info.summer.reminders.cancellation">Les annulations doivent être faites par courriel</li>
@@ -299,6 +342,7 @@
           </ul>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -309,55 +353,66 @@
     <h2 class="info-title fade-in" data-i18n="info.school.title">Informations — Répits scolaires</h2>
     <p class="info-subtitle fade-in" data-i18n="info.school.subtitle">Fins de semaine de septembre à mai</p>
 
-    <div class="info-accordion fade-in">
+    <div class="info-items fade-in">
+
       <!-- Coordonnées -->
-      <div class="info-accordion-item">
-        <button class="info-accordion-trigger">
-          <span style="display: flex; align-items: center; gap: 12px;">
-            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span data-i18n="info.school.contact.title">Coordonnées</span>
-          </span></button>
-        <div class="info-accordion-content">
+      <div class="info-item">
+        <div class="info-item-header">
+          <div class="info-icon info-icon-blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3 data-i18n="info.school.contact.title">Coordonnées</h3>
+        </div>
+        <div class="info-item-body">
           <p><strong data-i18n="info.school.contact.office">Bureau :</strong><br>
-          1862 rue Jolicoeur<br>
-          Montréal, H4E 1X2</p>
+          <a href="https://maps.app.goo.gl/q98H4n19vFZn6Ksr7" target="_blank">1862 rue Jolicoeur, Montréal, H4E 1X2</a></p>
+          <p style="margin-top: 6px;"><strong data-i18n="info.school.contact.phone">Téléphone :</strong> <a href="tel:5149312882">514-931-2882</a></p>
 
-          <p style="margin-top: 16px;"><strong data-i18n="info.school.contact.camp">Camp :</strong><br>
-          756 chemin des Patriotes<br>
-          Otterburn Park, J3H 1Z5</p>
+          <p style="margin-top: 14px;"><strong data-i18n="info.school.contact.camp">Camp :</strong><br>
+          756 Chemin des Patriotes Sud, Otterburn Park, J3H 1Z5</p>
 
-          <p style="margin-top: 16px;"><strong data-i18n="info.school.contact.phone">Téléphone :</strong> <a href="tel:5149312882" style="color: var(--blue); text-decoration: none;">514-931-2882</a></p>
+          <div class="info-map-embed">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800!2d-73.2096079!3d45.5452577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc9aafbffaf59ed%3A0x16d53c61fe4b6159!2sR%C3%A9pit%20Emergo%20(Camp)!5e1!3m2!1sfr!2sca" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="info-google-rating">
+            <svg viewBox="0 0 24 24" fill="#FBBC04" stroke="none" width="16" height="16"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <strong>5,0</strong>
+            <span data-i18n="info.school.contact.reviews">(12 avis sur Google)</span>
+            &nbsp;·&nbsp;
+            <a href="https://maps.app.goo.gl/vVqUMvqB9f82qbNb6" target="_blank" data-i18n="info.school.contact.maplink">Voir sur Google Maps →</a>
+          </div>
         </div>
       </div>
 
       <!-- Départ et retour -->
-      <div class="info-accordion-item">
-        <button class="info-accordion-trigger">
-          <span style="display: flex; align-items: center; gap: 12px;">
-            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <span data-i18n="info.school.times.title">Départ et retour</span>
-          </span></button>
-        <div class="info-accordion-content">
+      <div class="info-item">
+        <div class="info-item-header">
+          <div class="info-icon info-icon-indigo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 data-i18n="info.school.times.title">Départ et retour</h3>
+        </div>
+        <div class="info-item-body">
           <p><strong data-i18n="info.school.times.departure">Départ :</strong></p>
-          <ul style="margin-top: 8px;">
+          <ul style="margin-top: 4px;">
             <li data-i18n="info.school.times.office">Accueil à 18h au bureau</li>
             <li data-i18n="info.school.times.camp">Possibilité au camp vers 19h45</li>
           </ul>
 
-          <p style="margin-top: 16px;"><strong data-i18n="info.school.times.return">Retour :</strong></p>
-          <ul style="margin-top: 8px;">
+          <p style="margin-top: 14px;"><strong data-i18n="info.school.times.return">Retour :</strong></p>
+          <ul style="margin-top: 4px;">
             <li data-i18n="info.school.times.returnoffice">16h au bureau</li>
             <li data-i18n="info.school.times.returncamp">Ou 14h15 au camp</li>
           </ul>
 
-          <div class="info-warning" style="margin-top: 16px;">
+          <div class="info-warning" style="margin-top: 14px;">
             <strong>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3.05h16.94a2 2 0 0 0 1.71-3.05L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
               <span data-i18n="info.school.times.fee">Amende de 1$/minute après 16h15</span>
             </strong>
           </div>
 
-          <p style="margin-top: 16px;">
+          <p style="margin-top: 14px;">
             <strong data-i18n="info.school.times.note1">Important :</strong>
             <span data-i18n="info.school.times.note2">Transport adapté non accepté — présence du parent obligatoire au départ et au retour</span>
           </p>
@@ -365,13 +420,14 @@
       </div>
 
       <!-- Médicaments -->
-      <div class="info-accordion-item">
-        <button class="info-accordion-trigger">
-          <span style="display: flex; align-items: center; gap: 12px;">
-            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
-            <span data-i18n="info.school.meds.title">Médicaments</span>
-          </span></button>
-        <div class="info-accordion-content">
+      <div class="info-item">
+        <div class="info-item-header">
+          <div class="info-icon info-icon-red">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          </div>
+          <h3 data-i18n="info.school.meds.title">Médicaments</h3>
+        </div>
+        <div class="info-item-body">
           <ul>
             <li data-i18n="info.school.meds.dispill">Utilisation obligatoire du système Dispill avec copie de l'ordonnance valide</li>
             <li data-i18n="info.school.meds.asneeded">Médicaments au besoin dans contenant original</li>
@@ -381,14 +437,15 @@
       </div>
 
       <!-- Diète spéciale -->
-      <div class="info-accordion-item">
-        <button class="info-accordion-trigger">
-          <span style="display: flex; align-items: center; gap: 12px;">
-            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <span data-i18n="info.school.diet.title">Diète spéciale</span>
-          </span></button>
-        <div class="info-accordion-content">
-          <p data-i18n="info.school.diet.provide">Fournir les repas et menu personnalisés selon les besoins.</p>
+      <div class="info-item">
+        <div class="info-item-header">
+          <div class="info-icon info-icon-orange">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          </div>
+          <h3 data-i18n="info.school.diet.title">Diète spéciale</h3>
+        </div>
+        <div class="info-item-body">
+          <p data-i18n-html="info.school.diet.provide">Les repas sont fournis par le camp. Si votre enfant a une <strong>diète spéciale</strong> (allergies, intolérances, restrictions alimentaires), vous devez fournir ses repas et collations.</p>
           <div class="info-warning">
             <strong>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3.05h16.94a2 2 0 0 0 1.71-3.05L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
@@ -400,67 +457,78 @@
       </div>
 
       <!-- Vêtements -->
-      <div class="info-accordion-item">
-        <button class="info-accordion-trigger">
-          <span style="display: flex; align-items: center; gap: 12px;">
-            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12v7H6z"/><path d="M9 11l-3 8h12l-3-8"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="19" r="1"/></svg>
-            <span data-i18n="info.school.clothes.title">Vêtements</span>
-          </span></button>
-        <div class="info-accordion-content">
-          <p data-i18n="info.school.clothes.note" style="margin-bottom: 16px; font-weight: 500;">Pour un séjour d'une fin de semaine :</p>
-          <ul>
-            <li data-i18n="info.school.clothes.underwear">4 sous-vêtements</li>
-            <li data-i18n="info.school.clothes.socks">4 paires de bas</li>
-            <li data-i18n="info.school.clothes.warmsocks">2 paires de bas chauds</li>
-            <li data-i18n="info.school.clothes.tshirts">2 t-shirts</li>
-            <li data-i18n="info.school.clothes.longsleeves">2 chandails manches longues</li>
-            <li data-i18n="info.school.clothes.shorts">1 pantalon court</li>
-            <li data-i18n="info.school.clothes.pants">2 pantalons longs</li>
-            <li data-i18n="info.school.clothes.pajamas">2 pyjamas</li>
-            <li data-i18n="info.school.clothes.hat">Chapeau ou casquette</li>
-            <li data-i18n="info.school.clothes.windbreaker">Coupe-vent</li>
-            <li data-i18n="info.school.clothes.raincoat">Imperméable</li>
-            <li data-i18n="info.school.clothes.rainpants">Pantalon imperméable</li>
-            <li data-i18n="info.school.clothes.shoes">Chaussures fermées</li>
-            <li data-i18n="info.school.clothes.slippers">Pantoufles</li>
-            <li data-i18n="info.school.clothes.laundry">Sac pour linge sale</li>
-            <li data-i18n="info.school.clothes.washcloths">2 débarbouillettes</li>
-            <li data-i18n="info.school.clothes.towels">1 serviette de bain</li>
-            <li data-i18n="info.school.clothes.shampoo">Shampooing personnel</li>
-            <li data-i18n="info.school.clothes.deodorant">Déodorant</li>
-            <li data-i18n="info.school.clothes.soap">Savon</li>
-            <li data-i18n="info.school.clothes.brush">Peigne ou brosse</li>
-            <li data-i18n="info.school.clothes.toothbrush">Brosse à dents</li>
-            <li data-i18n="info.school.clothes.toothpaste">Dentifrice</li>
-          </ul>
+      <div class="info-item">
+        <div class="info-item-header">
+          <div class="info-icon info-icon-purple">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46L16 2 12 5 8 2 3.62 3.46a2 2 0 0 0-1.34 1.89V8l4.72 1V22h10V9l4.72-1V5.35a2 2 0 0 0-1.34-1.89z"/></svg>
+          </div>
+          <h3 data-i18n="info.school.clothes.title">Vêtements</h3>
+        </div>
+        <div class="info-item-body">
+          <p data-i18n="info.school.clothes.note" style="margin-bottom: 12px; font-weight: 500;">Pour un séjour d'une fin de semaine :</p>
+          <div class="info-clothes-grid">
+            <ul>
+              <li data-i18n="info.school.clothes.underwear">4 sous-vêtements</li>
+              <li data-i18n="info.school.clothes.socks">4 paires de bas</li>
+              <li data-i18n="info.school.clothes.warmsocks">2 paires de bas chauds</li>
+              <li data-i18n="info.school.clothes.tshirts">2 t-shirts</li>
+              <li data-i18n="info.school.clothes.longsleeves">2 chandails manches longues</li>
+              <li data-i18n="info.school.clothes.shorts">1 pantalon court</li>
+              <li data-i18n="info.school.clothes.pants">2 pantalons longs</li>
+              <li data-i18n="info.school.clothes.pajamas">2 pyjamas</li>
+              <li data-i18n="info.school.clothes.hat">Chapeau ou casquette</li>
+              <li data-i18n="info.school.clothes.windbreaker">Coupe-vent</li>
+              <li data-i18n="info.school.clothes.raincoat">Imperméable</li>
+              <li data-i18n="info.school.clothes.rainpants">Pantalon imperméable</li>
+            </ul>
+            <ul>
+              <li data-i18n="info.school.clothes.shoes">Chaussures fermées</li>
+              <li data-i18n="info.school.clothes.slippers">Pantoufles</li>
+              <li data-i18n="info.school.clothes.laundry">Sac pour linge sale</li>
+              <li data-i18n="info.school.clothes.washcloths">2 débarbouillettes</li>
+              <li data-i18n="info.school.clothes.towels">1 serviette de bain</li>
+              <li data-i18n="info.school.clothes.shampoo">Shampooing personnel</li>
+              <li data-i18n="info.school.clothes.deodorant">Déodorant</li>
+              <li data-i18n="info.school.clothes.soap">Savon</li>
+              <li data-i18n="info.school.clothes.brush">Peigne ou brosse</li>
+              <li data-i18n="info.school.clothes.toothbrush">Brosse à dents</li>
+              <li data-i18n="info.school.clothes.toothpaste">Dentifrice</li>
+            </ul>
+          </div>
           <p style="margin-top: 16px; font-weight: 500;" data-i18n="info.school.clothes.seasonal">Selon la température :</p>
-          <ul style="margin-top: 8px;">
-            <li data-i18n="info.school.clothes.sunscreen">Crème solaire</li>
-            <li data-i18n="info.school.clothes.insect">Chasse-moustiques</li>
-            <li data-i18n="info.school.clothes.rainboots">Bottes de pluie</li>
-            <li data-i18n="info.school.clothes.wintersuit">Ensemble de neige</li>
-            <li data-i18n="info.school.clothes.tuque">Tuque</li>
-            <li data-i18n="info.school.clothes.mittens">Mitaines</li>
-            <li data-i18n="info.school.clothes.scarf">Foulard</li>
-          </ul>
+          <div class="info-clothes-grid" style="margin-top: 4px;">
+            <ul>
+              <li data-i18n="info.school.clothes.sunscreen">Crème solaire</li>
+              <li data-i18n="info.school.clothes.insect">Chasse-moustiques</li>
+              <li data-i18n="info.school.clothes.rainboots">Bottes de pluie</li>
+              <li data-i18n="info.school.clothes.wintersuit">Ensemble de neige</li>
+            </ul>
+            <ul>
+              <li data-i18n="info.school.clothes.tuque">Tuque</li>
+              <li data-i18n="info.school.clothes.mittens">Mitaines</li>
+              <li data-i18n="info.school.clothes.scarf">Foulard</li>
+            </ul>
+          </div>
         </div>
       </div>
 
       <!-- Outils de communication -->
-      <div class="info-accordion-item">
-        <button class="info-accordion-trigger">
-          <span style="display: flex; align-items: center; gap: 12px;">
-            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            <span data-i18n="info.school.communication.title">Outils de communication</span>
-          </span></button>
-        <div class="info-accordion-content">
+      <div class="info-item">
+        <div class="info-item-header">
+          <div class="info-icon info-icon-teal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3 data-i18n="info.school.communication.title">Outils de communication</h3>
+        </div>
+        <div class="info-item-body">
           <ul>
             <li data-i18n="info.school.communication.notebook">Apporter cahier de communication</li>
             <li data-i18n="info.school.communication.pictograms">Pictogrammes ou autres outils de communication si nécessaire</li>
-            <li data-i18n="info.school.communication.plan">Transmettre le plan d'intervention ou document d'accommodation à <a href="mailto:info@repitemergo.com" style="color: var(--blue); text-decoration: none;">info@repitemergo.com</a></li>
+            <li data-i18n-html="info.school.communication.plan">Transmettre le plan d'intervention ou document d'accommodation à <a href="mailto:info@repitemergo.com">info@repitemergo.com</a></li>
           </ul>
         </div>
       </div>
+
     </div>
   </div>
 </section>

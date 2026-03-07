@@ -37,7 +37,8 @@
   .reve-quote::before { content: '\201C'; position: absolute; top: -8px; left: 16px; font-size: 4rem; color: var(--gold); font-style: normal; line-height: 1; }
   .reve-quote cite { display: block; margin-top: 12px; font-style: normal; font-weight: 600; font-size: .85rem; color: var(--navy); }
   .reve-villa { background: var(--cream); border-radius: var(--radius-lg); padding: 32px; }
-  .reve-villa-addr { font-size: .9rem; color: var(--text-mid); margin-bottom: 12px; }
+  .reve-villa-addr { font-size: .9rem; color: var(--text-mid); margin-bottom: 12px; transition: color .2s ease; }
+  a.reve-villa-addr:hover { color: var(--blue); }
   .reve-img { width: 100%; border-radius: var(--radius-lg); object-fit: cover; box-shadow: var(--shadow-md); }
   .reve-cta-section { background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%); color: #fff; padding: 60px 0; text-align: center; }
   .reve-cta-section h2 { color: #fff; margin-bottom: 12px; }
@@ -46,6 +47,17 @@
   .reve-eligible li { padding: 10px 0; border-bottom: 1px solid rgba(0,30,85,.08); display: flex; align-items: center; gap: 10px; font-size: .95rem; }
   .reve-eligible li:last-child { border-bottom: none; }
   .reve-check { width: 22px; height: 22px; border-radius: 50%; background: var(--blue-pale); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .reve-video-card { display:flex; align-items:center; gap:20px; padding:20px 28px; background:var(--white); border-radius:var(--radius-lg); box-shadow:var(--shadow-md); text-decoration:none; color:var(--text); transition:transform .2s ease, box-shadow .2s ease; }
+  .reve-video-card:hover { transform:translateY(-2px); box-shadow:var(--shadow-lg); }
+  .reve-video-play { width:56px; height:56px; border-radius:50%; background:var(--blue); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .reve-video-card strong { display:block; font-size:1rem; color:var(--navy); }
+  .reve-video-card span { display:block; font-size:.85rem; color:var(--text-mid); margin-top:4px; }
+  [data-theme="dark"] .reve-video-card { background:#152035; }
+  [data-theme="dark"] .reve-video-card strong { color:#fff; }
+
+  .reve-photos-link { display:inline-flex; align-items:center; gap:6px; color:var(--blue); text-decoration:none; font-weight:600; font-size:.95rem; }
+  .reve-photos-link:hover { text-decoration:underline; }
+
   @media (max-width: 768px) {
     .reve-grid { grid-template-columns: 1fr; }
     .reve-why-grid { grid-template-columns: 1fr 1fr; }
@@ -277,15 +289,48 @@
   </div>
 </section>
 
+<!-- ═══════════ REPORTAGE TVA ═══════════ -->
+<section class="reve-section" id="reportage">
+  <div class="container" style="max-width:800px;">
+    <div style="text-align:center; margin-bottom:28px;" class="fade-in">
+      <span class="section-label" data-i18n="reve.video.label">À voir</span>
+      <h2 data-i18n="reve.video.title">Un rêve à réaliser à la télé</h2>
+      <p style="color:var(--text-mid);" data-i18n-html="reve.video.desc">Quelques scènes du programme <em>Un rêve à réaliser</em> à l'été 2020, dans le reportage <strong>Autiste, amour et amitié</strong> de TVA. Le segment débute à 9 minutes 30.</p>
+    </div>
+    <div class="reve-video-link fade-in">
+      <a href="https://www.qub.ca/tvaplus/tva/autiste-amour-et-amitie/saison-1/ep-02-1065518971" target="_blank" class="reve-video-card">
+        <div class="reve-video-play">
+          <svg viewBox="0 0 24 24" fill="#fff" width="32" height="32"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <div>
+          <strong data-i18n="reve.video.watch">Regarder le reportage sur QUB</strong>
+          <span data-i18n="reve.video.time">Débute à 9 min 30</span>
+        </div>
+      </a>
+    </div>
+    <div class="reve-card fade-in" style="margin-top:28px;">
+      <p data-i18n="reve.video.text1">Ce programme permet aux personnes autistes autonomes d'évoluer dans un milieu plus normalisant et de relever ainsi une foule de défis à leur mesure.</p>
+      <p style="margin-top:12px;" data-i18n="reve.video.text2">Les participants vivent en petits groupes et participent, chacun à sa façon, aux différentes activités de la vie quotidienne. Le ratio est de trois animateurs pour neuf participants.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════ LA VILLA ═══════════ -->
-<section class="reve-section">
+<section class="reve-section" style="background:var(--cream);">
   <div class="container">
     <div class="reve-grid">
       <div class="fade-in">
         <span class="section-label" data-i18n="reve.villa.label">Le lieu</span>
         <h2 data-i18n="reve.villa.title">La Villa Marie-Rose</h2>
-        <p class="reve-villa-addr">Val-des-Lacs, QC &nbsp;·&nbsp; J0T 2P0</p>
+        <a href="https://maps.app.goo.gl/aocnp866RYJuAcd76" target="_blank" class="reve-villa-addr" style="display:block; text-decoration:none;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" style="vertical-align:-2px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          151, chemin Charron<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Val-des-Lacs, QC &nbsp;·&nbsp; J0T 2P0
+        </a>
         <p data-i18n="reve.villa.text">Nichée en pleine nature dans les Laurentides, la Villa Marie-Rose offre un cadre paisible et moderne pour nos séjours. Les participants sont logés et nourris dans des installations confortables, entourés de lac, de forêt et d'espaces pour les activités extérieures.</p>
+        <p style="margin-top:16px;">
+          <a href="https://photos.app.goo.gl/JcUJoHBNMvqbQH8m8" target="_blank" class="reve-photos-link" data-i18n="reve.villa.photos">Voir les photos de la Villa →</a>
+        </p>
       </div>
       <div class="fade-in">
         <img src="images/reve-villa.jpg" alt="Villa Marie-Rose, Val-des-Lacs" class="reve-img" style="margin-bottom:20px; max-height:300px;">
