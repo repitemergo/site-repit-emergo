@@ -979,12 +979,37 @@ p { margin-bottom: 1em; color: var(--text-mid); }
   background: transparent; cursor: pointer; margin-left: 6px;
   transition: all var(--transition); color: var(--text-mid);
 }
+.dark-toggle { overflow: hidden; }
 .dark-toggle:hover { background: var(--blue-pale); color: var(--navy); border-color: var(--blue); }
-.dark-toggle svg { width: 18px; height: 18px; animation: theme-idle 3s ease-in-out infinite; }
-.dark-toggle:hover svg { animation: none; transform: rotate(20deg) scale(1.15); transition: transform .3s ease; }
-@keyframes theme-idle {
-  0%, 100% { transform: rotate(0deg) scale(1); opacity: .7; }
-  50%      { transform: rotate(15deg) scale(1.1); opacity: 1; }
+.dark-toggle svg { width: 18px; height: 18px; position: relative; z-index: 2; transition: transform .3s ease; }
+.dark-toggle:hover svg { transform: scale(1.15); }
+/* Orbit ring: half day / half night rotating around the button */
+.dark-toggle::before {
+  content: '';
+  position: absolute; inset: -3px; border-radius: 50%;
+  background: conic-gradient(
+    #FFD966 0deg,    /* soleil / jour */
+    #FFF8E1 90deg,
+    #1A2744 180deg,  /* nuit */
+    #0E1726 270deg,
+    #FFD966 360deg
+  );
+  animation: orbit-spin 6s linear infinite;
+  z-index: 0;
+}
+/* Inner mask to show only the ring */
+.dark-toggle::after {
+  content: '';
+  position: absolute; inset: 2px; border-radius: 50%;
+  background: var(--white);
+  z-index: 1;
+  transition: background .3s ease;
+}
+@keyframes orbit-spin {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dark-toggle::before { animation: none; }
 }
 
 /* View Transitions — expanding sphere for theme toggle */
@@ -1046,6 +1071,7 @@ p { margin-bottom: 1em; color: var(--text-mid); }
 [data-theme="dark"] .footer { background: #080E18; }
 [data-theme="dark"] .footer-bottom { border-top-color: rgba(255,255,255,.06); }
 [data-theme="dark"] .dark-toggle { border-color: rgba(255,255,255,.15); color: #E8C060; }
+[data-theme="dark"] .dark-toggle::after { background: #0E1726; }
 [data-theme="dark"] .dark-toggle:hover { background: rgba(232,192,96,.15); }
 [data-theme="dark"] .dark-toggle .icon-moon { display: block; }
 [data-theme="dark"] .dark-toggle .icon-sun { display: none; }
