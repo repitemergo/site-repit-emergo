@@ -1991,6 +1991,12 @@ function toggleTheme() {
 
   // Get button position for the circle origin
   const btn = document.querySelector('.dark-toggle');
+  // Animate the icon spin
+  btn.classList.remove('theme-switching');
+  void btn.offsetWidth; // reflow to restart animation
+  btn.classList.add('theme-switching');
+  btn.addEventListener('animationend', () => btn.classList.remove('theme-switching'), { once: true });
+
   const rect = btn.getBoundingClientRect();
   const cx = rect.left + rect.width / 2;
   const cy = rect.top + rect.height / 2;
