@@ -16,6 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.typekit.net/qie5ffr.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/picto-mode.css">
 <style>
   .fade-in { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
@@ -60,8 +61,12 @@
           <a href="#member" data-i18n="nav.member">Devenir membre</a>
         </div>
       </div>
-      <a href="#programs" data-i18n="nav.programs">Programmes</a>
-      <a href="#calendar" data-i18n="nav.calendar">Calendrier et coûts</a>
+      <div class="nav-dropdown">
+        <a href="#programs" data-i18n="nav.programs">Programmes</a>
+        <div class="nav-dropdown-menu">
+          <a href="#calendar" data-i18n="nav.calendar">Calendrier et coûts</a>
+        </div>
+      </div>
       <div class="nav-dropdown">
           <a href="#about" data-i18n="nav.about">À propos</a>
           <div class="nav-dropdown-menu">
@@ -74,6 +79,9 @@
       <a href="#contact" data-i18n="nav.contact">Nous joindre</a>
       <a href="https://fondationemergo.com/" class="nav-cta" target="_blank" data-i18n="nav.donate">Faire un don</a>
       <a href="javascript:void(0)" class="lang-switch" onclick="toggleLang()" data-i18n="nav.lang">EN</a>
+      <button class="picto-toggle-btn" id="pictoToggleBtn" aria-pressed="false" aria-label="Activer le mode pictogrammes" title="Mode Pictogrammes">
+        <img src="https://static.arasaac.org/pictograms/15018/15018_500.png" alt="" width="20" height="20">
+      </button>
       <button class="dark-toggle" onclick="toggleTheme()" aria-label="Mode jour/nuit">
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -93,7 +101,8 @@
 <!-- ═══════════ HERO ═══════════ -->
 <section class="hero" id="top">
   <div class="container">
-    <div class="grid-2">
+    <!-- TEXT MODE -->
+    <div class="grid-2 text-content">
       <div>
         <div class="anniversary-badge">
           <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l2.39 4.84L18 6.82l-4 3.9.94 5.5L10 13.47l-4.94 2.75.94-5.5-4-3.9 5.61-.98z"/></svg>
@@ -114,6 +123,21 @@
         <video class="hero-video" autoplay muted loop playsinline controls poster="https://repitemergo.com/wp-content/uploads/2025/02/cropped-cropped-cropped-Repit_Emergo-Logotype_Horizontal_Bleu_Ciel-RGB.png">
           <source src="https://repitemergo.com/wp-content/uploads/2025/01/Decouvrez-Emergo-_-soutenir-les-familles-denfants-et-dadultes-autistes-au-Quebec.mp4" type="video/mp4">
         </video>
+      </div>
+    </div>
+    <!-- PICTO MODE -->
+    <div class="picto-content" style="text-align:center; padding:24px 0;">
+      <h2 style="color:white; font-size:1.6rem; margin-bottom:20px;">Bienvenue à Répit Emergo!</h2>
+      <div class="picto-sentence">
+        <div class="picto-word"><img src="https://static.arasaac.org/pictograms/6936/6936_500.png" alt="Bienvenue" loading="lazy"><span>Bienvenue</span></div>
+        <div class="picto-word"><img src="https://static.arasaac.org/pictograms/32416/32416_500.png" alt="Camp" loading="lazy"><span>Camp</span></div>
+        <div class="picto-word"><img src="https://static.arasaac.org/pictograms/20389/20389_500.png" alt="Nature" loading="lazy"><span>Nature</span></div>
+        <div class="picto-word"><img src="https://static.arasaac.org/pictograms/25790/25790_500.png" alt="Amis" loading="lazy"><span>Amis</span></div>
+        <div class="picto-word"><img src="https://static.arasaac.org/pictograms/35547/35547_500.png" alt="Content" loading="lazy"><span>Content</span></div>
+      </div>
+      <div class="picto-info-banner" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);margin-top:24px;">
+        <img src="https://static.arasaac.org/pictograms/12252/12252_500.png" alt="Aide" style="background:rgba(255,255,255,.1);border-radius:12px;padding:6px;">
+        <p style="color:white;">Le camp aide les familles depuis 50 ans</p>
       </div>
     </div>
   </div>
@@ -149,6 +173,8 @@
   <div class="circle-deco circle-deco-fill" style="width:60px;height:60px;top:200px;left:4%;" aria-hidden="true"></div>
   <div class="circle-deco circle-deco-ring circle-deco-gold" style="width:40px;height:40px;bottom:120px;right:14%;" aria-hidden="true"></div>
   <div class="container">
+    <!-- TEXT MODE -->
+    <div class="text-content">
     <div class="text-center" style="margin-bottom:48px;">
       <span class="section-label" data-i18n="mission.label">Notre mission</span>
       <h2 data-i18n="mission.title">Un répit essentiel pour les familles</h2>
@@ -171,6 +197,26 @@
         <p data-i18n="mission.engagement.text">Une interaction permanente avec les familles, une gestion efficiente des ressources et une recherche active de financement.</p>
       </div>
     </div>
+    </div>
+    <!-- PICTO MODE — Mission -->
+    <div class="picto-content">
+      <div class="picto-section-header">
+        <img src="https://static.arasaac.org/pictograms/12252/12252_500.png" alt="Mission">
+        <h2>Notre mission</h2>
+      </div>
+      <div class="picto-sentence" style="margin-bottom:24px;">
+        <div class="picto-word"><img src="https://static.arasaac.org/pictograms/12252/12252_500.png" alt="Aide" loading="lazy"><span>Aide</span></div>
+        <div class="picto-word"><img src="https://static.arasaac.org/pictograms/7116/7116_500.png" alt="Familles" loading="lazy"><span>Familles</span></div>
+        <div class="picto-word"><img src="https://static.arasaac.org/pictograms/20389/20389_500.png" alt="Nature" loading="lazy"><span>Nature</span></div>
+        <div class="picto-word"><img src="https://static.arasaac.org/pictograms/12260/12260_500.png" alt="Sécurité" loading="lazy"><span>Sécurité</span></div>
+        <div class="picto-word"><img src="https://static.arasaac.org/pictograms/35547/35547_500.png" alt="Content" loading="lazy"><span>Content</span></div>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+        <div class="picto-program-card"><img src="https://static.arasaac.org/pictograms/2752/2752_500.png" alt="Vision" style="width:64px;height:64px;" loading="lazy"><h3 style="color:var(--blue);">Notre vision</h3><p style="font-size:.85rem;color:var(--text-mid);margin:0;">Le meilleur camp pour les personnes autistes</p></div>
+        <div class="picto-program-card"><img src="https://static.arasaac.org/pictograms/25790/25790_500.png" alt="Respect" style="width:64px;height:64px;" loading="lazy"><h3 style="color:var(--gold);">Nos valeurs</h3><p style="font-size:.85rem;color:var(--text-mid);margin:0;">Respect, confiance, bienveillance</p></div>
+        <div class="picto-program-card"><img src="https://static.arasaac.org/pictograms/7116/7116_500.png" alt="Ensemble" style="width:64px;height:64px;" loading="lazy"><h3 style="color:var(--green);">Notre engagement</h3><p style="font-size:.85rem;color:var(--text-mid);margin:0;">Toujours avec les familles</p></div>
+      </div>
+    </div>
 
     <!-- Camp Certifié ACQ -->
     <a href="https://campsquebec.com/certification-acq" target="_blank" rel="noopener" class="fade-in" style="margin-top:48px; display:flex; align-items:center; justify-content:center; gap:20px; padding:24px 32px; background:var(--cream); border-radius:var(--radius-lg); border:1px solid rgba(0,30,85,.06); text-decoration:none; transition:box-shadow .3s ease;" onmouseover="this.style.boxShadow='var(--shadow-md)'" onmouseout="this.style.boxShadow='none'">
@@ -188,7 +234,8 @@
 <!-- ═══════════ NOTRE FONCTIONNEMENT ═══════════ -->
 <section class="section section-alt" id="fonctionnement">
   <div class="container">
-    <div class="grid-2" style="align-items:center; gap:48px;">
+    <!-- TEXT MODE -->
+    <div class="grid-2 text-content" style="align-items:center; gap:48px;">
       <div class="fade-in">
         <span class="section-label" data-i18n="ops.label">Notre fonctionnement</span>
         <h2 data-i18n="ops.title">Un encadrement sécuritaire et personnalisé</h2>
@@ -212,12 +259,32 @@
         <img src="images/prog-emergence.jpg" alt="Camp de Grandpré" style="width:100%; height:320px; object-fit:cover;" loading="lazy">
       </div>
     </div>
+    <!-- PICTO MODE — Fonctionnement -->
+    <div class="picto-content">
+      <div class="picto-section-header">
+        <img src="https://static.arasaac.org/pictograms/12260/12260_500.png" alt="Sécurité">
+        <h2>Le camp est sécuritaire</h2>
+      </div>
+      <div class="picto-grid">
+        <div class="picto-card"><img src="https://static.arasaac.org/pictograms/7116/7116_500.png" alt="Accompagnateur" loading="lazy"><span class="picto-label">1 accompagnateur pour 1 à 3 personnes</span></div>
+        <div class="picto-card"><img src="https://static.arasaac.org/pictograms/6964/6964_500.png" alt="Logé" loading="lazy"><span class="picto-label">Logé</span></div>
+        <div class="picto-card"><img src="https://static.arasaac.org/pictograms/6456/6456_500.png" alt="Nourri" loading="lazy"><span class="picto-label">Nourri</span></div>
+        <div class="picto-card"><img src="https://static.arasaac.org/pictograms/20389/20389_500.png" alt="Nature" loading="lazy"><span class="picto-label">En pleine nature</span></div>
+      </div>
+      <div class="picto-rule rule-good" style="max-width:500px;margin:16px auto;">
+        <div class="rule-icon yes">&#10003;</div>
+        <img src="https://static.arasaac.org/pictograms/12260/12260_500.png" alt="Sécurité" loading="lazy">
+        <span class="rule-text">Toujours en sécurité avec les accompagnateurs</span>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ═══════════ PROGRAMS ═══════════ -->
 <section class="section section-cream" id="programs">
   <div class="container">
+    <!-- TEXT MODE -->
+    <div class="text-content">
     <div class="text-center" style="margin-bottom:48px;">
       <span class="section-label" data-i18n="programs.label">Nos programmes</span>
       <h2 data-i18n="programs.title">Des séjours adaptés à chaque besoin</h2>
@@ -264,6 +331,130 @@
           <p data-i18n="prog.reve.desc">Pour les personnes autistes autonomes de 16 ans et plus. Vie en petits groupes et participation aux activités quotidiennes dans un milieu normalisant.</p>
           <a href="reve.html" class="prog-detail-link" data-i18n="prog.reve.link">En savoir plus <svg class="prog-detail-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         </div>
+      </div>
+    </div>
+    </div>
+    <!-- PICTO MODE — Programmes -->
+    <div class="picto-content">
+      <div class="picto-section-header">
+        <img src="https://static.arasaac.org/pictograms/8008/8008_500.png" alt="Programmes">
+        <h2>Les programmes</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        <div class="picto-program-card">
+          <h3 style="color:var(--blue);">Émergence</h3>
+          <div class="picto-sentence">
+            <div class="picto-word"><img src="https://static.arasaac.org/pictograms/25790/25790_500.png" alt="Amis" loading="lazy"><span>Amis</span></div>
+            <div class="picto-word"><img src="https://static.arasaac.org/pictograms/12252/12252_500.png" alt="Aide" loading="lazy"><span>Aide</span></div>
+            <div class="picto-word"><img src="https://static.arasaac.org/pictograms/8008/8008_500.png" alt="Activités" loading="lazy"><span>Activités</span></div>
+          </div>
+          <span class="ratio-badge">1 accompagnateur pour 1 à 2 personnes</span>
+        </div>
+        <div class="picto-program-card">
+          <h3 style="color:var(--gold);">iDÉFIx</h3>
+          <div class="picto-sentence">
+            <div class="picto-word"><img src="https://static.arasaac.org/pictograms/12260/12260_500.png" alt="Sécurité" loading="lazy"><span>Sécurité</span></div>
+            <div class="picto-word"><img src="https://static.arasaac.org/pictograms/12252/12252_500.png" alt="Aide" loading="lazy"><span>Aide</span></div>
+          </div>
+          <span class="ratio-badge">1 accompagnateur pour 1 personne</span>
+        </div>
+        <div class="picto-program-card">
+          <h3 style="color:var(--green);">Adaptatou</h3>
+          <div class="picto-sentence">
+            <div class="picto-word"><img src="https://static.arasaac.org/pictograms/23392/23392_500.png" alt="Jouer" loading="lazy"><span>Jouer</span></div>
+            <div class="picto-word"><img src="https://static.arasaac.org/pictograms/7116/7116_500.png" alt="Groupe" loading="lazy"><span>Groupe</span></div>
+            <div class="picto-word"><img src="https://static.arasaac.org/pictograms/22769/22769_500.png" alt="Créer" loading="lazy"><span>Créer</span></div>
+          </div>
+          <span class="ratio-badge">6 à 17 ans — 1 pour 2</span>
+        </div>
+        <div class="picto-program-card">
+          <h3 style="color:var(--blue);">Un rêve à réaliser</h3>
+          <div class="picto-sentence">
+            <div class="picto-word"><img src="https://static.arasaac.org/pictograms/2752/2752_500.png" alt="Rêve" loading="lazy"><span>Rêve</span></div>
+            <div class="picto-word"><img src="https://static.arasaac.org/pictograms/7116/7116_500.png" alt="Groupe" loading="lazy"><span>Groupe</span></div>
+            <div class="picto-word"><img src="https://static.arasaac.org/pictograms/6964/6964_500.png" alt="Autonomie" loading="lazy"><span>Autonomie</span></div>
+          </div>
+          <span class="ratio-badge">16 ans et + — 1 pour 3</span>
+        </div>
+      </div>
+      <!-- Activités du camp -->
+      <div class="picto-section-header" style="margin-top:40px;">
+        <img src="https://static.arasaac.org/pictograms/23392/23392_500.png" alt="Activités">
+        <h2>Les activités au camp</h2>
+      </div>
+      <div class="picto-grid">
+        <div class="picto-card"><img src="https://static.arasaac.org/pictograms/6568/6568_500.png" alt="Baignade" loading="lazy"><span class="picto-label">Baignade</span></div>
+        <div class="picto-card"><img src="https://static.arasaac.org/pictograms/3277/3277_500.png" alt="Canot" loading="lazy"><span class="picto-label">Canot</span></div>
+        <div class="picto-card"><img src="https://static.arasaac.org/pictograms/6532/6532_500.png" alt="Randonnée" loading="lazy"><span class="picto-label">Randonnée</span></div>
+        <div class="picto-card"><img src="https://static.arasaac.org/pictograms/22769/22769_500.png" alt="Bricolage" loading="lazy"><span class="picto-label">Bricolage</span></div>
+        <div class="picto-card"><img src="https://static.arasaac.org/pictograms/24791/24791_500.png" alt="Musique" loading="lazy"><span class="picto-label">Musique</span></div>
+        <div class="picto-card"><img src="https://static.arasaac.org/pictograms/23392/23392_500.png" alt="Jeux" loading="lazy"><span class="picto-label">Jeux</span></div>
+        <div class="picto-card"><img src="https://static.arasaac.org/pictograms/4654/4654_500.png" alt="Feu" loading="lazy"><span class="picto-label">Feu de camp</span></div>
+        <div class="picto-card"><img src="https://static.arasaac.org/pictograms/2666/2666_500.png" alt="Forêt" loading="lazy"><span class="picto-label">Forêt</span></div>
+        <div class="picto-card"><img src="https://static.arasaac.org/pictograms/6022/6022_500.png" alt="Lac" loading="lazy"><span class="picto-label">Lac</span></div>
+        <div class="picto-card"><img src="https://static.arasaac.org/pictograms/6960/6960_500.png" alt="Chanter" loading="lazy"><span class="picto-label">Chanter</span></div>
+        <div class="picto-card"><img src="https://static.arasaac.org/pictograms/8025/8025_500.png" alt="Animaux" loading="lazy"><span class="picto-label">Animaux</span></div>
+        <div class="picto-card"><img src="https://static.arasaac.org/pictograms/3057/3057_500.png" alt="Arbres" loading="lazy"><span class="picto-label">Arbres</span></div>
+      </div>
+      <!-- Journée type en pictos -->
+      <div class="picto-section-header" style="margin-top:40px;">
+        <img src="https://static.arasaac.org/pictograms/5560/5560_500.png" alt="Horaire">
+        <h2>Ma journée au camp</h2>
+      </div>
+      <div style="max-width:700px; margin:0 auto;">
+        <div class="picto-schedule-item"><div class="time-picto"><span class="time-text">7h30</span></div><div class="activity-picto"><img src="https://static.arasaac.org/pictograms/5560/5560_500.png" alt="Réveil" loading="lazy"><span class="activity-label">Réveil</span></div><div class="activity-picto"><img src="https://static.arasaac.org/pictograms/32426/32426_500.png" alt="Douche" loading="lazy"><span class="activity-label">Douche</span></div></div>
+        <div class="picto-schedule-item"><div class="time-picto"><span class="time-text">8h00</span></div><div class="activity-picto"><img src="https://static.arasaac.org/pictograms/4626/4626_500.png" alt="Petit-déjeuner" loading="lazy"><span class="activity-label">Petit-déjeuner</span></div></div>
+        <div class="picto-schedule-item"><div class="time-picto"><span class="time-text">9h00</span></div><div class="activity-picto"><img src="https://static.arasaac.org/pictograms/8008/8008_500.png" alt="Activité" loading="lazy"><span class="activity-label">Activité</span></div><div class="activity-picto"><img src="https://static.arasaac.org/pictograms/20389/20389_500.png" alt="Nature" loading="lazy"><span class="activity-label">Nature</span></div></div>
+        <div class="picto-schedule-item"><div class="time-picto"><span class="time-text">10h30</span></div><div class="activity-picto"><img src="https://static.arasaac.org/pictograms/37841/37841_500.png" alt="Collation" loading="lazy"><span class="activity-label">Collation</span></div></div>
+        <div class="picto-schedule-item"><div class="time-picto"><span class="time-text">11h00</span></div><div class="activity-picto"><img src="https://static.arasaac.org/pictograms/6568/6568_500.png" alt="Baignade" loading="lazy"><span class="activity-label">Baignade</span></div><div class="activity-picto"><img src="https://static.arasaac.org/pictograms/6022/6022_500.png" alt="Lac" loading="lazy"><span class="activity-label">Lac</span></div></div>
+        <div class="picto-schedule-item"><div class="time-picto"><span class="time-text">12h00</span></div><div class="activity-picto"><img src="https://static.arasaac.org/pictograms/4611/4611_500.png" alt="Dîner" loading="lazy"><span class="activity-label">Dîner</span></div></div>
+        <div class="picto-schedule-item"><div class="time-picto"><span class="time-text">13h00</span></div><div class="activity-picto"><img src="https://static.arasaac.org/pictograms/6479/6479_500.png" alt="Repos" loading="lazy"><span class="activity-label">Repos</span></div></div>
+        <div class="picto-schedule-item"><div class="time-picto"><span class="time-text">14h00</span></div><div class="activity-picto"><img src="https://static.arasaac.org/pictograms/3277/3277_500.png" alt="Canot" loading="lazy"><span class="activity-label">Canot</span></div><div class="activity-picto"><img src="https://static.arasaac.org/pictograms/6532/6532_500.png" alt="Randonnée" loading="lazy"><span class="activity-label">Randonnée</span></div><div class="activity-picto"><img src="https://static.arasaac.org/pictograms/24791/24791_500.png" alt="Musique" loading="lazy"><span class="activity-label">Musique</span></div></div>
+        <div class="picto-schedule-item"><div class="time-picto"><span class="time-text">15h30</span></div><div class="activity-picto"><img src="https://static.arasaac.org/pictograms/37841/37841_500.png" alt="Collation" loading="lazy"><span class="activity-label">Collation</span></div></div>
+        <div class="picto-schedule-item"><div class="time-picto"><span class="time-text">16h00</span></div><div class="activity-picto"><img src="https://static.arasaac.org/pictograms/23392/23392_500.png" alt="Jouer" loading="lazy"><span class="activity-label">Jouer</span></div></div>
+        <div class="picto-schedule-item"><div class="time-picto"><span class="time-text">17h30</span></div><div class="activity-picto"><img src="https://static.arasaac.org/pictograms/4592/4592_500.png" alt="Souper" loading="lazy"><span class="activity-label">Souper</span></div></div>
+        <div class="picto-schedule-item"><div class="time-picto"><span class="time-text">19h00</span></div><div class="activity-picto"><img src="https://static.arasaac.org/pictograms/4654/4654_500.png" alt="Feu" loading="lazy"><span class="activity-label">Feu de camp</span></div><div class="activity-picto"><img src="https://static.arasaac.org/pictograms/6960/6960_500.png" alt="Chanter" loading="lazy"><span class="activity-label">Chanter</span></div></div>
+        <div class="picto-schedule-item"><div class="time-picto"><span class="time-text">20h30</span></div><div class="activity-picto"><img src="https://static.arasaac.org/pictograms/32426/32426_500.png" alt="Hygiène" loading="lazy"><span class="activity-label">Hygiène</span></div></div>
+        <div class="picto-schedule-item"><div class="time-picto"><span class="time-text">21h00</span></div><div class="activity-picto"><img src="https://static.arasaac.org/pictograms/6479/6479_500.png" alt="Dodo" loading="lazy"><span class="activity-label">Dodo</span></div><div class="activity-picto"><img src="https://static.arasaac.org/pictograms/26997/26997_500.png" alt="Nuit" loading="lazy"><span class="activity-label">Nuit</span></div></div>
+      </div>
+      <!-- Règles et émotions -->
+      <div class="picto-section-header" style="margin-top:40px;">
+        <img src="https://static.arasaac.org/pictograms/2815/2815_500.png" alt="Règles">
+        <h2>Les règles</h2>
+      </div>
+      <div style="max-width:600px; margin:0 auto;">
+        <div class="picto-rule rule-good"><div class="rule-icon yes">&#10003;</div><img src="https://static.arasaac.org/pictograms/4872/4872_500.png" alt="Gilet" loading="lazy"><span class="rule-text">Porter le gilet de sauvetage</span></div>
+        <div class="picto-rule rule-good"><div class="rule-icon yes">&#10003;</div><img src="https://static.arasaac.org/pictograms/7116/7116_500.png" alt="Groupe" loading="lazy"><span class="rule-text">Rester avec le groupe</span></div>
+        <div class="picto-rule rule-good"><div class="rule-icon yes">&#10003;</div><img src="https://static.arasaac.org/pictograms/12252/12252_500.png" alt="Aide" loading="lazy"><span class="rule-text">Demander de l'aide si besoin</span></div>
+        <div class="picto-rule rule-good"><div class="rule-icon yes">&#10003;</div><img src="https://static.arasaac.org/pictograms/25790/25790_500.png" alt="Ami" loading="lazy"><span class="rule-text">Être gentil avec les amis</span></div>
+        <div class="picto-rule rule-good"><div class="rule-icon yes">&#10003;</div><img src="https://static.arasaac.org/pictograms/32464/32464_500.png" alt="Eau" loading="lazy"><span class="rule-text">Boire de l'eau</span></div>
+        <div class="picto-rule rule-bad"><div class="rule-icon no">&#10007;</div><img src="https://static.arasaac.org/pictograms/6568/6568_500.png" alt="Nager" loading="lazy" style="opacity:.6;"><span class="rule-text">Ne pas nager seul(e)</span></div>
+      </div>
+      <!-- Comment je me sens -->
+      <div class="picto-section-header" style="margin-top:40px;">
+        <h2>Comment je me sens?</h2>
+      </div>
+      <div class="picto-emotion-bar">
+        <div class="picto-emotion-item"><img src="https://static.arasaac.org/pictograms/35547/35547_500.png" alt="Content" loading="lazy"><span>Content</span></div>
+        <div class="picto-emotion-item"><img src="https://static.arasaac.org/pictograms/35545/35545_500.png" alt="Triste" loading="lazy"><span>Triste</span></div>
+        <div class="picto-emotion-item"><img src="https://static.arasaac.org/pictograms/12252/12252_500.png" alt="Aide" loading="lazy"><span>Besoin d'aide</span></div>
+        <div class="picto-emotion-item"><img src="https://static.arasaac.org/pictograms/6456/6456_500.png" alt="Faim" loading="lazy"><span>J'ai faim</span></div>
+        <div class="picto-emotion-item"><img src="https://static.arasaac.org/pictograms/32464/32464_500.png" alt="Soif" loading="lazy"><span>J'ai soif</span></div>
+        <div class="picto-emotion-item"><img src="https://static.arasaac.org/pictograms/6479/6479_500.png" alt="Fatigué" loading="lazy"><span>Fatigué</span></div>
+        <div class="picto-emotion-item"><img src="https://static.arasaac.org/pictograms/6964/6964_500.png" alt="Maison" loading="lazy"><span>Maison</span></div>
+      </div>
+      <!-- Mon sac -->
+      <div class="picto-section-header" style="margin-top:40px;">
+        <img src="https://static.arasaac.org/pictograms/2284/2284_500.png" alt="Sac">
+        <h2>Mon sac pour le camp</h2>
+      </div>
+      <div class="picto-grid">
+        <div class="picto-card"><img src="https://static.arasaac.org/pictograms/2284/2284_500.png" alt="Sac" loading="lazy"><span class="picto-label">Sac</span></div>
+        <div class="picto-card"><img src="https://static.arasaac.org/pictograms/4872/4872_500.png" alt="Vêtements" loading="lazy"><span class="picto-label">Vêtements</span></div>
+        <div class="picto-card"><img src="https://static.arasaac.org/pictograms/6568/6568_500.png" alt="Maillot" loading="lazy"><span class="picto-label">Maillot de bain</span></div>
+        <div class="picto-card"><img src="https://static.arasaac.org/pictograms/7252/7252_500.png" alt="Soleil" loading="lazy"><span class="picto-label">Crème solaire</span></div>
+        <div class="picto-card"><img src="https://static.arasaac.org/pictograms/3123/3123_500.png" alt="Pluie" loading="lazy"><span class="picto-label">Manteau de pluie</span></div>
+        <div class="picto-card"><img src="https://static.arasaac.org/pictograms/32464/32464_500.png" alt="Eau" loading="lazy"><span class="picto-label">Bouteille d'eau</span></div>
       </div>
     </div>
   </div>
@@ -828,6 +1019,11 @@
   </div>
 </section>
 
+<!-- ═══ CREDIT ARASAAC (visible only in picto mode) ═══ -->
+<div class="arasaac-credit">
+  <p>Pictogrammes : <a href="https://arasaac.org" target="_blank">ARASAAC</a> — Gouvernement d'Aragon, créés par Sergio Palao. Licence Creative Commons BY-NC-SA.</p>
+</div>
+
 <!-- ═══════════ FOOTER ═══════════ -->
 <footer class="footer">
   <div class="container">
@@ -916,6 +1112,7 @@ document.addEventListener('keydown', function(e) {
 </script>
 
 <script src="js/main.js"></script>
+<script src="js/picto-mode.js"></script>
 
 
 </body>
