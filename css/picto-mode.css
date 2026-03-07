@@ -90,10 +90,10 @@ body.picto-active .text-content {
   line-height: 1.6;
 }
 [data-theme="dark"] .picto-story-title {
-  color: var(--sky);
+  color: rgba(255,255,255,.95) !important;
 }
 [data-theme="dark"] .picto-story-text {
-  color: rgba(255,255,255,.7);
+  color: rgba(255,255,255,.75) !important;
 }
 [data-theme="dark"] .picto-story-section {
   border-bottom-color: rgba(91,155,213,.15);
@@ -209,7 +209,7 @@ body.picto-active .text-content {
   color: var(--navy);
 }
 [data-theme="dark"] .picto-section-header h2 {
-  color: var(--sky);
+  color: var(--sky) !important;
 }
 
 /* ═══ PICTO SCHEDULE ═══ */
@@ -422,13 +422,13 @@ body.picto-active .text-content {
   margin-bottom: 20px;
 }
 [data-theme="dark"] .hero .picto-content h2 {
-  color: rgba(255,255,255,.95);
+  color: rgba(255,255,255,.95) !important;
 }
 [data-theme="dark"] .hero .picto-content .picto-sentence .picto-word span {
-  color: rgba(255,255,255,.9);
+  color: rgba(255,255,255,.9) !important;
 }
 [data-theme="dark"] .hero .picto-content .picto-story-text {
-  color: rgba(255,255,255,.8);
+  color: rgba(255,255,255,.8) !important;
 }
 
 /* ═══ CREDIT ARASAAC ═══ */
