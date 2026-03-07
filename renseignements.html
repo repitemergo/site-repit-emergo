@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informations importantes — Répit Emergo</title>
+<meta name="description" content="Informations essentielles pour les familles — tout ce que vous devez savoir pour préparer le séjour de votre enfant avec Répit Emergo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/qie5ffr.css">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .fade-in { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  .fade-in:nth-child(2) { transition-delay: .1s; }
+  .fade-in:nth-child(3) { transition-delay: .2s; }
+  .fade-in:nth-child(4) { transition-delay: .3s; }
+
+  .info-hero { background: linear-gradient(0deg, rgba(0,20,70,.88), rgba(0,20,70,.78)), url('images/reve-lake.jpg') center/cover no-repeat; color: #fff; padding: 100px 0 80px; text-align: center; }
+  .info-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 16px; color: #fff; }
+  .info-hero p { font-size: 1.15rem; max-width: 560px; margin: 0 auto; color: #fff; font-weight: 600; letter-spacing: .01em; }
+
+  .info-section { padding: 60px 0; }
+  .info-subsection { margin-bottom: 32px; }
+  .info-subsection h3 { font-size: 1.2rem; color: var(--navy); margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+  .info-subsection-icon { width: 32px; height: 32px; flex-shrink: 0; }
+  .info-subsection-icon svg { width: 100%; height: 100%; color: var(--blue); }
+  .info-subsection p, .info-subsection ul { margin: 0; color: var(--text-mid); line-height: 1.6; font-size: .95rem; }
+  .info-subsection ul { list-style: none; padding: 0; }
+  .info-subsection ul li { padding: 6px 0 6px 24px; position: relative; }
+  .info-subsection ul li::before { content: "•"; position: absolute; left: 8px; color: var(--blue); font-weight: bold; }
+
+  .info-accordion { display: flex; flex-direction: column; gap: 12px; }
+  .info-accordion-item { border: 1px solid rgba(0,30,85,.1); border-radius: var(--radius-lg); overflow: hidden; }
+  .info-accordion-trigger { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; background: var(--white); cursor: pointer; font-weight: 600; color: var(--navy); transition: background .2s ease; }
+  .info-accordion-trigger:hover { background: var(--blue-pale); }
+  .info-accordion-trigger.active { background: var(--blue-pale); }
+  .info-accordion-trigger .icon-chevron { width: 20px; height: 20px; color: var(--blue); transition: transform .3s ease; }
+  .info-accordion-trigger.active .icon-chevron { transform: rotate(180deg); }
+  .info-accordion-content { display: none; padding: 20px; background: rgba(73,119,255,.02); border-top: 1px solid rgba(0,30,85,.1); }
+  .info-accordion-content.active { display: block; }
+  .info-accordion-content p { margin: 0 0 12px 0; color: var(--text-mid); font-size: .95rem; line-height: 1.6; }
+  .info-accordion-content p:last-child { margin-bottom: 0; }
+  .info-accordion-content ul { list-style: none; padding: 0; margin: 0; }
+  .info-accordion-content ul li { padding: 6px 0 6px 24px; position: relative; color: var(--text-mid); font-size: .95rem; line-height: 1.6; }
+  .info-accordion-content ul li::before { content: "•"; position: absolute; left: 8px; color: var(--blue); font-weight: bold; }
+
+  .info-warning { background: linear-gradient(135deg, #FFA500 0%, #FFB84D 100%); color: #1a1200; padding: 20px; border-radius: var(--radius-lg); margin-top: 20px; border-left: 4px solid #FF8C00; }
+  .info-warning strong { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .info-warning svg { width: 20px; height: 20px; flex-shrink: 0; }
+  .info-warning p { margin: 0; font-weight: 500; font-size: .95rem; }
+
+  .info-back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--blue); text-decoration: none; font-weight: 500; margin-bottom: 20px; transition: color .2s ease; }
+  .info-back-link:hover { color: var(--navy); }
+  .info-back-link svg { width: 18px; height: 18px; }
+
+  .info-card { background: var(--white); border-radius: var(--radius-lg); padding: 24px; border: 1px solid rgba(0,30,85,.08); margin-bottom: 20px; }
+  .info-card h4 { color: var(--navy); margin-bottom: 12px; font-size: 1rem; }
+  .info-card p { margin: 0; color: var(--text-mid); font-size: .95rem; line-height: 1.6; }
+
+  .info-address { background: var(--cream); padding: 16px; border-radius: var(--radius); margin-top: 12px; font-size: .9rem; color: var(--text-mid); }
+  .info-address strong { display: block; color: var(--navy); margin-bottom: 6px; }
+
+  .info-address-link { color: var(--blue); text-decoration: none; font-weight: 500; }
+  .info-address-link:hover { text-decoration: underline; }
+
+  .info-contact-box { background: var(--blue-pale); padding: 20px; border-radius: var(--radius-lg); margin-top: 20px; }
+  .info-contact-box h4 { color: var(--navy); margin-bottom: 12px; }
+  .info-contact-box p { margin: 0 0 8px 0; color: var(--text-mid); font-size: .95rem; }
+  .info-contact-box a { color: var(--blue); text-decoration: none; font-weight: 500; }
+  .info-contact-box a:hover { text-decoration: underline; }
+
+  .info-title { color: var(--navy); font-size: 1.8rem; margin-bottom: 12px; }
+  .info-subtitle { color: var(--text-mid); font-size: 1rem; margin-bottom: 32px; }
+
+  @media (max-width: 768px) {
+    .info-accordion-trigger { padding: 16px; }
+    .info-accordion-content { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<header class="navbar">
+  <div class="container">
+    <a href="index.html" class="navbar-brand">
+      <img src="https://repitemergo.com/wp-content/uploads/2025/02/cropped-cropped-cropped-Repit_Emergo-Logotype_Horizontal_Bleu_Ciel-RGB.png" alt="Répit Emergo" class="navbar-logo">
+    </a>
+    <div class="nav-links">
+      <a href="index.html#services" data-i18n="nav.services">Nos services</a>
+      <a href="index.html#programs" data-i18n="nav.programs">Programmes</a>
+      <a href="index.html#calendar" data-i18n="nav.calendar">Calendrier et coûts</a>
+      <a href="index.html#about" data-i18n="nav.about">À propos</a>
+      <a href="emplois.html" data-i18n="nav.jobs">Emplois</a>
+      <a href="index.html#contact" data-i18n="nav.contact">Nous joindre</a>
+      <a href="https://fondationemergo.com/" class="nav-cta" target="_blank" data-i18n="nav.donate">Faire un don</a>
+      <a href="javascript:void(0)" class="lang-switch" onclick="toggleLang()" data-i18n="nav.lang">EN</a>
+      <button class="dark-toggle" onclick="toggleTheme()" aria-label="Mode jour/nuit">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ═══════════ FLOATING SPHERES ═══════════ -->
+<div class="sphere-deco sphere-deco-1" aria-hidden="true"></div>
+<div class="sphere-deco sphere-deco-2" aria-hidden="true"></div>
+<div class="sphere-deco sphere-deco-3" aria-hidden="true"></div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="info-hero" id="top">
+  <div class="container">
+    <span class="section-label" style="color:var(--gold);" data-i18n="info.label">Pour les familles</span>
+    <h1 data-i18n="info.title">Informations importantes</h1>
+    <p data-i18n="info.subtitle">Tout ce que vous devez savoir pour préparer le séjour de votre enfant avec Répit Emergo.</p>
+  </div>
+</section>
+
+<!-- ═══════════ CONTENT ═══════════ -->
+<div class="container" style="padding-top: 40px; padding-bottom: 20px;">
+  <a href="index.html" class="info-back-link">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    <span data-i18n="info.back">Retour à l'accueil</span>
+  </a>
+</div>
+
+<!-- ═══════════ RÉPIT ESTIVAL ═══════════ -->
+<section class="info-section">
+  <div class="container">
+    <h2 class="info-title fade-in" data-i18n="info.summer.title">Informations — Répit estival</h2>
+
+    <div class="info-accordion fade-in">
+      <!-- Lieu des séjours -->
+      <div class="info-accordion-item">
+        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+          <span style="display: flex; align-items: center; gap: 12px;">
+            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-i18n="info.summer.location.title">Lieu des séjours</span>
+          </span>
+          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="info-accordion-content">
+          <p data-i18n="info.summer.location.label">Camp de Grandpré</p>
+          <p>756 chemin des Patriotes<br>Otterburn Park, J3H 1Z5</p>
+          <p style="margin-top: 12px;">
+            <a href="https://www.google.com/maps/search/756+chemin+des+Patriotes+Otterburn+Park+J3H+1Z5" target="_blank" class="info-address-link" data-i18n="info.summer.location.map">Voir sur Google Maps →</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Heures d'arrivée et de départ -->
+      <div class="info-accordion-item">
+        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+          <span style="display: flex; align-items: center; gap: 12px;">
+            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span data-i18n="info.summer.hours.title">Heures d'arrivée et de départ</span>
+          </span>
+          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="info-accordion-content">
+          <p><strong data-i18n="info.summer.hours.arrival">Arrivée :</strong> Entre 14h et 17h au camp</p>
+          <p><strong data-i18n="info.summer.hours.departure">Départ :</strong> Entre 11h et 12h</p>
+        </div>
+      </div>
+
+      <!-- Médicaments -->
+      <div class="info-accordion-item">
+        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+          <span style="display: flex; align-items: center; gap: 12px;">
+            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+            <span data-i18n="info.summer.meds.title">Médicaments</span>
+          </span>
+          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="info-accordion-content">
+          <ul>
+            <li data-i18n="info.summer.meds.dispill">Utilisation obligatoire du système Dispill avec copie de l'ordonnance valide</li>
+            <li data-i18n="info.summer.meds.asneeded">Médicaments au besoin dans contenant original</li>
+            <li data-i18n="info.summer.meds.coordinator">Remettre au coordonnateur des soins de santé</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Diète spéciale -->
+      <div class="info-accordion-item">
+        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+          <span style="display: flex; align-items: center; gap: 12px;">
+            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span data-i18n="info.summer.diet.title">Diète spéciale</span>
+          </span>
+          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="info-accordion-content">
+          <p data-i18n="info.summer.diet.provide">Fournir les repas et menu personnalisés selon les besoins.</p>
+          <div class="info-warning">
+            <strong>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3.05h16.94a2 2 0 0 0 1.71-3.05L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <span data-i18n="info.summer.diet.strict">INTERDICTION STRICTE</span>
+            </strong>
+            <p data-i18n="info.summer.diet.nuts">Nourriture contenant des traces de noix</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Consignes santé -->
+      <div class="info-accordion-item">
+        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+          <span style="display: flex; align-items: center; gap: 12px;">
+            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span data-i18n="info.summer.health.title">Consignes santé</span>
+          </span>
+          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="info-accordion-content">
+          <ul>
+            <li data-i18n="info.summer.health.cardiac">Certificat médical requis si maladie cardiaque</li>
+            <li data-i18n="info.summer.health.contagious">Informer du staff si maladie contagieuse dans les 15 jours précédentes</li>
+            <li data-i18n="info.summer.health.diapers">Prévoir couches si nécessaire</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Articles à apporter -->
+      <div class="info-accordion-item">
+        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+          <span style="display: flex; align-items: center; gap: 12px;">
+            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span data-i18n="info.summer.supplies.title">Articles à apporter</span>
+          </span>
+          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="info-accordion-content">
+          <ul>
+            <li data-i18n="info.summer.supplies.sunscreen">Crème solaire FPS 30+</li>
+            <li data-i18n="info.summer.supplies.insect">Chasse-moustiques</li>
+            <li data-i18n="info.summer.supplies.waterbottle">Gourde d'eau réutilisable</li>
+            <li data-i18n="info.summer.supplies.communication">Outil de communication (pictogrammes, cahier de communication, etc.)</li>
+            <li data-i18n="info.summer.supplies.healthcard">Copie de la carte d'assurance-maladie</li>
+            <li data-i18n="info.summer.supplies.plan">Plan d'intervention ou document d'accommodation</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Vêtements -->
+      <div class="info-accordion-item">
+        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+          <span style="display: flex; align-items: center; gap: 12px;">
+            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12v7H6z"/><path d="M9 11l-3 8h12l-3-8"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="19" r="1"/></svg>
+            <span data-i18n="info.summer.clothes.title">Vêtements</span>
+          </span>
+          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="info-accordion-content">
+          <ul>
+            <li data-i18n="info.summer.clothes.underwear">6 sous-vêtements</li>
+            <li data-i18n="info.summer.clothes.socks">6 paires de bas</li>
+            <li data-i18n="info.summer.clothes.warmsocks">2 paires de bas chauds</li>
+            <li data-i18n="info.summer.clothes.tshirts">6 t-shirts</li>
+            <li data-i18n="info.summer.clothes.longsleeves">2 chandails manches longues</li>
+            <li data-i18n="info.summer.clothes.shorts">3 pantalons courts</li>
+            <li data-i18n="info.summer.clothes.pants">2 pantalons longs</li>
+            <li data-i18n="info.summer.clothes.pajamas">2 pyjamas</li>
+            <li data-i18n="info.summer.clothes.swimsuit">1 maillot de bain</li>
+            <li data-i18n="info.summer.clothes.hat">1 chapeau ou casquette</li>
+            <li data-i18n="info.summer.clothes.windbreaker">1 coupe-vent</li>
+            <li data-i18n="info.summer.clothes.raincoat">1 imperméable</li>
+            <li data-i18n="info.summer.clothes.rainpants">1 pantalon imperméable</li>
+            <li data-i18n="info.summer.clothes.shoes">Chaussures fermées</li>
+            <li data-i18n="info.summer.clothes.sandals">Sandales ou tongs</li>
+            <li data-i18n="info.summer.clothes.slippers">Pantoufles</li>
+            <li data-i18n="info.summer.clothes.rainboots">Bottes de pluie</li>
+            <li data-i18n="info.summer.clothes.laundry">Sac pour linge sale</li>
+            <li data-i18n="info.summer.clothes.washcloths">4 débarbouillettes</li>
+            <li data-i18n="info.summer.clothes.towels">2 serviettes de bain</li>
+            <li data-i18n="info.summer.clothes.beachtowels">2 serviettes de plage</li>
+            <li data-i18n="info.summer.clothes.shampoo">Shampooing personnel</li>
+            <li data-i18n="info.summer.clothes.soap">Savon</li>
+            <li data-i18n="info.summer.clothes.deodorant">Déodorant</li>
+            <li data-i18n="info.summer.clothes.toothbrush">Brosse à dents</li>
+            <li data-i18n="info.summer.clothes.toothpaste">Dentifrice</li>
+            <li data-i18n="info.summer.clothes.brush">Brosse ou peigne</li>
+            <li data-i18n="info.summer.clothes.shaving">Crème à raser ou rasoir si nécessaire</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Rappels importants -->
+      <div class="info-accordion-item">
+        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+          <span style="display: flex; align-items: center; gap: 12px;">
+            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span data-i18n="info.summer.reminders.title">Rappels importants</span>
+          </span>
+          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="info-accordion-content">
+          <ul>
+            <li data-i18n="info.summer.reminders.label">Tous les effets personnels doivent être identifiés avec le nom</li>
+            <li data-i18n="info.summer.reminders.cancellation">Les annulations doivent être faites par courriel</li>
+            <li data-i18n="info.summer.reminders.receipt">Les reçus seront envoyés en septembre</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ RÉPITS SCOLAIRES ═══════════ -->
+<section class="info-section" style="background:var(--cream);">
+  <div class="container">
+    <h2 class="info-title fade-in" data-i18n="info.school.title">Informations — Répits scolaires</h2>
+    <p class="info-subtitle fade-in" data-i18n="info.school.subtitle">Fins de semaine de septembre à mai</p>
+
+    <div class="info-accordion fade-in">
+      <!-- Coordonnées -->
+      <div class="info-accordion-item">
+        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+          <span style="display: flex; align-items: center; gap: 12px;">
+            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-i18n="info.school.contact.title">Coordonnées</span>
+          </span>
+          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="info-accordion-content">
+          <p><strong data-i18n="info.school.contact.office">Bureau :</strong><br>
+          1862 rue Jolicoeur<br>
+          Montréal, H4E 1X2</p>
+
+          <p style="margin-top: 16px;"><strong data-i18n="info.school.contact.camp">Camp :</strong><br>
+          756 chemin des Patriotes<br>
+          Otterburn Park, J3H 1Z5</p>
+
+          <p style="margin-top: 16px;"><strong data-i18n="info.school.contact.phone">Téléphone :</strong> <a href="tel:5149312882" style="color: var(--blue); text-decoration: none;">514-931-2882</a></p>
+        </div>
+      </div>
+
+      <!-- Départ et retour -->
+      <div class="info-accordion-item">
+        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+          <span style="display: flex; align-items: center; gap: 12px;">
+            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span data-i18n="info.school.times.title">Départ et retour</span>
+          </span>
+          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="info-accordion-content">
+          <p><strong data-i18n="info.school.times.departure">Départ :</strong></p>
+          <ul style="margin-top: 8px;">
+            <li data-i18n="info.school.times.office">Accueil à 18h au bureau</li>
+            <li data-i18n="info.school.times.camp">Possibilité au camp vers 19h45</li>
+          </ul>
+
+          <p style="margin-top: 16px;"><strong data-i18n="info.school.times.return">Retour :</strong></p>
+          <ul style="margin-top: 8px;">
+            <li data-i18n="info.school.times.returnoffice">16h au bureau</li>
+            <li data-i18n="info.school.times.returncamp">Ou 14h15 au camp</li>
+          </ul>
+
+          <div class="info-warning" style="margin-top: 16px;">
+            <strong>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3.05h16.94a2 2 0 0 0 1.71-3.05L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <span data-i18n="info.school.times.fee">Amende de 1$/minute après 16h15</span>
+            </strong>
+          </div>
+
+          <p style="margin-top: 16px;">
+            <strong data-i18n="info.school.times.note1">Important :</strong>
+            <span data-i18n="info.school.times.note2">Transport adapté non accepté — présence du parent obligatoire au départ et au retour</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Médicaments -->
+      <div class="info-accordion-item">
+        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+          <span style="display: flex; align-items: center; gap: 12px;">
+            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+            <span data-i18n="info.school.meds.title">Médicaments</span>
+          </span>
+          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="info-accordion-content">
+          <ul>
+            <li data-i18n="info.school.meds.dispill">Utilisation obligatoire du système Dispill avec copie de l'ordonnance valide</li>
+            <li data-i18n="info.school.meds.asneeded">Médicaments au besoin dans contenant original</li>
+            <li data-i18n="info.school.meds.coordinator">Remettre au coordonnateur des soins de santé</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Diète spéciale -->
+      <div class="info-accordion-item">
+        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+          <span style="display: flex; align-items: center; gap: 12px;">
+            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span data-i18n="info.school.diet.title">Diète spéciale</span>
+          </span>
+          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="info-accordion-content">
+          <p data-i18n="info.school.diet.provide">Fournir les repas et menu personnalisés selon les besoins.</p>
+          <div class="info-warning">
+            <strong>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3.05h16.94a2 2 0 0 0 1.71-3.05L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <span data-i18n="info.school.diet.strict">INTERDICTION STRICTE</span>
+            </strong>
+            <p data-i18n="info.school.diet.nuts">Nourriture contenant des traces de noix</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vêtements -->
+      <div class="info-accordion-item">
+        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+          <span style="display: flex; align-items: center; gap: 12px;">
+            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12v7H6z"/><path d="M9 11l-3 8h12l-3-8"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="19" r="1"/></svg>
+            <span data-i18n="info.school.clothes.title">Vêtements</span>
+          </span>
+          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="info-accordion-content">
+          <p data-i18n="info.school.clothes.note" style="margin-bottom: 16px; font-weight: 500;">Pour un séjour d'une fin de semaine :</p>
+          <ul>
+            <li data-i18n="info.school.clothes.underwear">4 sous-vêtements</li>
+            <li data-i18n="info.school.clothes.socks">4 paires de bas</li>
+            <li data-i18n="info.school.clothes.warmsocks">2 paires de bas chauds</li>
+            <li data-i18n="info.school.clothes.tshirts">2 t-shirts</li>
+            <li data-i18n="info.school.clothes.longsleeves">2 chandails manches longues</li>
+            <li data-i18n="info.school.clothes.shorts">1 pantalon court</li>
+            <li data-i18n="info.school.clothes.pants">2 pantalons longs</li>
+            <li data-i18n="info.school.clothes.pajamas">2 pyjamas</li>
+            <li data-i18n="info.school.clothes.hat">Chapeau ou casquette</li>
+            <li data-i18n="info.school.clothes.windbreaker">Coupe-vent</li>
+            <li data-i18n="info.school.clothes.raincoat">Imperméable</li>
+            <li data-i18n="info.school.clothes.rainpants">Pantalon imperméable</li>
+            <li data-i18n="info.school.clothes.shoes">Chaussures fermées</li>
+            <li data-i18n="info.school.clothes.slippers">Pantoufles</li>
+            <li data-i18n="info.school.clothes.laundry">Sac pour linge sale</li>
+            <li data-i18n="info.school.clothes.washcloths">2 débarbouillettes</li>
+            <li data-i18n="info.school.clothes.towels">1 serviette de bain</li>
+            <li data-i18n="info.school.clothes.shampoo">Shampooing personnel</li>
+            <li data-i18n="info.school.clothes.deodorant">Déodorant</li>
+            <li data-i18n="info.school.clothes.soap">Savon</li>
+            <li data-i18n="info.school.clothes.brush">Peigne ou brosse</li>
+            <li data-i18n="info.school.clothes.toothbrush">Brosse à dents</li>
+            <li data-i18n="info.school.clothes.toothpaste">Dentifrice</li>
+          </ul>
+          <p style="margin-top: 16px; font-weight: 500;" data-i18n="info.school.clothes.seasonal">Selon la température :</p>
+          <ul style="margin-top: 8px;">
+            <li data-i18n="info.school.clothes.sunscreen">Crème solaire</li>
+            <li data-i18n="info.school.clothes.insect">Chasse-moustiques</li>
+            <li data-i18n="info.school.clothes.rainboots">Bottes de pluie</li>
+            <li data-i18n="info.school.clothes.wintersuit">Ensemble de neige</li>
+            <li data-i18n="info.school.clothes.tuque">Tuque</li>
+            <li data-i18n="info.school.clothes.mittens">Mitaines</li>
+            <li data-i18n="info.school.clothes.scarf">Foulard</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Outils de communication -->
+      <div class="info-accordion-item">
+        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+          <span style="display: flex; align-items: center; gap: 12px;">
+            <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span data-i18n="info.school.communication.title">Outils de communication</span>
+          </span>
+          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="info-accordion-content">
+          <ul>
+            <li data-i18n="info.school.communication.notebook">Apporter cahier de communication</li>
+            <li data-i18n="info.school.communication.pictograms">Pictogrammes ou autres outils de communication si nécessaire</li>
+            <li data-i18n="info.school.communication.plan">Transmettre le plan d'intervention ou document d'accommodation à <a href="mailto:info@repitemergo.com" style="color: var(--blue); text-decoration: none;">info@repitemergo.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CTA CONTACT ═══════════ -->
+<section class="info-section">
+  <div class="container">
+    <div class="info-contact-box fade-in">
+      <h4 data-i18n="info.contact.title">Des questions?</h4>
+      <p data-i18n="info.contact.text">N'hésitez pas à nous contacter. Notre équipe est disponible pour vous aider.</p>
+      <p>
+        <strong data-i18n="info.contact.phone">Téléphone :</strong> <a href="tel:5149312882">514-931-2882</a>
+      </p>
+      <p>
+        <strong data-i18n="info.contact.email">Courriel :</strong> <a href="mailto:info@repitemergo.com">info@repitemergo.com</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4 data-i18n="footer.about">Répit Emergo</h4>
+        <p style="font-size:.85rem; color:rgba(255,255,255,.5); line-height:1.6;" data-i18n="footer.desc">Service de répit spécialisé en autisme depuis 1976. Membre de l'Association des camps du Québec.</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer.links">Liens rapides</h4>
+        <ul>
+          <li><a href="index.html#services" data-i18n="nav.services">Nos services</a></li>
+          <li><a href="index.html#programs" data-i18n="nav.programs">Programmes</a></li>
+          <li><a href="index.html#calendar" data-i18n="nav.calendar">Calendrier et coûts</a></li>
+          <li><a href="index.html#member" data-i18n="nav.member">Devenir membre</a></li>
+          <li><a href="index.html#about" data-i18n="nav.history">Notre histoire</a></li>
+          <li><a href="emplois.html" data-i18n="nav.jobs">Emplois</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer.contact">Contact</h4>
+        <ul>
+          <li><a href="tel:5149312882">514 931-2882</a></li>
+          <li><a href="mailto:info@repitemergo.com">info@repitemergo.com</a></li>
+          <li style="margin-top:8px; font-size:.8rem; color:rgba(255,255,255,.4);">1862, rue Jolicoeur<br>Montréal H4E 1X2</li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer.follow">Suivez-nous</h4>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/repitemergo/" target="_blank" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="20" height="20"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://www.facebook.com/repitemergo" target="_blank" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.youtube.com/user/RepitEmergo" target="_blank" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="white"/></svg></a>
+          <a href="https://ca.linkedin.com/company/repitemergo" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.copyright">© 2026 Répit Emergo. Tous droits réservés.</span>
+      <span data-i18n="footer.neq">NEQ : 891299398RR0001</span>
+      <span class="footer-quebec" style="display:inline-flex; align-items:center; margin-left:10px; background:rgba(255,255,255,.85); padding:2px 4px; border-radius:2px;">
+        <img src="images/quebec-logo.svg" alt="Gouvernement du Québec" style="display:block; height:32px; max-width:144px;">
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleAccordion(event) {
+  const trigger = event.currentTarget;
+  const item = trigger.closest('.info-accordion-item');
+  const content = item.querySelector('.info-accordion-content');
+  const isActive = trigger.classList.contains('active');
+
+  // Close all other accordion items in the same container
+  const accordion = item.closest('.info-accordion');
+  accordion.querySelectorAll('.info-accordion-trigger.active').forEach(t => {
+    if (t !== trigger) {
+      t.classList.remove('active');
+      t.closest('.info-accordion-item').querySelector('.info-accordion-content').classList.remove('active');
+    }
+  });
+
+  // Toggle current item
+  trigger.classList.toggle('active');
+  content.classList.toggle('active');
+}
+
+// Intersection observer for fade-in animations
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

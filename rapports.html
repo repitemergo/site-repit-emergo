@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documents et rapports — Répit Emergo</title>
+<meta name="description" content="Consultez nos rapports annuels et documents officiels. Transparence et responsabilité envers notre communauté.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/qie5ffr.css">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .fade-in { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  .fade-in:nth-child(2) { transition-delay: .1s; }
+  .fade-in:nth-child(3) { transition-delay: .2s; }
+  .fade-in:nth-child(4) { transition-delay: .3s; }
+  .fade-in:nth-child(5) { transition-delay: .4s; }
+  .fade-in:nth-child(6) { transition-delay: .5s; }
+
+  .reports-hero { background: linear-gradient(0deg, rgba(0,20,70,.88), rgba(0,20,70,.78)), url('images/reports-hero.jpg') center/cover no-repeat; color: #fff; padding: 100px 0 80px; text-align: center; }
+  .reports-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 16px; color: #fff; }
+  .reports-hero p { font-size: 1.15rem; max-width: 560px; margin: 0 auto; color: #fff; font-weight: 600; letter-spacing: .01em; }
+
+  .reports-section { padding: 60px 0; }
+
+  .back-link { display: inline-block; margin-bottom: 24px; color: var(--blue); font-weight: 600; text-decoration: none; font-size: .9rem; transition: color .3s ease; }
+  .back-link:hover { color: var(--navy); }
+  .back-link::before { content: '← '; }
+
+  .reports-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 40px; }
+  .reports-card { background: var(--white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); transition: transform .3s ease, box-shadow .3s ease; }
+  .reports-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+  .reports-card-img { width: 100%; height: 240px; object-fit: cover; background: var(--blue-pale); }
+  .reports-card-body { padding: 24px; }
+  .reports-card-title { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; }
+  .reports-card-btn { display: inline-block; padding: 10px 20px; background: var(--gold); color: #1A1200; border-radius: var(--radius); font-weight: 600; text-decoration: none; font-size: .9rem; transition: background .3s ease, transform .2s ease; }
+  .reports-card-btn:hover { background: #d4a85f; transform: scale(1.05); }
+
+  .older-reports { margin-top: 48px; padding-top: 48px; border-top: 2px solid var(--border-light); }
+  .older-reports h3 { color: var(--navy); margin-bottom: 24px; font-size: 1.2rem; }
+  .older-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .older-item { background: var(--blue-pale); padding: 16px; border-radius: var(--radius); text-align: center; }
+  .older-item a { color: var(--blue); font-weight: 600; text-decoration: none; transition: color .3s ease; }
+  .older-item a:hover { color: var(--navy); }
+  .older-item span { display: block; font-size: .8rem; color: var(--text-mid); margin-top: 8px; }
+
+  .docs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px; }
+  .doc-card { background: var(--white); border-radius: var(--radius-lg); padding: 40px; box-shadow: var(--shadow-md); text-align: center; }
+  .doc-card-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--blue-pale); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+  .doc-card-icon svg { width: 32px; height: 32px; color: var(--blue); }
+  .doc-card-title { font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+  .doc-card-desc { font-size: .9rem; color: var(--text-mid); margin-bottom: 20px; line-height: 1.6; }
+  .doc-card-btn { display: inline-block; padding: 10px 24px; background: var(--gold); color: #1A1200; border-radius: var(--radius); font-weight: 600; text-decoration: none; font-size: .9rem; transition: background .3s ease, transform .2s ease; }
+  .doc-card-btn:hover { background: #d4a85f; transform: scale(1.05); }
+
+  .intro-section { background: var(--cream); padding: 40px; border-radius: var(--radius-lg); margin-bottom: 40px; }
+  .intro-section .section-label { color: var(--gold); }
+  .intro-section h2 { color: var(--navy); margin-bottom: 16px; }
+  .intro-section p { color: var(--text-mid); font-size: .95rem; line-height: 1.7; margin: 0; }
+
+  @media (max-width: 1024px) {
+    .reports-grid { grid-template-columns: 1fr 1fr; }
+    .older-list { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .reports-grid { grid-template-columns: 1fr; }
+    .docs-grid { grid-template-columns: 1fr; }
+    .older-list { grid-template-columns: repeat(2, 1fr); }
+    .reports-hero { padding: 60px 0; }
+    .reports-hero h1 { font-size: 1.8rem; }
+    .reports-hero p { font-size: 1rem; }
+  }
+
+  @media (max-width: 480px) {
+    .older-list { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<header class="navbar">
+  <div class="container">
+    <a href="index.html" class="navbar-brand">
+      <img src="https://repitemergo.com/wp-content/uploads/2025/02/cropped-cropped-cropped-Repit_Emergo-Logotype_Horizontal_Bleu_Ciel-RGB.png" alt="Répit Emergo" class="navbar-logo">
+    </a>
+    <div class="nav-links">
+      <a href="index.html#services" data-i18n="nav.services">Nos services</a>
+      <a href="index.html#programs" data-i18n="nav.programs">Programmes</a>
+      <a href="index.html#calendar" data-i18n="nav.calendar">Calendrier et coûts</a>
+      <a href="index.html#about" data-i18n="nav.about">À propos</a>
+      <a href="emplois.html" data-i18n="nav.jobs">Emplois</a>
+      <a href="index.html#contact" data-i18n="nav.contact">Nous joindre</a>
+      <a href="https://fondationemergo.com/" class="nav-cta" target="_blank" data-i18n="nav.donate">Faire un don</a>
+      <a href="javascript:void(0)" class="lang-switch" onclick="toggleLang()" data-i18n="nav.lang">EN</a>
+      <button class="dark-toggle" onclick="toggleTheme()" aria-label="Mode jour/nuit">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+    <button class="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ═══════════ FLOATING SPHERES ═══════════ -->
+<div class="sphere-deco sphere-deco-1" aria-hidden="true"></div>
+<div class="sphere-deco sphere-deco-2" aria-hidden="true"></div>
+<div class="sphere-deco sphere-deco-3" aria-hidden="true"></div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="reports-hero" id="top">
+  <div class="container">
+    <span class="section-label" style="color:var(--gold);" data-i18n="reports.label">Transparence</span>
+    <h1 data-i18n="reports.title">Documents et rapports</h1>
+    <p data-i18n="reports.subtitle">Accédez à nos rapports annuels et documents officiels.</p>
+  </div>
+</section>
+
+<!-- ═══════════ ANNUAL REPORTS ═══════════ -->
+<section class="reports-section">
+  <div class="container">
+    <a href="index.html" class="back-link" data-i18n="reports.back">Retour à l'accueil</a>
+
+    <div class="intro-section fade-in">
+      <span class="section-label" data-i18n="reports.annual.label">Transparence</span>
+      <h2 data-i18n="reports.annual.title">Rapports annuels</h2>
+      <p data-i18n="reports.annual.lead">Chaque année, nous rendons compte de nos activités, de notre gestion et de nos résultats. Consultez nos rapports annuels pour suivre l'évolution d'Emergo.</p>
+    </div>
+
+    <!-- Recent reports with thumbnails -->
+    <div class="reports-grid">
+      <!-- 2024-2025 -->
+      <div class="reports-card fade-in">
+        <img src="images/rapport-annuel-2024-25.jpg" alt="Rapport annuel 2024-2025" class="reports-card-img">
+        <div class="reports-card-body">
+          <div class="reports-card-title" data-i18n="reports.annual.2024-25">2024-2025</div>
+          <a href="documents/rapport-annuel-2024-25.pdf" class="reports-card-btn" target="_blank" data-i18n="reports.download">Télécharger le PDF</a>
+        </div>
+      </div>
+
+      <!-- 2023-2024 -->
+      <div class="reports-card fade-in">
+        <img src="images/rapport-annuel-2023-24.jpg" alt="Rapport annuel 2023-2024" class="reports-card-img">
+        <div class="reports-card-body">
+          <div class="reports-card-title" data-i18n="reports.annual.2023-24">2023-2024</div>
+          <a href="documents/rapport-annuel-2023-24.pdf" class="reports-card-btn" target="_blank" data-i18n="reports.download">Télécharger le PDF</a>
+        </div>
+      </div>
+
+      <!-- 2022-2023 -->
+      <div class="reports-card fade-in">
+        <img src="images/rapport-annuel-2022-23.jpg" alt="Rapport annuel 2022-2023" class="reports-card-img">
+        <div class="reports-card-body">
+          <div class="reports-card-title" data-i18n="reports.annual.2022-23">2022-2023</div>
+          <a href="documents/rapport-annuel-2022-23.pdf" class="reports-card-btn" target="_blank" data-i18n="reports.download">Télécharger le PDF</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Older reports -->
+    <div class="older-reports fade-in">
+      <h3 data-i18n="reports.annual.older">Rapports antérieurs</h3>
+      <div class="older-list">
+        <div class="older-item">
+          <a href="#" data-i18n="reports.annual.2021-22">2021-2022</a>
+          <span data-i18n="reports.coming">Bientôt disponible</span>
+        </div>
+        <div class="older-item">
+          <a href="#" data-i18n="reports.annual.2020-21">2020-2021</a>
+          <span data-i18n="reports.coming">Bientôt disponible</span>
+        </div>
+        <div class="older-item">
+          <a href="#" data-i18n="reports.annual.2019-20">2019-2020</a>
+          <span data-i18n="reports.coming">Bientôt disponible</span>
+        </div>
+        <div class="older-item">
+          <a href="#" data-i18n="reports.annual.2018-19">2018-2019</a>
+          <span data-i18n="reports.coming">Bientôt disponible</span>
+        </div>
+        <div class="older-item">
+          <a href="#" data-i18n="reports.annual.2017-18">2017-2018</a>
+          <span data-i18n="reports.coming">Bientôt disponible</span>
+        </div>
+        <div class="older-item">
+          <a href="#" data-i18n="reports.annual.2016-17">2016-2017</a>
+          <span data-i18n="reports.coming">Bientôt disponible</span>
+        </div>
+        <div class="older-item">
+          <a href="#" data-i18n="reports.annual.2015-16">2015-2016</a>
+          <span data-i18n="reports.coming">Bientôt disponible</span>
+        </div>
+        <div class="older-item">
+          <a href="#" data-i18n="reports.annual.2014-15">2014-2015</a>
+          <span data-i18n="reports.coming">Bientôt disponible</span>
+        </div>
+        <div class="older-item">
+          <a href="#" data-i18n="reports.annual.2013-14">2013-2014</a>
+          <span data-i18n="reports.coming">Bientôt disponible</span>
+        </div>
+        <div class="older-item">
+          <a href="#" data-i18n="reports.annual.2012-13">2012-2013</a>
+          <span data-i18n="reports.coming">Bientôt disponible</span>
+        </div>
+        <div class="older-item">
+          <a href="#" data-i18n="reports.annual.2011-12">2011-2012</a>
+          <span data-i18n="reports.coming">Bientôt disponible</span>
+        </div>
+        <div class="older-item">
+          <a href="#" data-i18n="reports.annual.2010-11">2010-2011</a>
+          <span data-i18n="reports.coming">Bientôt disponible</span>
+        </div>
+        <div class="older-item">
+          <a href="#" data-i18n="reports.annual.2009-10">2009-2010</a>
+          <span data-i18n="reports.coming">Bientôt disponible</span>
+        </div>
+        <div class="older-item">
+          <a href="#" data-i18n="reports.annual.2008-09">2008-2009</a>
+          <span data-i18n="reports.coming">Bientôt disponible</span>
+        </div>
+        <div class="older-item">
+          <a href="#" data-i18n="reports.annual.2007-08">2007-2008</a>
+          <span data-i18n="reports.coming">Bientôt disponible</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ OFFICIAL DOCUMENTS ═══════════ -->
+<section class="reports-section" style="background:var(--cream);">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:40px;">
+      <span class="section-label" data-i18n="reports.docs.label">Gouvernance</span>
+      <h2 data-i18n="reports.docs.title">Documents officiels</h2>
+    </div>
+
+    <div class="docs-grid">
+      <!-- Règlements généraux -->
+      <div class="doc-card fade-in">
+        <div class="doc-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg>
+        </div>
+        <h3 class="doc-card-title" data-i18n="reports.docs.bylaws">Règlements généraux</h3>
+        <p class="doc-card-desc" data-i18n="reports.docs.bylaws.desc">Juin 2022</p>
+        <a href="documents/reglements-generaux.pdf" class="doc-card-btn" target="_blank" data-i18n="reports.download">Télécharger le PDF</a>
+      </div>
+
+      <!-- Politique de confidentialité -->
+      <div class="doc-card fade-in">
+        <div class="doc-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 12v4"/><line x1="12" y1="16" x2="12" y2="16.01"/></svg>
+        </div>
+        <h3 class="doc-card-title" data-i18n="reports.docs.privacy">Politique de confidentialité</h3>
+        <p class="doc-card-desc" data-i18n="reports.docs.privacy.desc">Nos engagements envers vos données personnelles</p>
+        <a href="documents/politique-confidentialite.pdf" class="doc-card-btn" target="_blank" data-i18n="reports.download">Télécharger le PDF</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4 data-i18n="footer.about">Répit Emergo</h4>
+        <p style="font-size:.85rem; color:rgba(255,255,255,.5); line-height:1.6;" data-i18n="footer.desc">Service de répit spécialisé en autisme depuis 1976. Membre de l'Association des camps du Québec.</p>
+      </div>
+      <div>
+        <h4 data-i18n="footer.links">Liens rapides</h4>
+        <ul>
+          <li><a href="index.html#services" data-i18n="nav.services">Nos services</a></li>
+          <li><a href="index.html#programs" data-i18n="nav.programs">Programmes</a></li>
+          <li><a href="index.html#calendar" data-i18n="nav.calendar">Calendrier et coûts</a></li>
+          <li><a href="index.html#member" data-i18n="nav.member">Devenir membre</a></li>
+          <li><a href="index.html#about" data-i18n="nav.history">Notre histoire</a></li>
+          <li><a href="emplois.html" data-i18n="nav.jobs">Emplois</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer.contact">Contact</h4>
+        <ul>
+          <li><a href="tel:5149312882">514 931-2882</a></li>
+          <li><a href="mailto:info@repitemergo.com">info@repitemergo.com</a></li>
+          <li style="margin-top:8px; font-size:.8rem; color:rgba(255,255,255,.4);">1862, rue Jolicoeur<br>Montréal H4E 1X2</li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="footer.follow">Suivez-nous</h4>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/repitemergo/" target="_blank" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="20" height="20"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://www.facebook.com/repitemergo" target="_blank" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.youtube.com/user/RepitEmergo" target="_blank" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="white"/></svg></a>
+          <a href="https://ca.linkedin.com/company/repitemergo" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.copyright">© 2026 Répit Emergo. Tous droits réservés.</span>
+      <span data-i18n="footer.neq">NEQ : 891299398RR0001</span>
+      <span class="footer-quebec" style="display:inline-flex; align-items:center; margin-left:10px; background:rgba(255,255,255,.85); padding:2px 4px; border-radius:2px;">
+        <img src="images/quebec-logo.svg" alt="Gouvernement du Québec" style="display:block; height:32px; max-width:144px;">
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
