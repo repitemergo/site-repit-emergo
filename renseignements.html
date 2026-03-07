@@ -33,13 +33,8 @@
 
   .info-accordion { display: flex; flex-direction: column; gap: 12px; }
   .info-accordion-item { border: 1px solid rgba(0,30,85,.1); border-radius: var(--radius-lg); overflow: hidden; }
-  .info-accordion-trigger { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; background: var(--white); cursor: pointer; font-weight: 600; color: var(--navy); transition: background .2s ease; }
-  .info-accordion-trigger:hover { background: var(--blue-pale); }
-  .info-accordion-trigger.active { background: var(--blue-pale); }
-  .info-accordion-trigger .icon-chevron { width: 20px; height: 20px; color: var(--blue); transition: transform .3s ease; }
-  .info-accordion-trigger.active .icon-chevron { transform: rotate(180deg); }
-  .info-accordion-content { display: none; padding: 20px; background: rgba(73,119,255,.02); border-top: 1px solid rgba(0,30,85,.1); }
-  .info-accordion-content.active { display: block; }
+  .info-accordion-trigger { display: flex; align-items: center; padding: 18px 20px; background: var(--blue-pale); font-weight: 600; color: var(--navy); }
+  .info-accordion-content { display: block; padding: 20px; background: rgba(73,119,255,.02); border-top: 1px solid rgba(0,30,85,.1); }
   .info-accordion-content p { margin: 0 0 12px 0; color: var(--text-mid); font-size: .95rem; line-height: 1.6; }
   .info-accordion-content p:last-child { margin-bottom: 0; }
   .info-accordion-content ul { list-style: none; padding: 0; margin: 0; }
@@ -138,13 +133,11 @@
     <div class="info-accordion fade-in">
       <!-- Lieu des séjours -->
       <div class="info-accordion-item">
-        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+        <button class="info-accordion-trigger">
           <span style="display: flex; align-items: center; gap: 12px;">
             <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             <span data-i18n="info.summer.location.title">Lieu des séjours</span>
-          </span>
-          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
+          </span></button>
         <div class="info-accordion-content">
           <p data-i18n="info.summer.location.label">Camp de Grandpré</p>
           <p>756 chemin des Patriotes<br>Otterburn Park, J3H 1Z5</p>
@@ -156,13 +149,11 @@
 
       <!-- Heures d'arrivée et de départ -->
       <div class="info-accordion-item">
-        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+        <button class="info-accordion-trigger">
           <span style="display: flex; align-items: center; gap: 12px;">
             <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             <span data-i18n="info.summer.hours.title">Heures d'arrivée et de départ</span>
-          </span>
-          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
+          </span></button>
         <div class="info-accordion-content">
           <p><strong data-i18n="info.summer.hours.arrival">Arrivée :</strong> Entre 14h et 17h au camp</p>
           <p><strong data-i18n="info.summer.hours.departure">Départ :</strong> Entre 11h et 12h</p>
@@ -171,13 +162,11 @@
 
       <!-- Médicaments -->
       <div class="info-accordion-item">
-        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+        <button class="info-accordion-trigger">
           <span style="display: flex; align-items: center; gap: 12px;">
             <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
             <span data-i18n="info.summer.meds.title">Médicaments</span>
-          </span>
-          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
+          </span></button>
         <div class="info-accordion-content">
           <ul>
             <li data-i18n="info.summer.meds.dispill">Utilisation obligatoire du système Dispill avec copie de l'ordonnance valide</li>
@@ -189,13 +178,11 @@
 
       <!-- Diète spéciale -->
       <div class="info-accordion-item">
-        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+        <button class="info-accordion-trigger">
           <span style="display: flex; align-items: center; gap: 12px;">
             <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <span data-i18n="info.summer.diet.title">Diète spéciale</span>
-          </span>
-          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
+          </span></button>
         <div class="info-accordion-content">
           <p data-i18n="info.summer.diet.provide">Fournir les repas et menu personnalisés selon les besoins.</p>
           <div class="info-warning">
@@ -210,13 +197,11 @@
 
       <!-- Consignes santé -->
       <div class="info-accordion-item">
-        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+        <button class="info-accordion-trigger">
           <span style="display: flex; align-items: center; gap: 12px;">
             <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             <span data-i18n="info.summer.health.title">Consignes santé</span>
-          </span>
-          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
+          </span></button>
         <div class="info-accordion-content">
           <ul>
             <li data-i18n="info.summer.health.cardiac">Certificat médical requis si maladie cardiaque</li>
@@ -228,13 +213,11 @@
 
       <!-- Articles à apporter -->
       <div class="info-accordion-item">
-        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+        <button class="info-accordion-trigger">
           <span style="display: flex; align-items: center; gap: 12px;">
             <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             <span data-i18n="info.summer.supplies.title">Articles à apporter</span>
-          </span>
-          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
+          </span></button>
         <div class="info-accordion-content">
           <ul>
             <li data-i18n="info.summer.supplies.sunscreen">Crème solaire FPS 30+</li>
@@ -249,13 +232,11 @@
 
       <!-- Vêtements -->
       <div class="info-accordion-item">
-        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+        <button class="info-accordion-trigger">
           <span style="display: flex; align-items: center; gap: 12px;">
             <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12v7H6z"/><path d="M9 11l-3 8h12l-3-8"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="19" r="1"/></svg>
             <span data-i18n="info.summer.clothes.title">Vêtements</span>
-          </span>
-          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
+          </span></button>
         <div class="info-accordion-content">
           <ul>
             <li data-i18n="info.summer.clothes.underwear">6 sous-vêtements</li>
@@ -292,13 +273,11 @@
 
       <!-- Rappels importants -->
       <div class="info-accordion-item">
-        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+        <button class="info-accordion-trigger">
           <span style="display: flex; align-items: center; gap: 12px;">
             <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             <span data-i18n="info.summer.reminders.title">Rappels importants</span>
-          </span>
-          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
+          </span></button>
         <div class="info-accordion-content">
           <ul>
             <li data-i18n="info.summer.reminders.label">Tous les effets personnels doivent être identifiés avec le nom</li>
@@ -320,13 +299,11 @@
     <div class="info-accordion fade-in">
       <!-- Coordonnées -->
       <div class="info-accordion-item">
-        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+        <button class="info-accordion-trigger">
           <span style="display: flex; align-items: center; gap: 12px;">
             <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             <span data-i18n="info.school.contact.title">Coordonnées</span>
-          </span>
-          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
+          </span></button>
         <div class="info-accordion-content">
           <p><strong data-i18n="info.school.contact.office">Bureau :</strong><br>
           1862 rue Jolicoeur<br>
@@ -342,13 +319,11 @@
 
       <!-- Départ et retour -->
       <div class="info-accordion-item">
-        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+        <button class="info-accordion-trigger">
           <span style="display: flex; align-items: center; gap: 12px;">
             <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             <span data-i18n="info.school.times.title">Départ et retour</span>
-          </span>
-          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
+          </span></button>
         <div class="info-accordion-content">
           <p><strong data-i18n="info.school.times.departure">Départ :</strong></p>
           <ul style="margin-top: 8px;">
@@ -378,13 +353,11 @@
 
       <!-- Médicaments -->
       <div class="info-accordion-item">
-        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+        <button class="info-accordion-trigger">
           <span style="display: flex; align-items: center; gap: 12px;">
             <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
             <span data-i18n="info.school.meds.title">Médicaments</span>
-          </span>
-          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
+          </span></button>
         <div class="info-accordion-content">
           <ul>
             <li data-i18n="info.school.meds.dispill">Utilisation obligatoire du système Dispill avec copie de l'ordonnance valide</li>
@@ -396,13 +369,11 @@
 
       <!-- Diète spéciale -->
       <div class="info-accordion-item">
-        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+        <button class="info-accordion-trigger">
           <span style="display: flex; align-items: center; gap: 12px;">
             <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <span data-i18n="info.school.diet.title">Diète spéciale</span>
-          </span>
-          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
+          </span></button>
         <div class="info-accordion-content">
           <p data-i18n="info.school.diet.provide">Fournir les repas et menu personnalisés selon les besoins.</p>
           <div class="info-warning">
@@ -417,13 +388,11 @@
 
       <!-- Vêtements -->
       <div class="info-accordion-item">
-        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+        <button class="info-accordion-trigger">
           <span style="display: flex; align-items: center; gap: 12px;">
             <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12v7H6z"/><path d="M9 11l-3 8h12l-3-8"/><circle cx="9" cy="19" r="1"/><circle cx="15" cy="19" r="1"/></svg>
             <span data-i18n="info.school.clothes.title">Vêtements</span>
-          </span>
-          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
+          </span></button>
         <div class="info-accordion-content">
           <p data-i18n="info.school.clothes.note" style="margin-bottom: 16px; font-weight: 500;">Pour un séjour d'une fin de semaine :</p>
           <ul>
@@ -466,13 +435,11 @@
 
       <!-- Outils de communication -->
       <div class="info-accordion-item">
-        <button class="info-accordion-trigger" onclick="toggleAccordion(event)">
+        <button class="info-accordion-trigger">
           <span style="display: flex; align-items: center; gap: 12px;">
             <svg class="info-subsection-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             <span data-i18n="info.school.communication.title">Outils de communication</span>
-          </span>
-          <svg class="icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
+          </span></button>
         <div class="info-accordion-content">
           <ul>
             <li data-i18n="info.school.communication.notebook">Apporter cahier de communication</li>
@@ -549,25 +516,6 @@
 </footer>
 
 <script>
-function toggleAccordion(event) {
-  const trigger = event.currentTarget;
-  const item = trigger.closest('.info-accordion-item');
-  const content = item.querySelector('.info-accordion-content');
-  const isActive = trigger.classList.contains('active');
-
-  // Close all other accordion items in the same container
-  const accordion = item.closest('.info-accordion');
-  accordion.querySelectorAll('.info-accordion-trigger.active').forEach(t => {
-    if (t !== trigger) {
-      t.classList.remove('active');
-      t.closest('.info-accordion-item').querySelector('.info-accordion-content').classList.remove('active');
-    }
-  });
-
-  // Toggle current item
-  trigger.classList.toggle('active');
-  content.classList.toggle('active');
-}
 
 // Intersection observer for fade-in animations
 const observerOptions = {
