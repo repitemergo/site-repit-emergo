@@ -980,16 +980,11 @@ p { margin-bottom: 1em; color: var(--text-mid); }
   transition: all var(--transition); color: var(--text-mid);
 }
 .dark-toggle:hover { background: var(--blue-pale); color: var(--navy); border-color: var(--blue); }
-.dark-toggle svg { width: 18px; height: 18px; transition: transform .5s cubic-bezier(.4,0,.2,1); }
-.dark-toggle:hover svg { transform: rotate(20deg) scale(1.15); }
-.dark-toggle:active svg { transform: rotate(360deg) scale(.85); }
-.dark-toggle.theme-switching svg {
-  animation: theme-icon-spin .6s cubic-bezier(.4,0,.2,1);
-}
-@keyframes theme-icon-spin {
-  0%   { transform: rotate(0deg) scale(1); opacity: 1; }
-  40%  { transform: rotate(180deg) scale(.5); opacity: .3; }
-  100% { transform: rotate(360deg) scale(1); opacity: 1; }
+.dark-toggle svg { width: 18px; height: 18px; animation: theme-idle 3s ease-in-out infinite; }
+.dark-toggle:hover svg { animation: none; transform: rotate(20deg) scale(1.15); transition: transform .3s ease; }
+@keyframes theme-idle {
+  0%, 100% { transform: rotate(0deg) scale(1); opacity: .7; }
+  50%      { transform: rotate(15deg) scale(1.1); opacity: 1; }
 }
 
 /* View Transitions — expanding sphere for theme toggle */
