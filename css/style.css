@@ -997,8 +997,10 @@ p { margin-bottom: 1em; color: var(--text-mid); }
 .dark-toggle .star:nth-child(4) { bottom: 9px; right: 9px; animation-delay: 2s; animation-duration: 12s; }
 .dark-toggle .star:nth-child(5) { top: 14px; left: 5px; animation-delay: 8s; animation-duration: 11s; }
 @keyframes twinkle {
-  0%, 100% { opacity: 0; }
+  0%, 100% { opacity: .05; }
+  30%      { opacity: .35; }
   50%      { opacity: .5; }
+  70%      { opacity: .35; }
 }
 /* Cacher les étoiles en mode nuit (soleil affiché) */
 [data-theme="dark"] .dark-toggle .stars { display: none; }
