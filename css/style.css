@@ -988,17 +988,17 @@ p { margin-bottom: 1em; color: var(--text-mid); }
   position: absolute; inset: 0; border-radius: 50%; overflow: hidden; pointer-events: none;
 }
 .dark-toggle .star {
-  position: absolute; width: 2px; height: 2px; background: #fff; border-radius: 50%;
-  animation: twinkle 5s ease-in-out infinite;
+  position: absolute; width: 1.5px; height: 1.5px; background: rgba(255,255,255,.6); border-radius: 50%;
+  animation: twinkle 10s ease-in-out infinite;
 }
 .dark-toggle .star:nth-child(1) { top: 6px; left: 7px; animation-delay: 0s; }
-.dark-toggle .star:nth-child(2) { top: 8px; right: 6px; animation-delay: 1.5s; }
-.dark-toggle .star:nth-child(3) { bottom: 7px; left: 10px; animation-delay: 3s; }
-.dark-toggle .star:nth-child(4) { bottom: 9px; right: 9px; animation-delay: .8s; animation-duration: 6s; }
-.dark-toggle .star:nth-child(5) { top: 14px; left: 5px; animation-delay: 4s; animation-duration: 5.5s; }
+.dark-toggle .star:nth-child(2) { top: 8px; right: 6px; animation-delay: 3s; }
+.dark-toggle .star:nth-child(3) { bottom: 7px; left: 10px; animation-delay: 6s; }
+.dark-toggle .star:nth-child(4) { bottom: 9px; right: 9px; animation-delay: 2s; animation-duration: 12s; }
+.dark-toggle .star:nth-child(5) { top: 14px; left: 5px; animation-delay: 8s; animation-duration: 11s; }
 @keyframes twinkle {
-  0%, 100% { opacity: 0; transform: scale(.5); }
-  50%      { opacity: .7; transform: scale(1); }
+  0%, 100% { opacity: 0; }
+  50%      { opacity: .5; }
 }
 /* Cacher les étoiles en mode nuit (soleil affiché) */
 [data-theme="dark"] .dark-toggle .stars { display: none; }
