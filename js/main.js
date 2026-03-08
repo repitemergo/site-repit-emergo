@@ -384,18 +384,18 @@ const translations = {
     'jobs.summer.title': 'Répits estivaux (juin à août)',
     'jobs.summer.emergence': 'Programme Émergence — 50 postes',
     'jobs.summer.emergence.desc': '5 séjours de 10 jours au Camp de Grandpré (Otterburn Park). Formation obligatoire du 1 au 5 juin et 10-11 juin. Logé et nourri sur le site. Minimum 4 jours de congé entre les séjours.',
-    'jobs.summer.salary': 'Salaire brut été complet : plus de 7&nbsp;400&nbsp;$',
+    'jobs.summer.salary': 'Salaire brut été complet : plus de 7 400 $',
     'jobs.summer.salary.detail': 'Formation (586$) + 5 séjours (6 381$) + veilles (100$) + jours fériés + bonus été complet (300$)',
     'jobs.summer.reve': 'Un Rêve à Réaliser — 9 postes',
     'jobs.summer.reve.desc': '4 séjours de 10 jours à la Villa Marie-Rose (Val-des-Lacs). Dont 1 séjour anglophone. Logé et nourri sur le site.',
     'jobs.school.title': 'Répits scolaires (sept. à mai)',
     'jobs.school.desc': 'Des fins de semaine de répit au Camp de Grandpré. Environ 20 participants et une trentaine de staff par répit. Transport fourni depuis nos bureaux à Montréal. Logé et nourri dans des chalets modernes.',
-    'jobs.school.salary': 'Salaire total : jusqu\'à 9&nbsp;409&nbsp;$ pour toute l\'année',
+    'jobs.school.salary': 'Salaire total : jusqu\'à 9 409 $ pour toute l\'année',
     'jobs.school.salary.detail': '2 nuits (310$), 3 nuits (428$), Noël (725$). Bonus de 175$ pour 8 répits + 30$/répit supplémentaire.',
     'jobs.school.flexible': 'Horaire flexible : choisissez vos fins de semaine selon vos disponibilités. Conciliez facilement travail et études!',
     'jobs.positions.title': 'Postes disponibles en été',
     'jobs.perk1.title': 'Bourses d\'études',
-    'jobs.perk1.text': 'La Fondation Emergo offre des bourses de 1&nbsp;000&nbsp;$ à 1&nbsp;750&nbsp;$ aux employés assidus dans leurs études et leurs fonctions. 20&nbsp;000&nbsp;$ distribués en 2024-2025!',
+    'jobs.perk1.text': 'La Fondation Emergo offre des bourses de 1 000 $ à 1 750 $ aux employés assidus dans leurs études et leurs fonctions. 20 000 $ distribués en 2024-2025!',
     'jobs.perk2.title': 'Heures reconnues',
     'jobs.perk2.text': 'Possibilité de faire reconnaître vos heures travaillées pour monter d\'échelon salarial dans les organismes publics, ou pour un cours/stage.',
     'jobs.perk3.title': 'Programme de récompense',
@@ -589,7 +589,7 @@ const translations = {
     'ejobs.summer.salary.watches': 'Veilles',
     'ejobs.summer.salary.bonus': 'Bonus été complet',
     'ejobs.summer.salary.total': 'Total',
-    'ejobs.summer.salary.totalAmount': 'Plus de 7&nbsp;400&nbsp;$',
+    'ejobs.summer.salary.totalAmount': 'Plus de 7 400 $',
     'ejobs.emergence.positions': 'Postes au programme Émergence',
     'ejobs.pos.manager': 'Chargé·e de programme',
     'ejobs.pos.teamCoord': 'Coordonnateur·rice·s d\'équipe',
@@ -669,7 +669,7 @@ const translations = {
 
     // Perks
     'ejobs.perks.scholarships.title': 'Bourses d\'études',
-    'ejobs.perks.scholarships.text': 'La Fondation Emergo offre des bourses de 1&nbsp;000&nbsp;$ à 1&nbsp;750&nbsp;$ aux employés assidus. 20&nbsp;000&nbsp;$ distribués en 2024-2025!',
+    'ejobs.perks.scholarships.text': 'La Fondation Emergo offre des bourses de 1 000 $ à 1 750 $ aux employés assidus. 20 000 $ distribués en 2024-2025!',
     'ejobs.perks.hours.title': 'Heures reconnues',
     'ejobs.perks.hours.text': 'Possibilité de faire reconnaître vos heures pour monter d\'échelon dans les organismes publics (commissions scolaires, CSSS, CRDITED, etc.).',
     'ejobs.perks.referral.title': 'Récompense de recommandation',
@@ -708,7 +708,7 @@ const translations = {
     'ejobs.test.daphnee.author': '— Daphnée Martin (Pyjama), UQAM — Travail social',
 
     // Scholarships
-    'ejobs.schol.lead': 'La Fondation Emergo est fière d\'annoncer qu\'une somme de <strong>20&nbsp;000&nbsp;$</strong> a été mise à disposition pour honorer le parcours académique et l\'engagement du personnel étudiant de Répit Emergo.',
+    'ejobs.schol.lead': 'La Fondation Emergo est fière d\'annoncer qu\'une somme de <strong>20 000 $</strong> a été mise à disposition pour honorer le parcours académique et l\'engagement du personnel étudiant de Répit Emergo.',
     'ejobs.schol.criteria': 'Critères d\'admissibilité :',
     'ejobs.schol.crit1': 'Avoir complété au moins 3 séjours durant l\'été',
     'ejobs.schol.crit2': 'Être engagé·e à participer à des répits scolaires pour l\'année en cours',
@@ -805,12 +805,12 @@ const translations = {
     // Calendar chips
     'cal.allages': 'Tous âges',
     'cal.ratio.emergence': 'Ratio 1:1 ou 1:2',
-    'cal.price.9nights': '9 nuits — 1&nbsp;485&nbsp;$',
+    'cal.price.9nights': '9 nuits — 1 485 $',
     'cal.age.adaptatou': '7 à 17 ans',
     'cal.ratio.adaptatou': 'Ratio 1:2',
     'cal.age.reve': '16 ans et +',
     'cal.autonomous': 'Autonomes',
-    'cal.price.10nights': '10 nuits — 1&nbsp;640&nbsp;$',
+    'cal.price.10nights': '10 nuits — 1 640 $',
     'cal.demi.title': 'Demi-séjours disponibles :',
 
     // School calendar
@@ -2083,7 +2083,7 @@ function setLang(lang) {
   });
   // Also translate cal-row-price
   document.querySelectorAll('.cal-row-price').forEach(el => {
-    // These are just prices like "1&nbsp;485&nbsp;$" — no translation needed
+    // These are just prices like "1 485 $" — no translation needed
   });
 
   // Translate school calendar type (nuits → nights)
