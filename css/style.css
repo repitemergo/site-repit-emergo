@@ -992,7 +992,7 @@ p { margin-bottom: 1em; color: var(--text-mid); }
 /* Lueur d'horizon en bas du bouton */
 .dark-toggle .horizon {
   position: absolute; bottom: -2px; left: -15%; right: -15%; height: 65%;
-  background: radial-gradient(ellipse 140% 100% at 50% 100%, rgba(245,185,50,.55) 0%, rgba(220,160,40,.35) 30%, rgba(180,130,50,.15) 55%, transparent 80%);
+  background: radial-gradient(ellipse 140% 100% at 50% 100%, rgba(255,200,60,.7) 0%, rgba(240,170,40,.45) 30%, rgba(200,140,50,.2) 55%, transparent 80%);
   pointer-events: none; z-index: 1;
 }
 /* Étoiles scintillantes */
@@ -1077,8 +1077,8 @@ p { margin-bottom: 1em; color: var(--text-mid); }
 }
 [data-theme="dark"] .footer { background: #080E18; }
 [data-theme="dark"] .footer-bottom { border-top-color: rgba(255,255,255,.06); }
-[data-theme="dark"] .dark-toggle { border-color: rgba(255,255,255,.15); color: #E8C060; }
-[data-theme="dark"] .dark-toggle:hover { background: rgba(232,192,96,.15); }
+[data-theme="dark"] .dark-toggle { background: #0A1220; border-color: rgba(255,255,255,.1); color: #E8C060; }
+[data-theme="dark"] .dark-toggle:hover { background: #111D30; border-color: rgba(255,255,255,.15); }
 [data-theme="dark"] .dark-toggle .icon-moon { display: none; }
 [data-theme="dark"] .dark-toggle .icon-sun { display: block; }
 [data-theme="dark"] .nav-links a { color: #B0BDD0; }
