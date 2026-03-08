@@ -980,19 +980,19 @@ p { margin-bottom: 1em; color: var(--text-mid); }
   transition: all var(--transition); color: var(--text-mid);
 }
 .dark-toggle {
-  background: linear-gradient(to top, #2A4060 0%, #1A2D48 60%, #243854 100%);
-  color: #E8EDF4; border-color: #2A4060; overflow: hidden;
+  background: linear-gradient(to top, #3A5575 0%, #2A4060 50%, #1E3350 100%);
+  color: #E8EDF4; border-color: #3A5575; overflow: hidden;
 }
 .dark-toggle:hover {
-  background: linear-gradient(to top, #345070 0%, #1E3350 60%, #2A4060 100%);
-  color: #fff; border-color: #345070;
+  background: linear-gradient(to top, #4A6585 0%, #345070 50%, #2A4060 100%);
+  color: #fff; border-color: #4A6585;
 }
 .dark-toggle svg { width: 18px; height: 18px; transition: transform .3s ease; position: relative; z-index: 2; }
 .dark-toggle:hover svg { transform: scale(1.15); }
 /* Lueur d'horizon en bas du bouton */
 .dark-toggle .horizon {
   position: absolute; bottom: 0; left: 10%; right: 10%; height: 40%;
-  background: radial-gradient(ellipse at 50% 100%, rgba(180,140,60,.2) 0%, transparent 70%);
+  background: radial-gradient(ellipse at 50% 100%, rgba(220,170,60,.45) 0%, rgba(180,140,60,.15) 40%, transparent 75%);
   border-radius: 50%; pointer-events: none; z-index: 1;
 }
 /* Étoiles scintillantes */
@@ -1000,7 +1000,7 @@ p { margin-bottom: 1em; color: var(--text-mid); }
   position: absolute; inset: 0; border-radius: 50%; overflow: hidden; pointer-events: none; z-index: 1;
 }
 .dark-toggle .star {
-  position: absolute; width: 1.5px; height: 1.5px; background: rgba(255,255,255,.6); border-radius: 50%;
+  position: absolute; width: 2px; height: 2px; background: rgba(255,255,255,.8); border-radius: 50%;
   animation: twinkle 14s ease-in-out infinite;
 }
 .dark-toggle .star:nth-child(1) { top: 6px;  left: 7px;  animation-delay: -2s; }
