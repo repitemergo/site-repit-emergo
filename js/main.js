@@ -385,7 +385,7 @@ const translations = {
     'jobs.summer.emergence': 'Programme Émergence — 50 postes',
     'jobs.summer.emergence.desc': '5 séjours de 10 jours au Camp de Grandpré (Otterburn Park). Formation obligatoire du 1 au 5 juin et 10-11 juin. Logé et nourri sur le site. Minimum 4 jours de congé entre les séjours.',
     'jobs.summer.salary': 'Salaire brut été complet : plus de 7 400 $',
-    'jobs.summer.salary.detail': 'Formation (586$) + 5 séjours (6 381$) + veilles (100$) + jours fériés + bonus été complet (300$)',
+    'jobs.summer.salary.detail': 'Formation (586$) + 5 séjours (6 381$) + veilles (20$) + jours fériés + bonus été complet (300$)',
     'jobs.summer.reve': 'Un Rêve à Réaliser — 9 postes',
     'jobs.summer.reve.desc': '4 séjours de 10 jours à la Villa Marie-Rose (Val-des-Lacs). Dont 1 séjour anglophone. Logé et nourri sur le site.',
     'jobs.school.title': 'Répits scolaires (sept. à mai)',
