@@ -991,7 +991,7 @@ p { margin-bottom: 1em; color: var(--text-mid); }
 .dark-toggle:hover svg { transform: scale(1.15); }
 /* Lueur d'horizon en bas du bouton */
 .dark-toggle .horizon {
-  position: absolute; bottom: -2px; left: -15%; right: -15%; height: 65%;
+  position: absolute; bottom: -2px; left: -15%; right: -15%; height: 85%;
   background: radial-gradient(ellipse 140% 100% at 50% 100%, rgba(255,240,200,.95) 0%, rgba(255,215,150,.6) 25%, rgba(240,180,100,.3) 50%, transparent 80%);
   pointer-events: none; z-index: 1;
 }
