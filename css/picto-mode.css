@@ -33,8 +33,8 @@
   box-shadow: 0 0 0 3px rgba(212,168,67,.3);
 }
 .picto-toggle-btn img {
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
   border-radius: 2px;
   object-fit: contain;
 }
