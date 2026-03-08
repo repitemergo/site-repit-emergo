@@ -979,10 +979,30 @@ p { margin-bottom: 1em; color: var(--text-mid); }
   background: transparent; cursor: pointer; margin-left: 6px;
   transition: all var(--transition); color: var(--text-mid);
 }
-.dark-toggle { background: #0E1726; color: #E8EDF4; border-color: #0E1726; }
-.dark-toggle:hover { background: #1A2744; color: #fff; border-color: #1A2744; }
-.dark-toggle svg { width: 18px; height: 18px; transition: transform .3s ease; }
+.dark-toggle { background: #1E3050; color: #E8EDF4; border-color: #1E3050; overflow: hidden; }
+.dark-toggle:hover { background: #263D5C; color: #fff; border-color: #263D5C; }
+.dark-toggle svg { width: 18px; height: 18px; transition: transform .3s ease; position: relative; z-index: 1; }
 .dark-toggle:hover svg { transform: scale(1.15); }
+/* Étoiles scintillantes */
+.dark-toggle .stars {
+  position: absolute; inset: 0; border-radius: 50%; overflow: hidden; pointer-events: none;
+}
+.dark-toggle .star {
+  position: absolute; width: 2px; height: 2px; background: #fff; border-radius: 50%;
+  animation: twinkle 2s ease-in-out infinite;
+}
+.dark-toggle .star:nth-child(1) { top: 6px; left: 7px; animation-delay: 0s; }
+.dark-toggle .star:nth-child(2) { top: 8px; right: 6px; animation-delay: .7s; }
+.dark-toggle .star:nth-child(3) { bottom: 7px; left: 10px; animation-delay: 1.3s; }
+.dark-toggle .star:nth-child(4) { bottom: 9px; right: 9px; animation-delay: .4s; animation-duration: 2.5s; }
+.dark-toggle .star:nth-child(5) { top: 14px; left: 5px; animation-delay: 1.8s; animation-duration: 1.8s; }
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(.5); }
+  50%      { opacity: .8; transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dark-toggle .star { animation: none; opacity: .4; }
+}
 
 /* View Transitions — expanding sphere for theme toggle */
 ::view-transition-old(root),
