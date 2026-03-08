@@ -51,12 +51,12 @@ ul, ol { list-style: none; }
 /* ═══ TYPOGRAPHY ═══ */
 h1, h2, h3, h4 { font-family: "terfens", 'Poppins', sans-serif; font-weight: 700; line-height: 1.2; color: var(--navy); }
 h1 { font-size: clamp(2rem, 5vw, 3.2rem); }
-h2 { font-size: clamp(2rem, 4.375vw, 3rem); margin-bottom: .5em; }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); margin-bottom: .5em; }
 h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); margin-bottom: .4em; }
 p { margin-bottom: 1em; color: var(--text-mid); }
 .lead { font-size: 1.15rem; line-height: 1.8; max-width: 680px; }
 .section-label {
-  display: inline-block; font-size: .75rem; font-weight: 700;
+  display: inline-block; font-size: .94rem; font-weight: 700;
   letter-spacing: 2.5px; text-transform: uppercase; color: var(--blue);
   margin-bottom: .8rem;
 }
