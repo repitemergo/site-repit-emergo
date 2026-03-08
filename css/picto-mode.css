@@ -15,12 +15,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 36px;
-  padding: 2px;
+  padding: 4px 8px;
   background: var(--white);
-  border: 2px solid var(--blue);
-  border-radius: 8px;
+  border: 1px solid rgba(0,30,85,.12);
+  border-radius: 6px;
   cursor: pointer;
   transition: all .25s ease;
 }
@@ -35,9 +33,9 @@
   box-shadow: 0 0 0 3px rgba(212,168,67,.3);
 }
 .picto-toggle-btn img {
-  width: 30px;
-  height: 30px;
-  border-radius: 4px;
+  width: 22px;
+  height: 22px;
+  border-radius: 2px;
   object-fit: contain;
 }
 [data-theme="dark"] .picto-toggle-btn {
