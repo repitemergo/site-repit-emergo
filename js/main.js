@@ -37,7 +37,6 @@ const translations = {
     'nav.jobs': 'Emplois',
     'nav.contact': 'Nous joindre',
     'nav.donate': 'Faire un don',
-    'nav.member': 'Devenir membre',
     'nav.info': 'Renseignements',
     'nav.reports': 'Rapports et documents',
     'nav.lang': 'EN',
@@ -130,7 +129,6 @@ const translations = {
     'picto.schedule.movie': 'Film',
     'picto.schedule.bedtime': 'Routine du coucher',
     'picto.schedule.sleep': 'Dodo',
-    'picto.schedule.goodnight': 'Bonne nuit',
     'picto.rules.title': 'Les règles du camp',
     'picto.rules.group': 'Rester avec le groupe',
     'picto.rules.help': 'Demander de l\'aide si besoin',
@@ -334,6 +332,7 @@ const translations = {
     'cta.contact.text': 'Envoyez un courriel à l\'adresse ci-dessous pour obtenir le formulaire d\'adhésion et toute l\'information nécessaire.',
 
     // Footer
+    'footer.about': 'Répit Emergo',
     'footer.desc': 'Service de répit spécialisé en autisme depuis 1976. Un environnement sécuritaire, stimulant et adapté pour les personnes autistes de tous âges.',
     'footer.links': 'Liens rapides',
     'footer.contact': 'Contact',
@@ -1130,7 +1129,6 @@ const translations = {
     'picto.schedule.movie': 'Movie',
     'picto.schedule.bedtime': 'Bedtime routine',
     'picto.schedule.sleep': 'Sleep',
-    'picto.schedule.goodnight': 'Good night',
     'picto.rules.title': 'Camp rules',
     'picto.rules.group': 'Stay with the group',
     'picto.rules.help': 'Ask for help if needed',
@@ -1346,6 +1344,7 @@ const translations = {
     'cta.contact.text': 'Send an email to the address below to receive the membership form and all necessary information.',
 
     // Footer
+    'footer.about': 'Répit Emergo',
     'footer.desc': 'Specialized autism respite service since 1976. A safe, stimulating and adapted environment for autistic individuals of all ages.',
     'footer.links': 'Quick Links',
     'footer.contact': 'Contact',
