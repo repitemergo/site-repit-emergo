@@ -989,18 +989,19 @@ p { margin-bottom: 1em; color: var(--text-mid); }
 }
 .dark-toggle .star {
   position: absolute; width: 1.5px; height: 1.5px; background: rgba(255,255,255,.6); border-radius: 50%;
-  animation: twinkle 10s ease-in-out infinite;
+  animation: twinkle 16s linear infinite;
 }
 .dark-toggle .star:nth-child(1) { top: 6px; left: 7px; animation-delay: 0s; }
-.dark-toggle .star:nth-child(2) { top: 8px; right: 6px; animation-delay: 3s; }
-.dark-toggle .star:nth-child(3) { bottom: 7px; left: 10px; animation-delay: 6s; }
-.dark-toggle .star:nth-child(4) { bottom: 9px; right: 9px; animation-delay: 2s; animation-duration: 12s; }
-.dark-toggle .star:nth-child(5) { top: 14px; left: 5px; animation-delay: 8s; animation-duration: 11s; }
+.dark-toggle .star:nth-child(2) { top: 8px; right: 6px; animation-delay: 4s; }
+.dark-toggle .star:nth-child(3) { bottom: 7px; left: 10px; animation-delay: 8s; }
+.dark-toggle .star:nth-child(4) { bottom: 9px; right: 9px; animation-delay: 2s; animation-duration: 18s; }
+.dark-toggle .star:nth-child(5) { top: 14px; left: 5px; animation-delay: 11s; animation-duration: 20s; }
 @keyframes twinkle {
-  0%, 100% { opacity: .05; }
-  30%      { opacity: .35; }
-  50%      { opacity: .5; }
-  70%      { opacity: .35; }
+  0%   { opacity: .15; }
+  25%  { opacity: .3; }
+  50%  { opacity: .55; }
+  75%  { opacity: .3; }
+  100% { opacity: .15; }
 }
 /* Cacher les étoiles en mode nuit (soleil affiché) */
 [data-theme="dark"] .dark-toggle .stars { display: none; }
