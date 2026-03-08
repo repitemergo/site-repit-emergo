@@ -1126,7 +1126,7 @@ const translations = {
     'picto.schedule.drawing': 'Drawing',
     'picto.schedule.dinner': 'Dinner',
     'picto.schedule.campfire': 'Campfire',
-    'picto.schedule.evening': 'Evening',
+    'picto.schedule.evening': 'Party',
     'picto.schedule.movie': 'Movie',
     'picto.schedule.bedtime': 'Bedtime routine',
     'picto.schedule.sleep': 'Sleep',
