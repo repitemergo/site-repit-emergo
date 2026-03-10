@@ -2341,6 +2341,89 @@ function toggleTheme() {
   }, { passive: true });
 })();
 
+// ═══ INTERACTIVE CIRCLE DECOS — MOUSE REPULSION ═══
+(function() {
+  const circles = document.querySelectorAll('.circle-deco');
+  if (!circles.length) return;
+
+  // Store original positions & mark interactive
+  const circleData = [];
+  circles.forEach(el => {
+    el.classList.add('interactive');
+    circleData.push({
+      el,
+      origTop: parseFloat(el.style.top) || null,
+      origBottom: parseFloat(el.style.bottom) || null,
+      origLeft: parseFloat(el.style.left) || null,
+      origRight: parseFloat(el.style.right) || null,
+      offsetX: 0,
+      offsetY: 0
+    });
+  });
+
+  // Repulsion radius and strength
+  const RADIUS = 180;
+  const STRENGTH = 25;
+
+  document.addEventListener('mousemove', (e) => {
+    circleData.forEach(c => {
+      const rect = c.el.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const dx = cx - e.clientX;
+      const dy = cy - e.clientY;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+
+      if (dist < RADIUS && dist > 0) {
+        const force = (1 - dist / RADIUS) * STRENGTH;
+        c.offsetX = (dx / dist) * force;
+        c.offsetY = (dy / dist) * force;
+      } else {
+        c.offsetX *= 0.9;
+        c.offsetY *= 0.9;
+        if (Math.abs(c.offsetX) < 0.1) c.offsetX = 0;
+        if (Math.abs(c.offsetY) < 0.1) c.offsetY = 0;
+      }
+
+      if (c.el.classList.contains('visible')) {
+        c.el.style.transform = `scale(1) translate(${c.offsetX}px, ${c.offsetY}px)`;
+      }
+    });
+  }, { passive: true });
+
+  // Reset on mouse leave
+  document.addEventListener('mouseleave', () => {
+    circleData.forEach(c => {
+      c.offsetX = 0;
+      c.offsetY = 0;
+      if (c.el.classList.contains('visible')) {
+        c.el.style.transform = 'scale(1) translate(0, 0)';
+      }
+    });
+  });
+})();
+
+// ═══ INTERACTIVE BLOBS — SUBTLE MOUSE FOLLOW ═══
+(function() {
+  const blobSections = document.querySelectorAll('.blob-bg');
+  if (!blobSections.length) return;
+
+  blobSections.forEach(section => {
+    section.addEventListener('mousemove', (e) => {
+      const rect = section.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2; // -1 to 1
+      const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+      section.style.setProperty('--blob-x', (x * 20) + 'px');
+      section.style.setProperty('--blob-y', (y * 15) + 'px');
+    }, { passive: true });
+
+    section.addEventListener('mouseleave', () => {
+      section.style.setProperty('--blob-x', '0px');
+      section.style.setProperty('--blob-y', '0px');
+    });
+  });
+})();
+
 // ═══ MOUSE SPARKLE TRAIL ═══
 (function() {
   const colors = ['#D4A843', '#5B9BD5', '#E8C060', '#7BB8E8', '#4A9A5B', '#B8D4EE'];

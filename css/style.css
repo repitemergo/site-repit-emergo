@@ -867,22 +867,26 @@ p { margin-bottom: 1em; color: var(--text-mid); }
 .anim-shake { animation: shake 3s ease-in-out infinite; transform-origin: center; }
 
 /* ═══ ORGANIC BLOB BACKGROUNDS (reusable) ═══ */
-.blob-bg { position: relative; overflow: hidden; }
+.blob-bg { position: relative; overflow: hidden; --blob-x: 0px; --blob-y: 0px; }
 .blob-bg::before,
 .blob-bg::after {
   content: ''; position: absolute; border-radius: 50%;
   opacity: .08; filter: blur(70px); pointer-events: none; z-index: 0;
+  transition: translate .6s cubic-bezier(.25,.46,.45,.94);
+  will-change: translate;
 }
 /* Variant 1: blue + gold (default) */
 .blob-bg::before {
   width: 280px; height: 280px; top: -60px; right: 8%;
   background: var(--blue);
   animation: blob-drift 18s ease-in-out infinite alternate;
+  translate: var(--blob-x) var(--blob-y);
 }
 .blob-bg::after {
   width: 220px; height: 220px; bottom: -40px; left: 12%;
   background: var(--gold);
   animation: blob-drift 14s ease-in-out infinite alternate-reverse;
+  translate: calc(var(--blob-x) * -0.7) calc(var(--blob-y) * -0.7);
 }
 /* Variant 2: green + blue */
 .blob-bg-green::before { background: var(--green); }
@@ -921,8 +925,10 @@ p { margin-bottom: 1em; color: var(--text-mid); }
   opacity: 0;
   transition: opacity .8s ease, transform .8s ease;
   transform: scale(.6);
+  will-change: transform;
 }
 .circle-deco.visible { opacity: 1; transform: scale(1); }
+.circle-deco.interactive { transition: opacity .8s ease, transform .45s cubic-bezier(.25,.46,.45,.94); }
 .circle-deco-fill { background: var(--blue); opacity: .06; }
 .circle-deco-ring { background: transparent; border: 2px solid var(--blue); opacity: .10; }
 .circle-deco-gold { border-color: var(--gold); }
