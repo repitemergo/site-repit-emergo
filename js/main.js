@@ -1385,8 +1385,8 @@ const translations = {
 
     // Jobs
     'jobs.label': 'Student Jobs',
-    'jobs.title': 'A story where you could be the hero',
-    'jobs.lead': 'Working at Emergo can be a shock. Because communicating with an autistic person is different, because it takes energy, creativity and heart. But it\'s also one of the most transformative experiences of a lifetime. No specialization needed — if it speaks to you, we\'ll teach you.',
+    'jobs.title': 'Join our team!',
+    'jobs.lead': 'Are you a student looking for a high-impact social job? Our mission at Emergo is to offer autistic individuals an unforgettable camp experience. Come help us make it happen!',
     'jobs.expertise.title': 'Help relieve families',
     'jobs.expertise.text': 'You\'ll give families a well-deserved break. Your responsibilities: the well-being and safety of your participant, in a fun outdoor setting. You\'ll be supported by 50 years of expertise.',
     'jobs.adventure.title': 'Accept to grow',
