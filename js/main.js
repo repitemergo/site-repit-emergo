@@ -2341,31 +2341,56 @@ function toggleTheme() {
   }, { passive: true });
 })();
 
-// ═══ INTERACTIVE CIRCLE DECOS — MOUSE REPULSION ═══
+// ═══ INTERACTIVE CIRCLE DECOS — REPULSION + COLOR GLOW + SPARKLES ═══
 (function() {
   const circles = document.querySelectorAll('.circle-deco');
   if (!circles.length) return;
 
-  // Store original positions & mark interactive
   const circleData = [];
   circles.forEach(el => {
     el.classList.add('interactive');
     circleData.push({
       el,
-      origTop: parseFloat(el.style.top) || null,
-      origBottom: parseFloat(el.style.bottom) || null,
-      origLeft: parseFloat(el.style.left) || null,
-      origRight: parseFloat(el.style.right) || null,
       offsetX: 0,
-      offsetY: 0
+      offsetY: 0,
+      targetX: 0,
+      targetY: 0,
+      glowing: false
     });
   });
 
-  // Repulsion radius and strength
-  const RADIUS = 180;
-  const STRENGTH = 25;
+  // More generous radius, moderate strength, much more travel range
+  const RADIUS = 200;
+  const STRENGTH = 50;
+  const LERP = 0.12; // smooth interpolation
+
+  // Sparkle colors matching brand
+  const sparkColors = ['#D4A843', '#5B9BD5', '#4A9A5B', '#E8C060', '#7BB8E8'];
+
+  function spawnSparkles(cx, cy) {
+    const count = 3 + Math.floor(Math.random() * 3);
+    for (let i = 0; i < count; i++) {
+      const spark = document.createElement('div');
+      spark.className = 'circle-sparkle';
+      const size = 3 + Math.random() * 5;
+      const angle = Math.random() * Math.PI * 2;
+      const dist = 10 + Math.random() * 25;
+      spark.style.cssText = `
+        position:fixed; width:${size}px; height:${size}px; border-radius:50%; pointer-events:none; z-index:9999;
+        left:${cx + Math.cos(angle) * dist - size / 2}px;
+        top:${cy + Math.sin(angle) * dist - size / 2}px;
+        background:${sparkColors[Math.floor(Math.random() * sparkColors.length)]};
+        animation: circleSparkPop .6s ease-out forwards;
+      `;
+      document.body.appendChild(spark);
+      spark.addEventListener('animationend', () => spark.remove());
+    }
+  }
+
+  let lastSparkTime = 0;
 
   document.addEventListener('mousemove', (e) => {
+    const now = Date.now();
     circleData.forEach(c => {
       const rect = c.el.getBoundingClientRect();
       const cx = rect.left + rect.width / 2;
@@ -2376,14 +2401,31 @@ function toggleTheme() {
 
       if (dist < RADIUS && dist > 0) {
         const force = (1 - dist / RADIUS) * STRENGTH;
-        c.offsetX = (dx / dist) * force;
-        c.offsetY = (dy / dist) * force;
+        c.targetX = (dx / dist) * force;
+        c.targetY = (dy / dist) * force;
+
+        // Color glow when close
+        if (dist < RADIUS * 0.6 && !c.glowing) {
+          c.glowing = true;
+          c.el.classList.add('circle-glow');
+          // Sparkles on first contact
+          if (now - lastSparkTime > 120) {
+            spawnSparkles(cx, cy);
+            lastSparkTime = now;
+          }
+        }
       } else {
-        c.offsetX *= 0.9;
-        c.offsetY *= 0.9;
-        if (Math.abs(c.offsetX) < 0.1) c.offsetX = 0;
-        if (Math.abs(c.offsetY) < 0.1) c.offsetY = 0;
+        c.targetX = 0;
+        c.targetY = 0;
+        if (c.glowing) {
+          c.glowing = false;
+          c.el.classList.remove('circle-glow');
+        }
       }
+
+      // Smooth lerp toward target
+      c.offsetX += (c.targetX - c.offsetX) * LERP;
+      c.offsetY += (c.targetY - c.offsetY) * LERP;
 
       if (c.el.classList.contains('visible')) {
         c.el.style.transform = `scale(1) translate(${c.offsetX}px, ${c.offsetY}px)`;
@@ -2394,13 +2436,25 @@ function toggleTheme() {
   // Reset on mouse leave
   document.addEventListener('mouseleave', () => {
     circleData.forEach(c => {
-      c.offsetX = 0;
-      c.offsetY = 0;
-      if (c.el.classList.contains('visible')) {
-        c.el.style.transform = 'scale(1) translate(0, 0)';
-      }
+      c.targetX = 0;
+      c.targetY = 0;
+      c.glowing = false;
+      c.el.classList.remove('circle-glow');
     });
   });
+
+  // Animate decay even when mouse is still
+  function decayLoop() {
+    circleData.forEach(c => {
+      c.offsetX += (c.targetX - c.offsetX) * LERP;
+      c.offsetY += (c.targetY - c.offsetY) * LERP;
+      if (c.el.classList.contains('visible')) {
+        c.el.style.transform = `scale(1) translate(${c.offsetX}px, ${c.offsetY}px)`;
+      }
+    });
+    requestAnimationFrame(decayLoop);
+  }
+  decayLoop();
 })();
 
 // ═══ INTERACTIVE BLOBS — SUBTLE MOUSE FOLLOW ═══
@@ -2495,8 +2549,8 @@ function toggleTheme() {
   ];
 
   const BALLOON_COUNT = 22;
-  const MOUSE_RADIUS = 130;
-  const MOUSE_FORCE = 0.9;
+  const MOUSE_RADIUS = 100;
+  const MOUSE_FORCE = 0.4;
   const FRICTION = 0.988;
   const BOUNCE = 0.55;
   const ATTRACT_FORCE = 0.003; // gentle pull toward 2026
