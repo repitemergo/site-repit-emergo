@@ -931,12 +931,12 @@ p { margin-bottom: 1em; color: var(--text-mid); }
 .circle-deco.interactive { transition: opacity .8s ease, transform .35s cubic-bezier(.25,.46,.45,.94), box-shadow .4s ease, border-color .4s ease, background .4s ease; }
 
 /* Glow effect when mouse is near */
-.circle-deco-ring.circle-glow { border-color: var(--blue); opacity: .25; box-shadow: 0 0 18px 4px rgba(91,155,213,.25); }
-.circle-deco-ring.circle-deco-gold.circle-glow { border-color: var(--gold); box-shadow: 0 0 18px 4px rgba(212,168,67,.3); }
-.circle-deco-ring.circle-deco-green.circle-glow { border-color: var(--green); box-shadow: 0 0 18px 4px rgba(74,154,91,.25); }
-.circle-deco-fill.circle-glow { opacity: .14; box-shadow: 0 0 22px 6px rgba(91,155,213,.2); }
-.circle-deco-fill-gold.circle-glow { opacity: .14; box-shadow: 0 0 22px 6px rgba(212,168,67,.25); }
-.circle-deco-fill-green.circle-glow { opacity: .14; box-shadow: 0 0 22px 6px rgba(74,154,91,.2); }
+.circle-deco-ring.circle-glow { border-color: var(--blue); border-width: 3px; opacity: .55; box-shadow: 0 0 22px 8px rgba(91,155,213,.4); }
+.circle-deco-ring.circle-deco-gold.circle-glow { border-color: var(--gold); border-width: 3px; opacity: .55; box-shadow: 0 0 22px 8px rgba(212,168,67,.45); }
+.circle-deco-ring.circle-deco-green.circle-glow { border-color: var(--green); border-width: 3px; opacity: .55; box-shadow: 0 0 22px 8px rgba(74,154,91,.4); }
+.circle-deco-fill.circle-glow { opacity: .30; box-shadow: 0 0 28px 10px rgba(91,155,213,.3); }
+.circle-deco-fill-gold.circle-glow { opacity: .30; box-shadow: 0 0 28px 10px rgba(212,168,67,.35); }
+.circle-deco-fill-green.circle-glow { opacity: .30; box-shadow: 0 0 28px 10px rgba(74,154,91,.3); }
 
 /* Sparkle pop animation */
 @keyframes circleSparkPop {
@@ -944,19 +944,18 @@ p { margin-bottom: 1em; color: var(--text-mid); }
   100% { opacity: 0; transform: scale(0.2) translateY(-20px); }
 }
 
-/* Summer sun glow on hover */
-.sun-interactive { cursor: pointer; transition: filter .4s ease, transform .4s ease; }
-.sun-interactive:hover { filter: drop-shadow(0 0 12px rgba(212,168,67,.7)) drop-shadow(0 0 24px rgba(212,168,67,.4)); transform: scale(1.15) rotate(15deg); }
-.sun-interactive:hover ~ span { color: var(--gold) !important; }
-.circle-deco-fill { background: var(--blue); opacity: .06; }
-.circle-deco-ring { background: transparent; border: 2px solid var(--blue); opacity: .10; }
+/* Summer sun — scale only on hover, no halo, no rotation */
+.sun-interactive { cursor: default; transition: transform .3s ease; }
+.sun-interactive:hover { transform: scale(1.2); }
+.circle-deco-fill { background: var(--blue); opacity: .14; }
+.circle-deco-ring { background: transparent; border: 2px solid var(--blue); opacity: .22; }
 .circle-deco-gold { border-color: var(--gold); }
-.circle-deco-fill-gold { background: var(--gold); opacity: .06; }
+.circle-deco-fill-gold { background: var(--gold); opacity: .14; }
 .circle-deco-green { border-color: var(--green); }
-.circle-deco-fill-green { background: var(--green); opacity: .06; }
-[data-theme="dark"] .circle-deco-fill { opacity: .04; }
-[data-theme="dark"] .circle-deco-ring { opacity: .06; }
-[data-theme="dark"] .circle-deco-fill-gold { opacity: .04; }
+.circle-deco-fill-green { background: var(--green); opacity: .14; }
+[data-theme="dark"] .circle-deco-fill { opacity: .10; }
+[data-theme="dark"] .circle-deco-ring { opacity: .16; }
+[data-theme="dark"] .circle-deco-fill-gold { opacity: .10; }
 [data-theme="dark"] .circle-deco-fill-green { opacity: .04; }
 
 /* ═══ FLOATING SPHERES (large organic decorations) ═══ */

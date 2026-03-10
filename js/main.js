@@ -2404,12 +2404,14 @@ function toggleTheme() {
         c.targetX = (dx / dist) * force;
         c.targetY = (dy / dist) * force;
 
-        // Color glow when close
-        if (dist < RADIUS * 0.6 && !c.glowing) {
-          c.glowing = true;
-          c.el.classList.add('circle-glow');
-          // Sparkles on first contact
-          if (now - lastSparkTime > 120) {
+        // Color glow when close + continuous sparkles
+        if (dist < RADIUS * 0.6) {
+          if (!c.glowing) {
+            c.glowing = true;
+            c.el.classList.add('circle-glow');
+          }
+          // Sparkles continuously while mouse is near
+          if (now - lastSparkTime > 100) {
             spawnSparkles(cx, cy);
             lastSparkTime = now;
           }
