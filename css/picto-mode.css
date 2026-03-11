@@ -395,8 +395,8 @@ body.picto-active .text-content {
   max-width: 650px;
 }
 .picto-info-banner img {
-  width: 64px;
-  height: 64px;
+  width: 110px;
+  height: 110px;
   object-fit: contain;
   flex-shrink: 0;
 }
