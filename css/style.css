@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════
    RÉPIT EMERGO — Site Web 2026
-   Brand colors from annual report + new logo
+   Brand palette from livre de marque Emergo
    ═══════════════════════════════════════════════════ */
 
 /* ═══ BRAND FONTS ═══ */
@@ -8,21 +8,22 @@
    Poppins — via Google Fonts */
 
 :root {
-  --navy: #001E55;
-  --navy-dark: #001340;
-  --blue: #5B9BD5;
-  --blue-light: #C5D8F0;
-  --blue-pale: #E8F0FA;
-  --sky: #B8D4EE;
-  --gold: #D4A843;
-  --gold-light: #F5E6C0;
-  --cream: #F7F5F0;
+  /* ── Couleurs officielles (livre de marque) ── */
+  --navy: #001E55;           /* Bleu Roi — exact */
+  --navy-dark: #001340;      /* Bleu Roi foncé (hover) */
+  --blue: #4A7EB5;           /* dérivé mid-blue pour liens (entre Bleu Roi & Bleu Ciel) */
+  --blue-light: #D2E6FF;     /* Bleu Ciel — exact */
+  --blue-pale: #EBF3FF;      /* teinte pâle dérivée du Bleu Ciel */
+  --sky: #D2E6FF;            /* Bleu Ciel — exact */
+  --gold: #D4A843;           /* doré fonctionnel pour CTA */
+  --gold-light: #FFEBB4;     /* Jaune — exact */
+  --cream: #F0EDE1;          /* Beige — exact */
   --white: #FFFFFF;
   --text: #1A1A2E;
   --text-mid: #3D4B6B;
   --text-light: #6B7B9A;
-  --green: #4A9A5B;
-  --green-light: #E0F0E4;
+  --green: #6B9F7B;          /* dérivé mid-vert pour icônes (famille Vert) */
+  --green-light: #C8E1C8;    /* Vert — exact */
   --red-soft: #C0504D;
   --shadow-sm: 0 1px 3px rgba(0,30,85,.08);
   --shadow-md: 0 4px 16px rgba(0,30,85,.10);
@@ -249,7 +250,7 @@ p { margin-bottom: 1em; color: var(--text-mid); }
   display: inline-flex; align-items: center; gap: 6px;
   margin-top: 12px; padding: 8px 16px;
   font-size: .85rem; font-weight: 600;
-  color: #fff; background: #1565C0;
+  color: #fff; background: #4A7EB5;
   border-radius: 100px; text-decoration: none;
   transition: background .3s ease, gap .3s ease, box-shadow .3s ease;
 }
@@ -257,7 +258,7 @@ p { margin-bottom: 1em; color: var(--text-mid); }
   color: #fff; background: #0D47A1; gap: 10px;
   box-shadow: 0 4px 12px rgba(0,30,85,.25);
 }
-[data-theme="dark"] .prog-detail-link { color: #fff; background: #1565C0; }
+[data-theme="dark"] .prog-detail-link { color: #fff; background: #4A7EB5; }
 [data-theme="dark"] .prog-detail-link:hover { color: #fff; background: #1976D2; }
 .prog-detail-arrow {
   transition: transform .3s ease;
@@ -280,7 +281,7 @@ p { margin-bottom: 1em; color: var(--text-mid); }
 .album-cta-link:hover { transform: scale(1.01); }
 .album-cta-inner {
   position: relative;
-  background: linear-gradient(135deg, #001E55 0%, #1565C0 100%);
+  background: linear-gradient(135deg, #001E55 0%, #4A7EB5 100%);
   border-radius: var(--radius-lg);
   min-height: 240px;
   display: flex; align-items: center; justify-content: center;
@@ -1139,10 +1140,10 @@ p { margin-bottom: 1em; color: var(--text-mid); }
 
 /* ═══ DARK MODE THEME ═══ */
 [data-theme="dark"] {
-  --navy: #B8D4EE;
+  --navy: #D2E6FF;           /* Bleu Ciel pour texte en dark */
   --navy-dark: #0A1628;
-  --blue: #7BB8E8;
-  --blue-light: #1E3A5F;
+  --blue: #8BB8E0;           /* mid-blue clair pour liens en dark */
+  --blue-light: #1E3A5F;     /* Bleu Ciel inversé */
   --blue-pale: #15253D;
   --sky: #1A3A5A;
   --gold: #E8C060;
@@ -1152,7 +1153,7 @@ p { margin-bottom: 1em; color: var(--text-mid); }
   --text: #E8EDF4;
   --text-mid: #B0BDD0;
   --text-light: #7B8FA8;
-  --green: #6BC07A;
+  --green: #8BC09B;          /* vert clair pour dark mode */
   --green-light: #142A1A;
   --shadow-sm: 0 1px 3px rgba(0,0,0,.3);
   --shadow-md: 0 4px 16px rgba(0,0,0,.4);
@@ -1167,7 +1168,7 @@ p { margin-bottom: 1em; color: var(--text-mid); }
 [data-theme="dark"] h3, [data-theme="dark"] h4 { color: #E8EDF4; }
 [data-theme="dark"] .card { background: #152035; border-color: rgba(255,255,255,.06); }
 [data-theme="dark"] .program-card { background: #152035; border-color: rgba(255,255,255,.06); }
-[data-theme="dark"] .testimonial { background: #152035; border-left-color: #7BB8E8; }
+[data-theme="dark"] .testimonial { background: #152035; border-left-color: #8BB8E0; }
 [data-theme="dark"] .section-alt { background: #121E30; }
 [data-theme="dark"] .section-cream { background: #111A28; }
 [data-theme="dark"] .hero {
@@ -1184,28 +1185,28 @@ p { margin-bottom: 1em; color: var(--text-mid); }
 [data-theme="dark"] .nav-dropdown-menu { background: #152035; border-color: rgba(255,255,255,.06); }
 [data-theme="dark"] .nav-dropdown-menu a { color: #B0BDD0; }
 [data-theme="dark"] .nav-dropdown-menu a:hover { background: #1E3A5F; color: #E8EDF4; }
-[data-theme="dark"] .nav-cta { background: #7BB8E8; color: #0E1726 !important; }
+[data-theme="dark"] .nav-cta { background: #8BB8E0; color: #0E1726 !important; }
 [data-theme="dark"] .lang-switch { border-color: rgba(255,255,255,.15); color: #B0BDD0; }
-[data-theme="dark"] .btn-primary { background: #7BB8E8; color: #0E1726; }
-[data-theme="dark"] .btn-secondary { border-color: #7BB8E8; color: #E8EDF4; }
-[data-theme="dark"] .btn-secondary:hover { background: #7BB8E8; color: #0E1726; }
+[data-theme="dark"] .btn-primary { background: #8BB8E0; color: #0E1726; }
+[data-theme="dark"] .btn-secondary { border-color: #8BB8E0; color: #E8EDF4; }
+[data-theme="dark"] .btn-secondary:hover { background: #8BB8E0; color: #0E1726; }
 [data-theme="dark"] .jobs-apply { background: linear-gradient(135deg, #152035 0%, #1E3A5F 100%); }
 [data-theme="dark"] .cta-section { background: linear-gradient(135deg, #0E1726 0%, #152035 70%, #1A3050 100%); }
-[data-theme="dark"] .avatar-gradient { background: linear-gradient(135deg, #7BB8E8 0%, #3A6EA5 100%) !important; }
+[data-theme="dark"] .avatar-gradient { background: linear-gradient(135deg, #8BB8E0 0%, #4A7EB5 100%) !important; }
 [data-theme="dark"] .stats-bg::before { opacity: .08; }
 [data-theme="dark"] .stats-bg::after { opacity: .06; }
 [data-theme="dark"] .timeline-content { background: #152035; }
 [data-theme="dark"] .contact-icon { background: #1E3A5F; }
 [data-theme="dark"] .anniversary-badge { background: linear-gradient(135deg, #B8922E 0%, #D4A843 100%); }
 [data-theme="dark"] .field-tag { background: #1E3050; color: #B0BDD0; }
-[data-theme="dark"] .field-tag.field-blue { background: #15253D; color: #7BB8E8; border-color: rgba(123,184,232,.2); }
+[data-theme="dark"] .field-tag.field-blue { background: #15253D; color: #8BB8E0; border-color: rgba(123,184,232,.2); }
 [data-theme="dark"] .field-tag.field-gold { background: #2A2215; color: #E8C060; border-color: rgba(232,192,96,.2); }
 [data-theme="dark"] .field-tag.field-green { background: #142A1A; color: #6BC07A; border-color: rgba(107,192,122,.2); }
 [data-theme="dark"] .field-tag.field-purple { background: #152A28; color: #4DB6AC; border-color: rgba(77,182,172,.2); }
-[data-theme="dark"] .field-tag.field-navy { background: #1A2540; color: #B8D4EE; border-color: rgba(184,212,238,.15); }
+[data-theme="dark"] .field-tag.field-navy { background: #1A2540; color: #D2E6FF; border-color: rgba(184,212,238,.15); }
 [data-theme="dark"] .field-tag.field-highlight { box-shadow: 0 0 0 1px rgba(123,184,232,.3); }
 [data-theme="dark"] .jobs-position-card { background: #1E3050; }
-[data-theme="dark"] .jobs-position-count { background: #7BB8E8; color: #0E1726; }
+[data-theme="dark"] .jobs-position-count { background: #8BB8E0; color: #0E1726; }
 [data-theme="dark"] .jobs-apply .btn-secondary { border-color: rgba(255,255,255,.5); color: #E8EDF4; }
 [data-theme="dark"] .jobs-apply .btn-secondary:hover { background: rgba(255,255,255,.15); }
 [data-theme="dark"] .footer-brand div[style*="font-weight:700"] { color: #E8EDF4 !important; }

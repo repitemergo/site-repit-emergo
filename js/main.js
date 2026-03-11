@@ -2343,7 +2343,7 @@ function toggleTheme() {
 
 // ═══ MOUSE SPARKLE TRAIL ═══
 (function() {
-  const colors = ['#D4A843', '#5B9BD5', '#E8C060', '#7BB8E8', '#4A9A5B', '#B8D4EE'];
+  const colors = ['#D4A843', '#4A7EB5', '#FFEBB4', '#D2E6FF', '#6B9F7B', '#C8E1C8'];
   let lastSparkle = 0;
   let sparkleCount = 0;
   const MAX_SPARKLES = 30; // limit active sparkles
