@@ -2374,6 +2374,170 @@ function toggleTheme() {
   });
 })();
 
+// ═══ JOBS FESTIVE BALLOONS — COLORFUL PHYSICS ═══
+(function() {
+  const canvas = document.getElementById('jobs-balloons-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const section = canvas.closest('section');
+
+  const vivid = [
+    'rgba(255,107,107,.22)',  // coral
+    'rgba(255,230,109,.20)', // yellow
+    'rgba(78,205,196,.18)',  // teal
+    'rgba(167,139,250,.20)', // purple
+    'rgba(56,189,248,.18)',  // sky
+    'rgba(244,114,182,.18)', // pink
+    'rgba(74,222,128,.16)',  // green
+    'rgba(251,146,60,.18)',  // orange
+  ];
+
+  const COUNT = 30;
+  const MOUSE_RADIUS = 90;
+  const MOUSE_FORCE = 0.35;
+  const FRICTION = 0.99;
+  const BOUNCE = 0.6;
+
+  let balls = [], mouseX = -9999, mouseY = -9999, mouseIn = false;
+  let W = 0, H = 0, animId = null, isVisible = false;
+
+  function resize() {
+    const r = section.getBoundingClientRect();
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = r.width; H = r.height;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function create() {
+    balls = [];
+    for (let i = 0; i < COUNT; i++) {
+      const r = 12 + Math.random() * 30;
+      balls.push({
+        x: Math.random() * W, y: Math.random() * H, r,
+        vx: (Math.random() - .5) * .8, vy: (Math.random() - .5) * .8,
+        color: vivid[Math.floor(Math.random() * vivid.length)],
+        mass: r * r * .001,
+        ringOnly: Math.random() > .5,
+      });
+    }
+  }
+
+  function physics() {
+    for (let i = 0; i < balls.length; i++) {
+      const b = balls[i];
+      const t = Date.now() * .001;
+      b.vx += Math.sin(t + i * 1.3) * .005;
+      b.vy += Math.cos(t + i * 2.1) * .005;
+
+      if (mouseIn) {
+        const dx = b.x - mouseX, dy = b.y - mouseY;
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d < MOUSE_RADIUS + b.r && d > 0) {
+          const f = MOUSE_FORCE * (1 - d / (MOUSE_RADIUS + b.r));
+          b.vx += (dx / d) * f; b.vy += (dy / d) * f;
+        }
+      }
+
+      for (let j = i + 1; j < balls.length; j++) {
+        const b2 = balls[j];
+        const dx = b2.x - b.x, dy = b2.y - b.y;
+        const d = Math.sqrt(dx * dx + dy * dy);
+        const minD = b.r + b2.r;
+        if (d < minD && d > 0) {
+          const nx = dx / d, ny = dy / d, ov = (minD - d) * .5;
+          b.x -= nx * ov; b.y -= ny * ov; b2.x += nx * ov; b2.y += ny * ov;
+          const tm = b.mass + b2.mass;
+          const imp = ((b.vx - b2.vx) * nx + (b.vy - b2.vy) * ny) * BOUNCE;
+          b.vx -= imp * b2.mass / tm * nx; b.vy -= imp * b2.mass / tm * ny;
+          b2.vx += imp * b.mass / tm * nx; b2.vy += imp * b.mass / tm * ny;
+        }
+      }
+
+      b.vx *= FRICTION; b.vy *= FRICTION;
+      b.x += b.vx; b.y += b.vy;
+      if (b.x < b.r) { b.x = b.r; b.vx = Math.abs(b.vx) * BOUNCE; }
+      if (b.x > W - b.r) { b.x = W - b.r; b.vx = -Math.abs(b.vx) * BOUNCE; }
+      if (b.y < b.r) { b.y = b.r; b.vy = Math.abs(b.vy) * BOUNCE; }
+      if (b.y > H - b.r) { b.y = H - b.r; b.vy = -Math.abs(b.vy) * BOUNCE; }
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    for (const b of balls) {
+      ctx.beginPath();
+      ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+      if (b.ringOnly) {
+        ctx.strokeStyle = b.color.replace(/[\d.]+\)$/, '0.35)');
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      } else {
+        ctx.fillStyle = b.color;
+        ctx.fill();
+      }
+    }
+  }
+
+  function animate() {
+    if (!isVisible) return;
+    physics(); draw();
+    animId = requestAnimationFrame(animate);
+  }
+
+  section.addEventListener('mousemove', (e) => {
+    const r = section.getBoundingClientRect();
+    mouseX = e.clientX - r.left; mouseY = e.clientY - r.top; mouseIn = true;
+  }, { passive: true });
+  section.addEventListener('mouseleave', () => { mouseIn = false; });
+  section.addEventListener('touchmove', (e) => {
+    const r = section.getBoundingClientRect(); const t = e.touches[0];
+    mouseX = t.clientX - r.left; mouseY = t.clientY - r.top; mouseIn = true;
+  }, { passive: true });
+  section.addEventListener('touchend', () => { mouseIn = false; });
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        isVisible = true; resize();
+        if (!balls.length) create();
+        animate();
+      } else {
+        isVisible = false;
+        if (animId) { cancelAnimationFrame(animId); animId = null; }
+      }
+    });
+  }, { threshold: .05 });
+  obs.observe(section);
+  window.addEventListener('resize', () => { if (isVisible) { resize(); } });
+})();
+
+// ═══ MAGIC WAVE BUTTON — COLORFUL EXPANDING RINGS ═══
+(function() {
+  const btn = document.querySelector('.btn-magic-waves');
+  if (!btn) return;
+
+  const waveColors = ['#D4A843', '#5B9BD5', '#F472B6', '#4ECDC4', '#A78BFA', '#FF6B6B', '#38BDF8'];
+  let waveIndex = 0;
+
+  function spawnWaves() {
+    for (let i = 0; i < 4; i++) {
+      setTimeout(() => {
+        const wave = document.createElement('span');
+        wave.className = 'magic-wave';
+        wave.style.borderColor = waveColors[waveIndex % waveColors.length];
+        waveIndex++;
+        btn.appendChild(wave);
+        wave.addEventListener('animationend', () => wave.remove());
+      }, i * 140);
+    }
+  }
+
+  btn.addEventListener('mouseenter', spawnWaves);
+  btn.addEventListener('click', spawnWaves);
+})();
+
 // ═══ FIELDS CLOUD — RE-ANIMATE ON SCROLL INTO VIEW ═══
 (function() {
   const fieldsCloud = document.querySelector('.fields-cloud-animated');

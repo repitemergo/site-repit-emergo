@@ -599,14 +599,69 @@ p { margin-bottom: 1em; color: var(--text-mid); }
   content: ''; position: absolute; left: 0; top: 12px;
   width: 8px; height: 8px; border-radius: 50%; background: var(--blue);
 }
+/* ═══ JOBS FESTIVE BACKGROUND ═══ */
+.jobs-festive { position: relative; overflow: hidden; }
+.jobs-festive > .container,
+.jobs-festive > .staff-banner { position: relative; z-index: 2; }
+
+/* Animated blurred color blobs */
+.jobs-color-blobs {
+  position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
+}
+.jobs-color-blobs::before,
+.jobs-color-blobs::after {
+  content: ''; position: absolute; border-radius: 50%;
+  filter: blur(80px); opacity: .12; will-change: transform;
+}
+.jobs-color-blobs::before {
+  width: 350px; height: 350px; top: -80px; left: 5%;
+  background: radial-gradient(circle, #FF6B6B, #FFE66D, #4ECDC4);
+  animation: jobs-blob-1 12s ease-in-out infinite alternate;
+}
+.jobs-color-blobs::after {
+  width: 300px; height: 300px; bottom: -50px; right: 8%;
+  background: radial-gradient(circle, #A78BFA, #38BDF8, #F472B6);
+  animation: jobs-blob-2 10s ease-in-out infinite alternate-reverse;
+}
+@keyframes jobs-blob-1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(60px, 40px) scale(1.15); }
+  100% { transform: translate(-30px, 70px) scale(0.95); }
+}
+@keyframes jobs-blob-2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-50px, -30px) scale(1.1); }
+  100% { transform: translate(40px, -60px) scale(0.9); }
+}
+[data-theme="dark"] .jobs-color-blobs::before { opacity: .08; }
+[data-theme="dark"] .jobs-color-blobs::after { opacity: .06; }
+
 .jobs-apply {
   background: linear-gradient(135deg, var(--navy) 0%, #0A2E6B 100%);
   border-radius: var(--radius-lg); padding: 48px; text-align: center;
+  position: relative; overflow: hidden;
 }
 .jobs-apply h3 { color: #FFFFFF; margin-bottom: .5em; }
 .jobs-apply p { color: rgba(255,255,255,.7); max-width: 560px; margin: 0 auto 1.5rem; }
 .jobs-apply .btn-primary { background: var(--gold); color: var(--navy); }
 .jobs-apply .btn-primary:hover { background: #E8C060; color: var(--navy); }
+
+/* ═══ MAGIC WAVE BUTTON ═══ */
+.btn-magic-waves {
+  position: relative; overflow: visible; z-index: 1;
+}
+.magic-wave {
+  position: absolute; top: 50%; left: 50%;
+  width: 20px; height: 20px; margin: -10px 0 0 -10px;
+  border-radius: 50%; pointer-events: none;
+  border: 3px solid var(--gold);
+  animation: magicWaveExpand .9s ease-out forwards;
+  z-index: -1;
+}
+@keyframes magicWaveExpand {
+  0% { transform: scale(1); opacity: .9; }
+  100% { transform: scale(18); opacity: 0; }
+}
 
 /* ═══ JOBS POSITION CARDS ═══ */
 .jobs-position-card {
