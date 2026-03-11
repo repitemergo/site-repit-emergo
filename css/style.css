@@ -401,15 +401,43 @@ p { margin-bottom: 1em; color: var(--text-mid); }
 }
 
 /* ═══ TEAM ═══ */
-.team-card { text-align: center; }
+.team-card {
+  text-align: center;
+  padding: 24px 16px 20px;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid transparent;
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease, background .3s ease;
+  cursor: default;
+}
+#team .team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0,30,85,.10), 0 2px 8px rgba(0,30,85,.06);
+  border-color: rgba(91,155,213,.25);
+  background: rgba(255,255,255,.7);
+}
+#team .team-card:hover .team-card-photo {
+  box-shadow: 0 0 0 5px rgba(91,155,213,.18);
+}
+#team .team-card:hover .avatar-ring {
+  animation-duration: 1.8s;
+  border-width: 3px;
+}
+#team .team-card:hover h4 { color: var(--navy); }
+#team .team-card:hover a { color: var(--blue); }
+[data-theme="dark"] #team .team-card:hover {
+  background: rgba(255,255,255,.06);
+  border-color: rgba(91,155,213,.3);
+  box-shadow: 0 12px 32px rgba(0,0,0,.25);
+}
 .team-card-photo {
   width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 16px;
   background: var(--blue-pale); display: flex; align-items: center;
   justify-content: center; font-size: 2.5rem; color: var(--blue);
-  overflow: hidden;
+  overflow: hidden; transition: box-shadow .3s ease;
 }
-.team-card h4 { font-size: 1rem; margin-bottom: 2px; }
+.team-card h4 { font-size: 1rem; margin-bottom: 2px; transition: color .3s ease; }
 .team-card p { font-size: .85rem; color: var(--text-light); margin: 0; }
+.team-card a { transition: color .3s ease; }
 
 /* Board grid: always 2 cols on mobile */
 #board .grid-4 { gap: 16px; }
