@@ -646,27 +646,6 @@ p { margin-bottom: 1em; color: var(--text-mid); }
 .jobs-apply .btn-primary { background: var(--gold); color: var(--navy); }
 .jobs-apply .btn-primary:hover { background: #E8C060; color: var(--navy); }
 
-/* ═══ LIQUID REFRACTION WAVE BUTTON ═══ */
-.btn-magic-waves {
-  position: relative; overflow: visible; z-index: 1;
-}
-.magic-wave {
-  position: absolute; inset: -2px;
-  border-radius: 100px; pointer-events: none;
-  border: 2px solid rgba(255,255,255,.45);
-  animation: liquidWaveExpand 1.6s cubic-bezier(.25,.46,.45,.94) forwards;
-  z-index: -1;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  background: radial-gradient(ellipse at 30% 40%, rgba(255,255,255,.08), transparent 60%);
-}
-@keyframes liquidWaveExpand {
-  0% { transform: scale(1); opacity: .7; border-width: 2px; }
-  30% { transform: scale(1.15, 1.3); opacity: .5; border-width: 1.5px; }
-  60% { transform: scale(1.4, 1.8); opacity: .3; border-width: 1px; }
-  100% { transform: scale(1.8, 2.6); opacity: 0; border-width: .5px; }
-}
-
 /* ═══ JOBS-APPLY PARTY BOX ═══ */
 .jobs-apply::before {
   content: ''; position: absolute; inset: 0; z-index: 0;

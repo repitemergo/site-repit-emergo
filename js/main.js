@@ -2513,26 +2513,6 @@ function toggleTheme() {
   window.addEventListener('resize', () => { if (isVisible) { resize(); } });
 })();
 
-// ═══ LIQUID REFRACTION WAVE BUTTON ═══
-(function() {
-  const btn = document.querySelector('.btn-magic-waves');
-  if (!btn) return;
-
-  function spawnWaves() {
-    for (let i = 0; i < 3; i++) {
-      setTimeout(() => {
-        const wave = document.createElement('span');
-        wave.className = 'magic-wave';
-        btn.appendChild(wave);
-        wave.addEventListener('animationend', () => wave.remove());
-      }, i * 250);
-    }
-  }
-
-  btn.addEventListener('mouseenter', spawnWaves);
-  btn.addEventListener('click', spawnWaves);
-})();
-
 // ═══ JOBS-APPLY PARTY BOX — CONFETTI + SHIMMER ═══
 (function() {
   const applyBox = document.querySelector('.jobs-apply');
