@@ -2513,29 +2513,100 @@ function toggleTheme() {
   window.addEventListener('resize', () => { if (isVisible) { resize(); } });
 })();
 
-// ═══ MAGIC WAVE BUTTON — COLORFUL EXPANDING RINGS ═══
+// ═══ LIQUID REFRACTION WAVE BUTTON ═══
 (function() {
   const btn = document.querySelector('.btn-magic-waves');
   if (!btn) return;
 
-  const waveColors = ['#D4A843', '#5B9BD5', '#F472B6', '#4ECDC4', '#A78BFA', '#FF6B6B', '#38BDF8'];
-  let waveIndex = 0;
-
   function spawnWaves() {
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 3; i++) {
       setTimeout(() => {
         const wave = document.createElement('span');
         wave.className = 'magic-wave';
-        wave.style.borderColor = waveColors[waveIndex % waveColors.length];
-        waveIndex++;
         btn.appendChild(wave);
         wave.addEventListener('animationend', () => wave.remove());
-      }, i * 140);
+      }, i * 250);
     }
   }
 
   btn.addEventListener('mouseenter', spawnWaves);
   btn.addEventListener('click', spawnWaves);
+})();
+
+// ═══ JOBS-APPLY PARTY BOX — CONFETTI + SHIMMER ═══
+(function() {
+  const applyBox = document.querySelector('.jobs-apply');
+  if (!applyBox) return;
+
+  // Add shimmer overlay
+  const shimmer = document.createElement('div');
+  shimmer.className = 'jobs-apply-shimmer';
+  shimmer.setAttribute('aria-hidden', 'true');
+  applyBox.insertBefore(shimmer, applyBox.firstChild);
+
+  // Add confetti canvas
+  const canvas = document.createElement('canvas');
+  canvas.className = 'jobs-apply-confetti-canvas';
+  canvas.setAttribute('aria-hidden', 'true');
+  applyBox.insertBefore(canvas, applyBox.firstChild);
+  const ctx = canvas.getContext('2d');
+
+  const COLORS = ['#FF6B6B','#FFE66D','#4ECDC4','#A78BFA','#38BDF8','#F472B6','#34D399','#FB923C'];
+  const NUM = 35;
+  let particles = [];
+  let running = false;
+
+  function resize() {
+    canvas.width = applyBox.offsetWidth;
+    canvas.height = applyBox.offsetHeight;
+  }
+
+  function init() {
+    particles = [];
+    for (let i = 0; i < NUM; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        w: 3 + Math.random() * 5,
+        h: 7 + Math.random() * 9,
+        color: COLORS[Math.floor(Math.random() * COLORS.length)],
+        rot: Math.random() * 360,
+        rotV: (Math.random() - .5) * 3,
+        vy: .2 + Math.random() * .6,
+        vx: (Math.random() - .5) * .4,
+        alpha: .35 + Math.random() * .35
+      });
+    }
+  }
+
+  function animate() {
+    if (!running) return;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (const p of particles) {
+      p.y += p.vy;
+      p.x += p.vx + Math.sin(p.y * .015) * .25;
+      p.rot += p.rotV;
+      if (p.y > canvas.height + 20) { p.y = -15; p.x = Math.random() * canvas.width; }
+      if (p.x < -20) p.x = canvas.width + 10;
+      if (p.x > canvas.width + 20) p.x = -10;
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot * Math.PI / 180);
+      ctx.globalAlpha = p.alpha;
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+      ctx.restore();
+    }
+    requestAnimationFrame(animate);
+  }
+
+  const obs = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      if (!running) { running = true; resize(); init(); animate(); }
+    } else { running = false; }
+  }, { threshold: 0.05 });
+  obs.observe(applyBox);
+  window.addEventListener('resize', () => { if (running) resize(); });
 })();
 
 // ═══ FIELDS CLOUD — RE-ANIMATE ON SCROLL INTO VIEW ═══

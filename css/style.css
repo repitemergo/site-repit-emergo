@@ -646,20 +646,57 @@ p { margin-bottom: 1em; color: var(--text-mid); }
 .jobs-apply .btn-primary { background: var(--gold); color: var(--navy); }
 .jobs-apply .btn-primary:hover { background: #E8C060; color: var(--navy); }
 
-/* ═══ MAGIC WAVE BUTTON ═══ */
+/* ═══ LIQUID REFRACTION WAVE BUTTON ═══ */
 .btn-magic-waves {
   position: relative; overflow: visible; z-index: 1;
 }
 .magic-wave {
-  position: absolute; inset: 0;
+  position: absolute; inset: -2px;
   border-radius: 100px; pointer-events: none;
-  border: 2.5px solid var(--gold);
-  animation: magicWaveExpand .9s ease-out forwards;
+  border: 2px solid rgba(255,255,255,.45);
+  animation: liquidWaveExpand 1.6s cubic-bezier(.25,.46,.45,.94) forwards;
   z-index: -1;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  background: radial-gradient(ellipse at 30% 40%, rgba(255,255,255,.08), transparent 60%);
 }
-@keyframes magicWaveExpand {
-  0% { transform: scale(1); opacity: .85; }
-  100% { transform: scale(1.8, 2.8); opacity: 0; }
+@keyframes liquidWaveExpand {
+  0% { transform: scale(1); opacity: .7; border-width: 2px; }
+  30% { transform: scale(1.15, 1.3); opacity: .5; border-width: 1.5px; }
+  60% { transform: scale(1.4, 1.8); opacity: .3; border-width: 1px; }
+  100% { transform: scale(1.8, 2.6); opacity: 0; border-width: .5px; }
+}
+
+/* ═══ JOBS-APPLY PARTY BOX ═══ */
+.jobs-apply::before {
+  content: ''; position: absolute; inset: 0; z-index: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255,107,107,.12) 0%, transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(78,205,196,.10) 0%, transparent 40%),
+    radial-gradient(circle at 50% 10%, rgba(167,139,250,.08) 0%, transparent 35%);
+  animation: partyGlow 8s ease-in-out infinite alternate;
+}
+.jobs-apply > * { position: relative; z-index: 1; }
+@keyframes partyGlow {
+  0% { opacity: .6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: .7; transform: scale(.98); }
+}
+.jobs-apply-confetti-canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;
+}
+.jobs-apply-shimmer {
+  position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden;
+}
+.jobs-apply-shimmer::before {
+  content: ''; position: absolute;
+  width: 200%; height: 200%; top: -50%; left: -80%;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,.04) 45%, rgba(255,255,255,.08) 50%, rgba(255,255,255,.04) 55%, transparent 60%);
+  animation: shimmerSweep 6s ease-in-out infinite;
+}
+@keyframes shimmerSweep {
+  0% { transform: translateX(-30%); }
+  100% { transform: translateX(80%); }
 }
 
 /* ═══ JOBS POSITION CARDS ═══ */
