@@ -38,42 +38,6 @@
   [data-theme="dark"] .legend-dot-uni { background:#7BB8E8; }
   [data-theme="dark"] .legend-dot-cegep { background:#4DB6AC; }
 
-  /* ═══ EMPLOIS FESTIVE HERO ═══ */
-  .emplois-festive { position: relative; overflow: hidden; }
-  .emplois-video-bg {
-    position: absolute; inset: -40px; width: calc(100% + 80px); height: calc(100% + 80px);
-    object-fit: cover; filter: blur(50px) saturate(1.8) brightness(1.1);
-    opacity: .35; z-index: 0; pointer-events: none;
-  }
-  [data-theme="dark"] .emplois-video-bg { opacity: .2; filter: blur(50px) saturate(1.4) brightness(.7); }
-  .emplois-color-blobs {
-    position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
-  }
-  .emplois-color-blobs::before {
-    content: ''; position: absolute; width: 320px; height: 320px;
-    background: radial-gradient(circle, #FF6B6B 0%, #FFE66D 40%, transparent 70%);
-    border-radius: 50%; top: -60px; left: -40px; opacity: .4;
-    animation: emplois-blob-1 14s ease-in-out infinite alternate;
-  }
-  .emplois-color-blobs::after {
-    content: ''; position: absolute; width: 280px; height: 280px;
-    background: radial-gradient(circle, #A78BFA 0%, #38BDF8 40%, transparent 70%);
-    border-radius: 50%; bottom: -40px; right: -30px; opacity: .35;
-    animation: emplois-blob-2 11s ease-in-out infinite alternate;
-  }
-  @keyframes emplois-blob-1 { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(120px, 60px) scale(1.3); } }
-  @keyframes emplois-blob-2 { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(-100px, -50px) scale(1.2); } }
-  .emplois-color-blobs-alt::before {
-    background: radial-gradient(circle, #34D399 0%, #FFE66D 40%, transparent 70%) !important;
-    top: auto !important; bottom: 10% !important; left: 10% !important;
-    animation: emplois-blob-2 16s ease-in-out infinite alternate !important;
-  }
-  .emplois-color-blobs-alt::after {
-    background: radial-gradient(circle, #FB923C 0%, #F472B6 40%, transparent 70%) !important;
-    bottom: auto !important; top: 10% !important; right: 5% !important;
-    animation: emplois-blob-1 13s ease-in-out infinite alternate !important;
-  }
-
   /* ═══ SECTION PHOTOS ═══ */
   .section-photo { width:100%; border-radius:var(--radius-lg, 20px); overflow:hidden; margin:32px 0; }
   .section-photo img { width:100%; height:auto; display:block; }
@@ -145,8 +109,8 @@
         <p class="lead" data-i18n="ejobs.hero.lead">Vous êtes étudiant·e·s et cherchez un travail à fort impact social? Notre mission chez Emergo est d'offrir aux personnes autistes une expérience de camp inoubliable. Venez nous aider à la réaliser!</p>
         <p style="color:var(--text-mid); font-size:.95rem;" data-i18n="ejobs.hero.sub">Répit Emergo est l'endroit où votre énergie, votre passion et votre empathie seront pleinement valorisées. Nous accueillons des accompagnateur·rice·s de toutes les disciplines académiques!</p>
         <div class="hero-cta">
-          <a href="mailto:recrutement@repitemergo.com" class="btn btn-primary btn-magic-waves" data-i18n="ejobs.hero.cta">Postuler maintenant</a>
-          <a href="#summer" class="btn btn-secondary btn-magic-waves" data-i18n="ejobs.hero.cta2">Voir les postes</a>
+          <a href="mailto:recrutement@repitemergo.com" class="btn btn-primary" data-i18n="ejobs.hero.cta">Postuler maintenant</a>
+          <a href="#summer" class="btn btn-secondary" data-i18n="ejobs.hero.cta2">Voir les postes</a>
         </div>
       </div>
       <div class="hero-video-wrap">
@@ -200,18 +164,8 @@
 </div>
 
 <!-- ═══════════ SUMMER JOBS ═══════════ -->
-<section class="section emplois-festive" id="summer">
-  <!-- Blurred video background for color effects -->
-  <video class="emplois-video-bg" autoplay muted loop playsinline>
-    <source src="https://repitemergo.com/wp-content/uploads/2025/01/Decouvrez-Emergo-_-soutenir-les-familles-denfants-et-dadultes-autistes-au-Quebec.mp4" type="video/mp4">
-  </video>
-  <!-- Animated color blobs -->
-  <div class="emplois-color-blobs" aria-hidden="true"></div>
-  <!-- Balloons canvas -->
-  <canvas id="emplois-balloons-canvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;"></canvas>
-  <!-- Floating confetti -->
-  <canvas id="emplois-confetti-canvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;"></canvas>
-  <div class="container" style="position:relative;z-index:2;">
+<section class="section" id="summer">
+  <div class="container">
     <div class="text-center" style="margin-bottom:48px;">
       <span class="section-label" data-i18n="ejobs.summer.label">Été 2026</span>
       <h2 data-i18n="ejobs.summer.title">Les répits estivaux (juin à août)</h2>
@@ -475,10 +429,8 @@
 </section>
 
 <!-- ═══════════ PERKS ═══════════ -->
-<section class="section blob-bg blob-bg-green emplois-festive" id="perks">
-  <div class="emplois-color-blobs emplois-color-blobs-alt" aria-hidden="true"></div>
-  <canvas class="emplois-confetti-extra" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;"></canvas>
-  <div class="container" style="position:relative;z-index:2;">
+<section class="section blob-bg blob-bg-green" id="perks">
+  <div class="container">
     <div class="text-center" style="margin-bottom:48px;">
       <span class="section-label" data-i18n="ejobs.perks.label">Avantages</span>
       <h2 data-i18n="ejobs.perks.title">Bien plus qu'un emploi d'été</h2>
@@ -750,7 +702,7 @@
   <div class="container" style="position:relative; z-index:1;">
     <h2 data-i18n="ejobs.cta.title">Prêt·e à vivre l'expérience Emergo?</h2>
     <p style="color:rgba(255,255,255,.7); max-width:560px; margin:0 auto 2rem;" data-i18n="ejobs.cta.text">Rejoignez une équipe passionnée et faites une différence dans la vie des personnes autistes et de leurs familles.</p>
-    <a href="mailto:recrutement@repitemergo.com" class="btn btn-gold btn-magic-waves" data-i18n="ejobs.cta.button">Postuler maintenant — recrutement@repitemergo.com</a>
+    <a href="mailto:recrutement@repitemergo.com" class="btn btn-gold" data-i18n="ejobs.cta.button">Postuler maintenant — recrutement@repitemergo.com</a>
   </div>
 </section>
 
@@ -1393,201 +1345,6 @@ document.addEventListener('keydown', function(e) {
     if (m) m.classList.remove('active');
   }
 });
-</script>
-
-<script>
-/* ═══════════ EMPLOIS PAGE — FESTIVE EFFECTS ═══════════ */
-(function(){
-  /* ── 1. Colorful Balloons in Summer Section ── */
-  var bc = document.getElementById('emplois-balloons-canvas');
-  if (bc) {
-    var ctx = bc.getContext('2d');
-    var balls = [], NUM = 25;
-    var COLORS = ['#FF6B6B','#FFE66D','#4ECDC4','#A78BFA','#38BDF8','#F472B6','#34D399','#FB923C','#F87171','#FBBF24'];
-    var heroEl = document.getElementById('summer');
-    var running = false;
-
-    function resize() {
-      bc.width = heroEl.offsetWidth;
-      bc.height = heroEl.offsetHeight;
-    }
-
-    function initBalls() {
-      balls = [];
-      for (var i = 0; i < NUM; i++) {
-        var r = 10 + Math.random() * 22;
-        balls.push({
-          x: Math.random() * bc.width, y: Math.random() * bc.height,
-          vx: (Math.random() - .5) * 1.2, vy: (Math.random() - .5) * 1.2 - .3,
-          r: r, color: COLORS[i % COLORS.length], alpha: .35 + Math.random() * .3
-        });
-      }
-    }
-
-    function drawBall(b) {
-      ctx.beginPath();
-      ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
-      ctx.fillStyle = b.color;
-      ctx.globalAlpha = b.alpha;
-      ctx.fill();
-      // Highlight
-      ctx.beginPath();
-      ctx.arc(b.x - b.r * .3, b.y - b.r * .3, b.r * .3, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(255,255,255,.5)';
-      ctx.fill();
-      ctx.globalAlpha = 1;
-    }
-
-    function animate() {
-      if (!running) return;
-      ctx.clearRect(0, 0, bc.width, bc.height);
-      for (var i = 0; i < balls.length; i++) {
-        var b = balls[i];
-        b.x += b.vx; b.y += b.vy;
-        // Bounce off edges
-        if (b.x < b.r) { b.x = b.r; b.vx *= -1; }
-        if (b.x > bc.width - b.r) { b.x = bc.width - b.r; b.vx *= -1; }
-        if (b.y < b.r) { b.y = b.r; b.vy *= -1; }
-        if (b.y > bc.height - b.r) { b.y = bc.height - b.r; b.vy *= -1; }
-        // Gentle float upward
-        b.vy -= 0.003;
-        // Friction
-        b.vx *= 0.999; b.vy *= 0.999;
-        drawBall(b);
-      }
-      requestAnimationFrame(animate);
-    }
-
-    var obs = new IntersectionObserver(function(entries) {
-      if (entries[0].isIntersecting) {
-        if (!running) { running = true; resize(); initBalls(); animate(); }
-      } else { running = false; }
-    }, { threshold: 0.05 });
-    obs.observe(heroEl);
-    window.addEventListener('resize', function() { if (running) resize(); });
-  }
-
-  /* ── 2. Confetti Particles ── */
-  var cc = document.getElementById('emplois-confetti-canvas');
-  if (cc) {
-    var cctx = cc.getContext('2d');
-    var confetti = [], CONF_NUM = 40;
-    var CONF_COLORS = ['#FF6B6B','#FFE66D','#4ECDC4','#A78BFA','#38BDF8','#F472B6','#34D399','#FB923C'];
-    var confRunning = false;
-
-    function confResize() {
-      cc.width = cc.parentElement.offsetWidth;
-      cc.height = cc.parentElement.offsetHeight;
-    }
-
-    function initConfetti() {
-      confetti = [];
-      for (var i = 0; i < CONF_NUM; i++) {
-        confetti.push({
-          x: Math.random() * cc.width, y: Math.random() * cc.height,
-          w: 4 + Math.random() * 6, h: 8 + Math.random() * 10,
-          color: CONF_COLORS[Math.floor(Math.random() * CONF_COLORS.length)],
-          rot: Math.random() * 360, rotV: (Math.random() - .5) * 4,
-          vy: .3 + Math.random() * .8, vx: (Math.random() - .5) * .5,
-          alpha: .4 + Math.random() * .4
-        });
-      }
-    }
-
-    function animateConfetti() {
-      if (!confRunning) return;
-      cctx.clearRect(0, 0, cc.width, cc.height);
-      for (var i = 0; i < confetti.length; i++) {
-        var c = confetti[i];
-        c.y += c.vy; c.x += c.vx + Math.sin(c.y * .02) * .3;
-        c.rot += c.rotV;
-        if (c.y > cc.height + 20) { c.y = -20; c.x = Math.random() * cc.width; }
-        if (c.x < -20) c.x = cc.width + 10;
-        if (c.x > cc.width + 20) c.x = -10;
-        cctx.save();
-        cctx.translate(c.x, c.y);
-        cctx.rotate(c.rot * Math.PI / 180);
-        cctx.globalAlpha = c.alpha;
-        cctx.fillStyle = c.color;
-        cctx.fillRect(-c.w / 2, -c.h / 2, c.w, c.h);
-        cctx.restore();
-      }
-      requestAnimationFrame(animateConfetti);
-    }
-
-    var confObs = new IntersectionObserver(function(entries) {
-      if (entries[0].isIntersecting) {
-        if (!confRunning) { confRunning = true; confResize(); initConfetti(); animateConfetti(); }
-      } else { confRunning = false; }
-    }, { threshold: 0.05 });
-    confObs.observe(document.getElementById('summer'));
-    window.addEventListener('resize', function() { if (confRunning) confResize(); });
-  }
-
-  /* ── 2b. Extra confetti in Perks section ── */
-  var ccExtra = document.querySelector('.emplois-confetti-extra');
-  if (ccExtra) {
-    var exCtx = ccExtra.getContext('2d');
-    var exConf = [], EX_NUM = 30;
-    var exRunning = false;
-    function exResize() { ccExtra.width = ccExtra.parentElement.offsetWidth; ccExtra.height = ccExtra.parentElement.offsetHeight; }
-    function initExConf() {
-      exConf = [];
-      for (var i = 0; i < EX_NUM; i++) {
-        exConf.push({
-          x: Math.random() * ccExtra.width, y: Math.random() * ccExtra.height,
-          w: 3 + Math.random() * 5, h: 6 + Math.random() * 8,
-          color: CONF_COLORS[Math.floor(Math.random() * CONF_COLORS.length)],
-          rot: Math.random() * 360, rotV: (Math.random() - .5) * 3,
-          vy: .2 + Math.random() * .6, vx: (Math.random() - .5) * .4,
-          alpha: .35 + Math.random() * .35
-        });
-      }
-    }
-    function animateExConf() {
-      if (!exRunning) return;
-      exCtx.clearRect(0, 0, ccExtra.width, ccExtra.height);
-      for (var i = 0; i < exConf.length; i++) {
-        var c = exConf[i];
-        c.y += c.vy; c.x += c.vx + Math.sin(c.y * .02) * .2;
-        c.rot += c.rotV;
-        if (c.y > ccExtra.height + 20) { c.y = -20; c.x = Math.random() * ccExtra.width; }
-        exCtx.save(); exCtx.translate(c.x, c.y); exCtx.rotate(c.rot * Math.PI / 180);
-        exCtx.globalAlpha = c.alpha; exCtx.fillStyle = c.color;
-        exCtx.fillRect(-c.w / 2, -c.h / 2, c.w, c.h);
-        exCtx.restore();
-      }
-      requestAnimationFrame(animateExConf);
-    }
-    var exObs = new IntersectionObserver(function(entries) {
-      if (entries[0].isIntersecting) { if (!exRunning) { exRunning = true; exResize(); initExConf(); animateExConf(); } }
-      else { exRunning = false; }
-    }, { threshold: 0.05 });
-    exObs.observe(document.getElementById('perks'));
-    window.addEventListener('resize', function() { if (exRunning) exResize(); });
-  }
-
-  /* ── 3. Magic Wave Buttons ── */
-  var waveBtns = document.querySelectorAll('.btn-magic-waves');
-  var waveColors = ['#D4A843','#5B9BD5','#F472B6','#4ECDC4','#A78BFA','#FF6B6B','#38BDF8'];
-  waveBtns.forEach(function(btn) {
-    function spawnWaves() {
-      for (var i = 0; i < 3; i++) {
-        (function(idx) {
-          setTimeout(function() {
-            var w = document.createElement('span');
-            w.className = 'magic-wave';
-            w.style.borderColor = waveColors[Math.floor(Math.random() * waveColors.length)];
-            btn.appendChild(w);
-            w.addEventListener('animationend', function() { w.remove(); });
-          }, idx * 120);
-        })(i);
-      }
-    }
-    btn.addEventListener('mouseenter', spawnWaves);
-    btn.addEventListener('click', spawnWaves);
-  });
-})();
 </script>
 </body>
 </html>
