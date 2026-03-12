@@ -842,6 +842,17 @@ const translations = {
     'album.cta.title': '50 ans de souvenirs',
     'album.cta.text': 'Des milliers de sourires, d\'aventures et de moments magiques. Parcourez notre album photo!',
 
+    // Boîte à outils
+    'toolbox.label': 'Ressources',
+    'toolbox.title': 'Boîte à outils',
+    'toolbox.lead': 'Des ressources gratuites pour les familles, les accompagnateurs et les intervenants. Découvrez notre banque d\'activités adaptées et notre navigateur de ressources en autisme.',
+    'toolbox.activities.title': 'Banque d\'activités',
+    'toolbox.activities.desc': 'Des dizaines d\'idées d\'activités adaptées\u00a0: arts, jeux sensoriels, activités motrices, musique et plus encore. Parfait pour les accompagnateurs et les familles!',
+    'toolbox.activities.cta': 'Explorer les activités',
+    'toolbox.resources.title': 'Navigateur de ressources',
+    'toolbox.resources.desc': 'Plus de 130 ressources québécoises et canadiennes en autisme\u00a0: services, organismes, financement, recherche, outils d\'évaluation et bien plus.',
+    'toolbox.resources.cta': 'Parcourir les ressources',
+
     // Timeline
     'history.1976': 'Fondation du Camp Emergo, premier camp d\'été pour personnes autistes au Québec, par des parents de l\'Association des enfants autistiques du Québec.',
     'history.1991': 'Début des répits scolaires — des fins de semaine de répit tout au long de l\'année scolaire.',
@@ -1853,6 +1864,17 @@ const translations = {
     'photos.album': 'View photo album',
     'album.cta.title': '50 years of memories',
     'album.cta.text': 'Thousands of smiles, adventures and magical moments. Browse our photo album!',
+
+    // Toolbox
+    'toolbox.label': 'Resources',
+    'toolbox.title': 'Toolbox',
+    'toolbox.lead': 'Free resources for families, support workers and professionals. Discover our adapted activity bank and our autism resource navigator.',
+    'toolbox.activities.title': 'Activity Bank',
+    'toolbox.activities.desc': 'Dozens of adapted activity ideas: arts, sensory games, motor activities, music and more. Perfect for support workers and families!',
+    'toolbox.activities.cta': 'Explore activities',
+    'toolbox.resources.title': 'Resource Navigator',
+    'toolbox.resources.desc': 'Over 130 Quebec and Canadian autism resources: services, organizations, funding, research, assessment tools and much more.',
+    'toolbox.resources.cta': 'Browse resources',
 
     // Timeline
     'history.1976': 'Founding of Camp Emergo, the first summer camp for autistic individuals in Quebec, by parents from the Association des enfants autistiques du Québec.',

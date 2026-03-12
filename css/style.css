@@ -1370,3 +1370,102 @@ p { margin-bottom: 1em; color: var(--text-mid); }
 [data-theme="dark"] .staff-banner-overlay {
   background: linear-gradient(to top, rgba(5,10,22,.8) 0%, rgba(5,10,22,.3) 50%, transparent 100%);
 }
+
+/* ═══ BOÎTE À OUTILS ═══ */
+.toolbox-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.toolbox-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--white);
+  border-radius: 20px;
+  padding: 44px 32px 36px;
+  text-decoration: none;
+  color: var(--text);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,30,85,0.06);
+  border: 2px solid transparent;
+}
+.toolbox-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,30,85,0.12);
+}
+.toolbox-card-activities:hover { border-color: var(--gold); }
+.toolbox-card-resources:hover { border-color: var(--blue); }
+.toolbox-card-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+.toolbox-card:hover .toolbox-card-icon { transform: scale(1.1) rotate(-3deg); }
+.toolbox-icon-activities {
+  background: linear-gradient(135deg, var(--gold-light) 0%, #FCEABB 100%);
+  color: #8B6914;
+}
+.toolbox-icon-resources {
+  background: linear-gradient(135deg, var(--blue-pale) 0%, var(--blue-light) 100%);
+  color: #1a4fa0;
+}
+.toolbox-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.toolbox-card-desc {
+  font-size: 0.92rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+.toolbox-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+}
+.toolbox-card-activities .toolbox-card-cta {
+  background: var(--gold-light);
+  color: #6B4F0A;
+}
+.toolbox-card-activities:hover .toolbox-card-cta {
+  background: var(--gold);
+  color: #1A1200;
+}
+.toolbox-card-resources .toolbox-card-cta {
+  background: var(--blue-pale);
+  color: var(--navy);
+}
+.toolbox-card-resources:hover .toolbox-card-cta {
+  background: var(--blue);
+  color: var(--white);
+}
+@media (max-width: 640px) {
+  .toolbox-grid { grid-template-columns: 1fr; gap: 20px; }
+  .toolbox-card { padding: 32px 24px 28px; }
+}
+[data-theme="dark"] .toolbox-card {
+  background: rgba(15,30,60,0.6);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+[data-theme="dark"] .toolbox-card-title { color: #e0e8ff; }
+[data-theme="dark"] .toolbox-card-desc { color: #a0b0cc; }
