@@ -17,7 +17,7 @@
     --blanc:      #FFFFFF;
 
     /* Derived */
-    --bg:         var(--bleu-ciel);
+    --bg:         var(--beige);
     --card:       var(--blanc);
     --text:       var(--bleu-roi);
     --muted:      #3d5a80;
@@ -37,7 +37,7 @@
 
   /* ===== HERO ===== */
   .hero {
-    background: var(--bleu-ciel);
+    background: var(--beige);
     color: var(--bleu-roi);
     text-align: center;
     padding: 2rem 1.5rem 2.5rem;
@@ -54,86 +54,6 @@
     width: auto;
     opacity: 1;
   }
-  .hero::before {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    right: 0;
-    height: 16px;
-    background: repeating-linear-gradient(90deg,
-      transparent 0px, transparent 12px,
-      var(--bleu-ciel) 12px, var(--bleu-ciel) 14px);
-    opacity: .3;
-    pointer-events: none;
-  }
-  /* ===== ARTS & CRAFTS BACKGROUND ===== */
-  .page-crafts {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 0;
-  }
-  .page-crafts .craft {
-    position: absolute;
-    opacity: .08;
-  }
-  /* Paint splashes — organic blobs */
-  .splash {
-    border-radius: 42% 58% 65% 35% / 55% 40% 60% 45%;
-  }
-  .sp1  { width: 200px; height: 180px; top: 2%;   left: -30px; background: var(--jaune); transform: rotate(15deg); }
-  .sp2  { width: 160px; height: 140px; top: 18%;  right: -20px; background: var(--vert); border-radius: 55% 45% 38% 62% / 45% 60% 40% 55%; transform: rotate(-20deg); }
-  .sp3  { width: 120px; height: 110px; top: 35%;  left: 5%;  background: var(--bleu-ciel); border-radius: 38% 62% 50% 50% / 60% 35% 65% 40%; opacity: .12; transform: rotate(30deg); }
-  .sp4  { width: 180px; height: 160px; top: 52%;  right: 3%; background: var(--jaune); border-radius: 60% 40% 45% 55% / 40% 55% 45% 60%; transform: rotate(-10deg); }
-  .sp5  { width: 140px; height: 130px; top: 70%;  left: -20px; background: var(--vert); border-radius: 45% 55% 60% 40% / 50% 45% 55% 50%; transform: rotate(25deg); }
-  .sp6  { width: 100px; height: 90px;  top: 88%;  right: 8%; background: var(--bleu-ciel); border-radius: 52% 48% 42% 58% / 55% 42% 58% 45%; opacity: .1; transform: rotate(-15deg); }
-  /* Stars — CSS clip-path */
-  .star {
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  }
-  .st1 { width: 50px;  height: 50px;  top: 8%;   right: 12%; background: var(--jaune); transform: rotate(12deg); opacity: .12; }
-  .st2 { width: 35px;  height: 35px;  top: 30%;  left: 25%;  background: #f0d8cc; transform: rotate(-8deg); opacity: .15; }
-  .st3 { width: 45px;  height: 45px;  top: 55%;  right: 22%; background: var(--jaune); transform: rotate(20deg); opacity: .1; }
-  .st4 { width: 30px;  height: 30px;  top: 75%;  left: 45%;  background: var(--vert); transform: rotate(-15deg); opacity: .13; }
-  .st5 { width: 40px;  height: 40px;  top: 92%;  left: 15%;  background: var(--jaune); transform: rotate(5deg); opacity: .11; }
-  /* Zigzag strips — like cut paper / washi tape */
-  .zig {
-    height: 12px;
-    opacity: .06;
-    background: repeating-linear-gradient(90deg, transparent, transparent 8px, currentColor 8px, currentColor 16px);
-  }
-  .z1 { width: 200px; top: 14%; left: 60%;  color: var(--bleu-roi); transform: rotate(3deg); }
-  .z2 { width: 160px; top: 42%; right: 0;   color: var(--jaune); transform: rotate(-2deg); opacity: .1; }
-  .z3 { width: 180px; top: 65%; left: 0;    color: var(--vert); transform: rotate(1.5deg); }
-  .z4 { width: 140px; top: 85%; left: 55%;  color: #f0d8cc; transform: rotate(-3deg); opacity: .08; }
-  /* Confetti dots */
-  .dot {
-    border-radius: 50%;
-    opacity: .07;
-  }
-  .d1  { width: 18px; height: 18px; top: 6%;   left: 50%; background: var(--jaune); }
-  .d2  { width: 12px; height: 12px; top: 12%;  left: 78%; background: var(--vert); }
-  .d3  { width: 15px; height: 15px; top: 25%;  right: 35%; background: #f0d8cc; }
-  .d4  { width: 10px; height: 10px; top: 33%;  left: 40%; background: var(--jaune); }
-  .d5  { width: 20px; height: 20px; top: 47%;  left: 70%; background: var(--vert); opacity: .06; }
-  .d6  { width: 14px; height: 14px; top: 60%;  right: 42%; background: var(--bleu-ciel); opacity: .1; }
-  .d7  { width: 16px; height: 16px; top: 68%;  left: 30%; background: var(--jaune); }
-  .d8  { width: 11px; height: 11px; top: 78%;  right: 18%; background: #f0d8cc; }
-  .d9  { width: 13px; height: 13px; top: 84%;  left: 62%; background: var(--vert); }
-  .d10 { width: 17px; height: 17px; top: 95%;  left: 42%; background: var(--jaune); opacity: .06; }
-  /* Squiggly lines — like hand-drawn */
-  .squig {
-    height: 3px;
-    opacity: .06;
-    border-radius: 2px;
-    background: var(--bleu-roi);
-  }
-  .sq1 { width: 100px; top: 20%; left: 3%;  transform: rotate(8deg); border-radius: 50%/100%; }
-  .sq2 { width: 80px;  top: 48%; right: 5%; transform: rotate(-5deg); }
-  .sq3 { width: 90px;  top: 73%; left: 8%;  transform: rotate(3deg); }
-
   .hero h1 {
     font-family: 'Trebuchet MS', 'Arial Black', sans-serif;
     font-size: clamp(1.6rem, 4.5vw, 2.6rem);
@@ -221,8 +141,8 @@
     right: 25px;
     width: 60px;
     height: 14px;
-    background: var(--bleu-ciel);
-    opacity: .7;
+    background: var(--jaune);
+    opacity: .5;
     border-radius: 1px;
     transform: rotate(1deg);
   }
@@ -542,24 +462,6 @@
 </style>
 </head>
 <body>
-
-<!-- Arts & crafts background decorations -->
-<div class="page-crafts">
-  <!-- Paint splashes -->
-  <div class="craft splash sp1"></div><div class="craft splash sp2"></div><div class="craft splash sp3"></div>
-  <div class="craft splash sp4"></div><div class="craft splash sp5"></div><div class="craft splash sp6"></div>
-  <!-- Stars -->
-  <div class="craft star st1"></div><div class="craft star st2"></div><div class="craft star st3"></div>
-  <div class="craft star st4"></div><div class="craft star st5"></div>
-  <!-- Zigzag strips -->
-  <div class="craft zig z1"></div><div class="craft zig z2"></div><div class="craft zig z3"></div><div class="craft zig z4"></div>
-  <!-- Confetti dots -->
-  <div class="craft dot d1"></div><div class="craft dot d2"></div><div class="craft dot d3"></div><div class="craft dot d4"></div>
-  <div class="craft dot d5"></div><div class="craft dot d6"></div><div class="craft dot d7"></div><div class="craft dot d8"></div>
-  <div class="craft dot d9"></div><div class="craft dot d10"></div>
-  <!-- Squiggly lines -->
-  <div class="craft squig sq1"></div><div class="craft squig sq2"></div><div class="craft squig sq3"></div>
-</div>
 
 <div class="hero">
   <div class="hero-logo"><img src="images/Repit_Emergo-Logotype_Horizontal_Bleu_Ciel-RGB(C).png" alt="R&eacute;pit Emergo"></div>
