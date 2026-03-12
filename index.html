@@ -892,34 +892,81 @@
       <p class="lead mx-auto" data-i18n="toolbox.lead">Des ressources gratuites pour les familles, les accompagnateurs et les intervenants. Découvrez notre banque d'activités adaptées et notre navigateur de ressources en autisme.</p>
     </div>
     <div class="toolbox-grid">
-      <!-- Banque d'activités -->
+      <!-- Banque d'activités — Arts & Crafts style -->
       <a href="banque-activites.html" class="toolbox-card toolbox-card-activities fade-in">
+        <!-- Decorative craft elements -->
+        <div class="craft-deco" aria-hidden="true">
+          <span class="craft-splash craft-s1"></span>
+          <span class="craft-splash craft-s2"></span>
+          <span class="craft-splash craft-s3"></span>
+          <span class="craft-dot craft-d1"></span>
+          <span class="craft-dot craft-d2"></span>
+          <span class="craft-dot craft-d3"></span>
+          <span class="craft-dot craft-d4"></span>
+          <span class="craft-star craft-st1"></span>
+          <span class="craft-star craft-st2"></span>
+        </div>
+        <div class="craft-tape" aria-hidden="true"></div>
         <div class="toolbox-card-icon toolbox-icon-activities">
+          <!-- Scissors icon for arts & crafts -->
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="36" height="36">
-            <path d="M12 19l7-7 3 3-7 7-3-3z"/>
-            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
-            <path d="M2 2l7.586 7.586"/>
-            <circle cx="11" cy="11" r="2"/>
+            <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
+            <line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/>
+            <line x1="8.12" y1="8.12" x2="12" y2="12"/>
           </svg>
         </div>
         <h3 class="toolbox-card-title" data-i18n="toolbox.activities.title">Banque d'activités</h3>
-        <p class="toolbox-card-desc" data-i18n="toolbox.activities.desc">Des dizaines d'idées d'activités adaptées : arts, jeux sensoriels, activités motrices, musique et plus encore. Parfait pour les accompagnateurs et les familles!</p>
+        <p class="toolbox-card-desc" data-i18n="toolbox.activities.desc">Des dizaines d'idées d'activités adaptées&nbsp;: arts, jeux sensoriels, activités motrices, musique et plus encore. Parfait pour les accompagnateurs et les familles!</p>
+        <div class="craft-tags">
+          <span class="craft-tag craft-tag-yellow" data-i18n="toolbox.activities.tag1">Arts plastiques</span>
+          <span class="craft-tag craft-tag-green" data-i18n="toolbox.activities.tag2">Sensoriel</span>
+          <span class="craft-tag craft-tag-blue" data-i18n="toolbox.activities.tag3">Motricité</span>
+        </div>
         <span class="toolbox-card-cta">
           <span data-i18n="toolbox.activities.cta">Explorer les activités</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </span>
       </a>
-      <!-- Ressources autisme -->
+      <!-- Ressources autisme — Data explorer style -->
       <a href="ressources-autisme.html" class="toolbox-card toolbox-card-resources fade-in">
+        <div class="res-glow" aria-hidden="true"></div>
         <div class="toolbox-card-icon toolbox-icon-resources">
+          <!-- Open book icon -->
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="36" height="36">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="2" y1="12" x2="22" y2="12"/>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
           </svg>
         </div>
         <h3 class="toolbox-card-title" data-i18n="toolbox.resources.title">Navigateur de ressources</h3>
-        <p class="toolbox-card-desc" data-i18n="toolbox.resources.desc">Plus de 130 ressources québécoises et canadiennes en autisme : services, organismes, financement, recherche, outils d'évaluation et bien plus.</p>
+        <p class="toolbox-card-desc" data-i18n="toolbox.resources.desc">Plus de 130 ressources québécoises et canadiennes en autisme&nbsp;: services, organismes, financement, recherche, outils d'évaluation et bien plus.</p>
+        <!-- Animated stats bar -->
+        <div class="res-stats">
+          <div class="res-stat">
+            <span class="res-stat-num">136</span>
+            <span class="res-stat-label" data-i18n="toolbox.resources.stat1">ressources</span>
+          </div>
+          <div class="res-stat-divider"></div>
+          <div class="res-stat">
+            <span class="res-stat-num">12</span>
+            <span class="res-stat-label" data-i18n="toolbox.resources.stat2">catégories</span>
+          </div>
+          <div class="res-stat-divider"></div>
+          <div class="res-stat">
+            <span class="res-stat-num">10</span>
+            <span class="res-stat-label" data-i18n="toolbox.resources.stat3">domaines</span>
+          </div>
+        </div>
+        <!-- Category color dots -->
+        <div class="res-cats" aria-hidden="true">
+          <span class="res-cat-dot" style="background:#4A7EB5" title="Services"></span>
+          <span class="res-cat-dot" style="background:#D4A843" title="Organismes"></span>
+          <span class="res-cat-dot" style="background:#6B9F7B" title="Recherche"></span>
+          <span class="res-cat-dot" style="background:#E07B54" title="Outils"></span>
+          <span class="res-cat-dot" style="background:#8B6BB5" title="Éducation"></span>
+          <span class="res-cat-dot" style="background:#C75B7A" title="Famille"></span>
+          <span class="res-cat-dot" style="background:#5BA3C7" title="Financement"></span>
+          <span class="res-cat-dot" style="background:#4A9B8F" title="Emploi"></span>
+        </div>
         <span class="toolbox-card-cta">
           <span data-i18n="toolbox.resources.cta">Parcourir les ressources</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>

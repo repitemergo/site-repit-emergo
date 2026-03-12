@@ -849,9 +849,15 @@ const translations = {
     'toolbox.activities.title': 'Banque d\'activités',
     'toolbox.activities.desc': 'Des dizaines d\'idées d\'activités adaptées\u00a0: arts, jeux sensoriels, activités motrices, musique et plus encore. Parfait pour les accompagnateurs et les familles!',
     'toolbox.activities.cta': 'Explorer les activités',
+    'toolbox.activities.tag1': 'Arts plastiques',
+    'toolbox.activities.tag2': 'Sensoriel',
+    'toolbox.activities.tag3': 'Motricité',
     'toolbox.resources.title': 'Navigateur de ressources',
     'toolbox.resources.desc': 'Plus de 130 ressources québécoises et canadiennes en autisme\u00a0: services, organismes, financement, recherche, outils d\'évaluation et bien plus.',
     'toolbox.resources.cta': 'Parcourir les ressources',
+    'toolbox.resources.stat1': 'ressources',
+    'toolbox.resources.stat2': 'catégories',
+    'toolbox.resources.stat3': 'domaines',
 
     // Timeline
     'history.1976': 'Fondation du Camp Emergo, premier camp d\'été pour personnes autistes au Québec, par des parents de l\'Association des enfants autistiques du Québec.',
@@ -1872,9 +1878,15 @@ const translations = {
     'toolbox.activities.title': 'Activity Bank',
     'toolbox.activities.desc': 'Dozens of adapted activity ideas: arts, sensory games, motor activities, music and more. Perfect for support workers and families!',
     'toolbox.activities.cta': 'Explore activities',
+    'toolbox.activities.tag1': 'Arts & Crafts',
+    'toolbox.activities.tag2': 'Sensory',
+    'toolbox.activities.tag3': 'Motor skills',
     'toolbox.resources.title': 'Resource Navigator',
     'toolbox.resources.desc': 'Over 130 Quebec and Canadian autism resources: services, organizations, funding, research, assessment tools and much more.',
     'toolbox.resources.cta': 'Browse resources',
+    'toolbox.resources.stat1': 'resources',
+    'toolbox.resources.stat2': 'categories',
+    'toolbox.resources.stat3': 'domains',
 
     // Timeline
     'history.1976': 'Founding of Camp Emergo, the first summer camp for autistic individuals in Quebec, by parents from the Association des enfants autistiques du Québec.',
