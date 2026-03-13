@@ -1731,6 +1731,139 @@ const RESOURCES = [
     tags: ["français", "anglais", "recherche", "technologie", "éducation", "communication", "gratuit", "en ligne"],
     phone: "",
     year: 2020
+  },
+  // === PARTENAIRES RÉPIT QUÉBEC & CAMPS SPÉCIALISÉS ACQ (13 mars 2026) ===
+  {
+    id: 155,
+    name: "Corporation l'Espoir",
+    category: "services",
+    org: "Corporation l'Espoir",
+    desc: "Organisme communautaire du Grand Montréal soutenant depuis 1976 les personnes autistes ou ayant une déficience intellectuelle et leurs familles. Offre loisirs adaptés, activités d'empowerment, camps de jour et services de répit personnalisés. Membre de Répit Québec.",
+    url: "https://www.corporationespoir.org",
+    region: "Montréal",
+    tags: ["français", "enfants", "adultes", "parents", "répit", "loisirs", "DI", "TSA", "camp de jour"],
+    phone: "",
+    year: 1976
+  },
+  {
+    id: 156,
+    name: "Maison Grandi-Ose — Centre de loisirs adaptés",
+    category: "services",
+    org: "Maison Grandi-Ose",
+    desc: "Centre de loisirs adaptés à Trois-Rivières offrant répit avec coucher, activités de jour et camps pour enfants et adultes vivant avec une déficience physique, intellectuelle ou un TSA. Équipement spécialisé (lève-personne, installations adaptées). Membre de Répit Québec.",
+    url: "https://www.lhebdojournal.com/infolettre/la-maison-grandi-ose-elargit-son-offre-de-repits-specialises/",
+    region: "Mauricie",
+    tags: ["français", "enfants", "adultes", "répit", "hébergement", "loisirs", "adapté", "DI", "TSA"],
+    phone: "819-373-7440",
+    year: 2000
+  },
+  {
+    id: 157,
+    name: "Les Répits de Gaby",
+    category: "services",
+    org: "Les Répits de Gaby",
+    desc: "Organisme fondé en 2002 offrant du répit aux familles lanaudoises vivant avec une personne autiste de 5 ans et plus. 10 points de service (Terrebonne, Repentigny, Joliette, Crabtree) avec répit de jour et de fin de semaine. Membre de Répit Québec.",
+    url: "https://repitsdegaby.suitedonna.com/",
+    region: "Lanaudière",
+    tags: ["français", "enfants", "adultes", "parents", "répit", "TSA", "camp de jour"],
+    phone: "450-754-2782",
+    year: 2002
+  },
+  {
+    id: 158,
+    name: "Au voilier de Lili — Association des personnes handicapées de Lotbinière",
+    category: "services",
+    org: "Association des personnes handicapées de Lotbinière",
+    desc: "Organisme de plus de 40 ans offrant répit de jour et résidentiel pour personnes avec limitations physiques ou intellectuelles. Maison entièrement adaptée à Saint-Apollinaire. Activités de jour et séjours de répit dans un environnement chaleureux et sécuritaire. Membre de Répit Québec.",
+    url: "https://www.auvoilierdelili.com/",
+    region: "Chaudière-Appalaches",
+    tags: ["français", "enfants", "adultes", "répit", "hébergement", "adapté", "DI"],
+    phone: "1-877-212-3884",
+    year: 1982
+  },
+  {
+    id: 159,
+    name: "Le Petit Répit",
+    category: "services",
+    org: "Le Petit Répit",
+    desc: "Organisme communautaire Famille offrant du répit à domicile 7 jours sur 7, de 7h à minuit, pour les familles avec enfants de 0 à 17 ans dans la région métropolitaine de Québec. Services d'aide, de réconfort et de relève parentale incluant les familles d'enfants autistes.",
+    url: "https://lepetitrepit.ca/index.php/fr/",
+    region: "Capitale-Nationale",
+    tags: ["français", "enfants", "parents", "répit", "à domicile", "famille"],
+    phone: "418-525-0858",
+    year: 1996
+  },
+  {
+    id: 160,
+    name: "Société de l'autisme de l'Abitibi-Témiscamingue",
+    category: "organismes",
+    org: "Société de l'autisme de l'Abitibi-Témiscamingue",
+    desc: "Association régionale dédiée aux personnes autistes et à leurs familles en Abitibi-Témiscamingue. Services d'information, accompagnement, gardiennage spécialisé, activités de socialisation et répit pour les familles. Membre de la FQA et de Répit Québec.",
+    url: "https://sante.gouv.qc.ca/repertoire-ressources/ressource/?nofiche=54332",
+    region: "Abitibi-Témiscamingue",
+    tags: ["français", "enfants", "adultes", "parents", "répit", "TSA", "gardiennage"],
+    phone: "",
+    year: 1990
+  },
+  {
+    id: 161,
+    name: "Centre Notre-Dame-de-Fatima — Camp besoins particuliers",
+    category: "activites",
+    org: "Centre de plein air Notre-Dame-de-Fatima",
+    desc: "Camp certifié ACQ depuis 1948 à Notre-Dame-de-l'Île-Perrot (30 min de Montréal). Camps de vacances et répit pour enfants et adultes avec DI, TSA, déficience auditive ou multihandicap. Camp de jour Arc-en-ciel avec ratio 1:2 ou 1:1. Cadre naturel exceptionnel avec activités adaptées.",
+    url: "https://www.mon-camp.ca/",
+    region: "Montérégie",
+    tags: ["français", "enfants", "adultes", "camp", "répit", "hébergement", "adapté", "DI", "TSA", "ACQ"],
+    phone: "514-453-7600",
+    year: 1948
+  },
+  {
+    id: 162,
+    name: "Le Domaine des Prés d'Or — Camp adapté",
+    category: "activites",
+    org: "Le Domaine des Prés d'Or",
+    desc: "Camp de vacances ouvert à l'année depuis 1987 à Lac-des-Îles (Laurentides) pour adultes vivant avec une DI ou un TSA. Hébergement, repas, activités adaptées et accompagnement personnalisé. Infirmerie 24h/24. Camps été, automne et répit. Certifié ACQ.",
+    url: "https://domainedespresdor.com/",
+    region: "Laurentides",
+    tags: ["français", "adultes", "camp", "répit", "hébergement", "adapté", "DI", "TSA", "ACQ"],
+    phone: "",
+    year: 1987
+  },
+  {
+    id: 163,
+    name: "Le Grand Village — Camp pour personnes handicapées",
+    category: "activites",
+    org: "Le Grand Village",
+    desc: "Camp fondé en 1965 par le Club Rotary de Québec permettant à des enfants, adolescents et adultes vivant avec une déficience physique, intellectuelle ou un TSA de vivre des activités stimulantes. Camps d'été de 6 ou 10 jours, répit de fin de semaine et camps de jour adaptés. Certifié ACQ.",
+    url: "https://grand-village.com/",
+    region: "Chaudière-Appalaches",
+    tags: ["français", "enfants", "adultes", "camp", "répit", "hébergement", "adapté", "DI", "TSA", "ACQ"],
+    phone: "418-831-1677",
+    year: 1965
+  },
+  {
+    id: 164,
+    name: "Base de plein air Bon départ",
+    category: "activites",
+    org: "Base de plein air Bon départ",
+    desc: "OBNL à Wentworth-Nord (Laurentides) offrant camps de vacances, sports et plein air pour enfants vulnérables et personnes avec DI/TSA. Site de 542 acres avec 5 lacs, héberge jusqu'à 300 personnes. Programme répit pour jeunes (7-21 ans) et adultes (22+). Certifié ACQ.",
+    url: "https://www.bpabondepart.ca/",
+    region: "Laurentides",
+    tags: ["français", "enfants", "adultes", "camp", "répit", "hébergement", "plein air", "DI", "TSA", "ACQ", "gratuit"],
+    phone: "450-226-3336",
+    year: 1970
+  },
+  {
+    id: 165,
+    name: "Centre Normand-Léveillé — Camp besoins particuliers",
+    category: "activites",
+    org: "Centre Normand-Léveillé",
+    desc: "Camp à Drummondville accueillant enfants et adultes de 5 ans et plus avec DI, déficience physique, TSA ou autres limitations. Camps de vacances été et répit toute l'année. Ratios d'encadrement de 1:1 à 1:5. Programmation adaptée en forêt. Certifié ACQ. Pas de diagnostic requis.",
+    url: "https://www.centre-normand-leveille.ca/",
+    region: "Centre-du-Québec",
+    tags: ["français", "enfants", "adultes", "camp", "répit", "hébergement", "adapté", "DI", "TSA", "ACQ"],
+    phone: "",
+    year: 1970
   }
 ];
 
@@ -1875,4 +2008,16 @@ const ENRICHMENTS = {
   152: { dateAdded: "2026-03-12", founded: 2025, clientele: "Population générale, professionnels santé, personnes autistes, familles", size: "Plateforme gouvernementale", employees: "N/A", scope: "provincial", importance: 4, type: "Collection d'applications validées", note: "Lancé juin 2025, 19 apps sur 350 000 évaluées, comité expert incluant patients partenaires", utility: { parentNouveau: 6, parentEtabli: 5, adulteAutiste: 7, fratrie: 4, etudiant: 5, intervenant: 7, proSante: 8, enseignant: 4, chercheur: 5, gestionnaire: 7 }, analyse: "Initiative gouvernementale québécoise unique : première collection d'applications mobiles en santé mentale validées scientifiquement. Sur 350 000 apps disponibles, seulement 19 ont passé l'évaluation rigoureuse par un comité d'experts incluant cliniciens et patients partenaires. Catégories couvrant stress, émotions, sommeil et relations. Complément aux traitements professionnels favorisant l'autonomie.", forces: "Validation gouvernementale rigoureuse (2% des apps ont des preuves scientifiques), bilingue, gratuit, catégorisé par thématique, collaboration cliniciens-patients-chercheurs.", limites: "Pas spécifique à l'autisme (santé mentale générale), nombre limité d'apps (19), ne remplace pas les traitements professionnels, nécessite un appareil mobile." },
   153: { dateAdded: "2026-03-12", founded: 2010, clientele: "Chercheurs, cliniciens, enfants et familles", size: "Centre de recherche hospitalier", employees: "30-50", scope: "national", importance: 5, type: "Centre de recherche", note: "Co-dirigé par Dre Evdokia Anagnostou et Dre Jessica Brian, intégré au Bloorview Research Institute", utility: { parentNouveau: 4, parentEtabli: 4, adulteAutiste: 5, fratrie: 2, etudiant: 7, intervenant: 6, proSante: 9, enseignant: 4, chercheur: 10, gestionnaire: 6 }, analyse: "Centre de recherche majeur au Canada en autisme, intégré au principal hôpital pédiatrique de réadaptation du pays. Équipe multidisciplinaire couvrant neurologie, pédiatrie développementale, psychiatrie, science des données et ingénierie. Recherche sur la biologie de l'autisme, le phénotypage comportemental, les interventions novatrices et les soutiens adaptés aux enfants, jeunes et adultes neurodivergents.", forces: "Intégration recherche-clinique exceptionnelle, équipe scientifique de calibre mondial, infrastructure hospitalière complète, recherche couvrant biologie et interventions.", limites: "Anglophone, basé en Ontario (Toronto), focus pédiatrique principalement, accès limité pour les familles québécoises." },
   154: { dateAdded: "2026-03-12", founded: 2020, clientele: "Chercheurs, professionnels, éducateurs, parents, développeurs technologie", size: "Programme de recherche international", employees: "N/A", scope: "international", importance: 4, type: "Guide de recherche appliquée", note: "Soutenu par UEFA Foundation for Children, projets en 6 pays européens", utility: { parentNouveau: 5, parentEtabli: 4, adulteAutiste: 4, fratrie: 2, etudiant: 7, intervenant: 7, proSante: 5, enseignant: 7, chercheur: 9, gestionnaire: 5 }, analyse: "Programme international de recherche appliquée sur l'utilisation des technologies numériques pour les personnes autistes. Revue de littérature exhaustive et guide pratique couvrant les outils numériques pour la communication non verbale, l'interaction sociale et les apprentissages scolaires. Fournit un cadre d'évaluation des technologies adaptées à l'autisme. Ressource francophone rare dans le domaine techno-autisme.", forces: "Revue de littérature exhaustive, guide pratique en français, cadre d'évaluation des technologies, perspective internationale multi-pays, gratuit en ligne.", limites: "Contexte européen (moins applicable directement au Québec), technologies évoluent rapidement (certains outils déjà dépassés), pas de recommandations spécifiques pour le marché nord-américain." },
+  // === PARTENAIRES RÉPIT QUÉBEC & CAMPS SPÉCIALISÉS ACQ (13 mars 2026) ===
+  155: { dateAdded: "2026-03-13", founded: 1976, clientele: "Personnes autistes ou DI et familles (Grand Montréal)", size: "Organisme communautaire", employees: "10-20", scope: "regional", importance: 4, type: "Services communautaires", note: "Membre de Répit Québec, DI légère à modérée et/ou TSA léger à modéré", utility: { parentNouveau: 6, parentEtabli: 8, adulteAutiste: 7, fratrie: 5, etudiant: 5, intervenant: 5, proSante: 5, enseignant: 4, chercheur: 2, gestionnaire: 5 }, analyse: "Corporation l'Espoir est un organisme communautaire du Grand Montréal offrant depuis 1976 des services de loisirs adaptés, répit, camps de jour et empowerment aux personnes avec DI et/ou TSA léger à modéré et à leurs familles. Milieu sécurisant et sans jugement favorisant les connexions sociales et le développement personnel.", forces: "Près de 50 ans d'expérience, large gamme de services (loisirs, répit, camps), milieu inclusif et bienveillant, membre actif de Répit Québec.", limites: "Limité à la grande région de Montréal, clientèle DI/TSA léger à modéré seulement, dépendance au financement communautaire." },
+  156: { dateAdded: "2026-03-13", founded: 2000, clientele: "Enfants et adultes avec déficiences physiques, intellectuelles ou TSA (Mauricie)", size: "Centre de loisirs adaptés", employees: "5-15", scope: "regional", importance: 3, type: "Centre de répit et loisirs", note: "Membre de Répit Québec, équipement spécialisé (lève-personne, installations adaptées)", utility: { parentNouveau: 5, parentEtabli: 7, adulteAutiste: 6, fratrie: 5, etudiant: 5, intervenant: 5, proSante: 4, enseignant: 3, chercheur: 2, gestionnaire: 4 }, analyse: "Maison Grandi-Ose est un centre de loisirs adaptés à Trois-Rivières offrant répit de jour, de soir avec coucher et séjours semaine pour enfants et adultes avec déficiences physiques, intellectuelles ou TSA. Équipement spécialisé permettant l'accueil d'une clientèle variée. Programmation d'activités adaptées les vendredis soir pour adolescents/jeunes adultes 15-25 ans.", forces: "Répit avec coucher disponible (rare en Mauricie), équipement spécialisé adapté multi-handicap, activités sociales vendredis soir pour ados/jeunes adultes.", limites: "Limité à la région de la Mauricie (Trois-Rivières), capacité d'accueil restreinte, financement communautaire." },
+  157: { dateAdded: "2026-03-13", founded: 2002, clientele: "Familles avec personne autiste 5 ans+ (Lanaudière)", size: "Organisme communautaire spécialisé TSA", employees: "5-15", scope: "regional", importance: 4, type: "Services de répit spécialisés", note: "Membre de Répit Québec, 10 points de service en Lanaudière, spécialisé TSA exclusivement", utility: { parentNouveau: 6, parentEtabli: 8, adulteAutiste: 5, fratrie: 5, etudiant: 5, intervenant: 5, proSante: 4, enseignant: 3, chercheur: 2, gestionnaire: 5 }, analyse: "Les Répits de Gaby est un organisme spécialisé en répit pour familles vivant avec une personne autiste en Lanaudière. 10 points de service (Terrebonne, Repentigny, Joliette, Crabtree) avec répit de jour et de fin de semaine. Mission de maintenir les enfants dans leur milieu familial en prévenant l'épuisement des familles.", forces: "Spécialisation TSA exclusive (expertise ciblée), 10 points de service couvrant bien la région, répit jour et fin de semaine, mission préventive claire.", limites: "Résidents de Lanaudière seulement (membership requis), pas de services au-delà du répit, sans âge maximum mais clientèle principalement jeune." },
+  158: { dateAdded: "2026-03-13", founded: 1982, clientele: "Personnes avec limitations physiques ou intellectuelles (Lotbinière)", size: "Association communautaire", employees: "5-10", scope: "local", importance: 3, type: "Répit et activités adaptées", note: "Membre de Répit Québec, 40+ ans d'existence, maison entièrement adaptée à Saint-Apollinaire", utility: { parentNouveau: 4, parentEtabli: 6, adulteAutiste: 5, fratrie: 4, etudiant: 4, intervenant: 4, proSante: 3, enseignant: 3, chercheur: 1, gestionnaire: 3 }, analyse: "Au voilier de Lili (Association des personnes handicapées de Lotbinière) offre depuis plus de 40 ans du répit de jour et résidentiel ainsi que des activités adaptées pour personnes avec limitations fonctionnelles. Maison chaleureuse et entièrement adaptée à Saint-Apollinaire favorisant autonomie et bien-être.", forces: "40+ ans d'expérience, maison entièrement adaptée, répit résidentiel disponible, environnement chaleureux et sécuritaire.", limites: "Couverture locale (Lotbinière seulement), pas spécialisé TSA (multi-handicap), petite capacité d'accueil." },
+  159: { dateAdded: "2026-03-13", founded: 1996, clientele: "Familles avec enfants 0-17 ans (Capitale-Nationale)", size: "Organisme communautaire Famille", employees: "5-10", scope: "regional", importance: 3, type: "Répit à domicile", note: "Service 7/7 de 7h à minuit, fondé par des parents en 1996", utility: { parentNouveau: 7, parentEtabli: 6, adulteAutiste: 2, fratrie: 4, etudiant: 4, intervenant: 4, proSante: 3, enseignant: 3, chercheur: 1, gestionnaire: 3 }, analyse: "Le Petit Répit offre du répit à domicile 7 jours sur 7 (7h à minuit) aux familles avec enfants de 0 à 17 ans dans la région métropolitaine de Québec. Personne de confiance prenant le relais auprès des enfants, aide en cas de maladie ou d'urgence, soutien post-accouchement. Fondé par des parents en 1996 qui avaient besoin de soutien concret.", forces: "Répit à domicile (format rare et très pratique), disponibilité étendue 7/7, initiative parentale authentique, répond au besoin de flexibilité des familles.", limites: "Limité à la région de Québec, pas spécialisé TSA (familles en général), enfants 0-17 ans seulement." },
+  160: { dateAdded: "2026-03-13", founded: 1990, clientele: "Personnes autistes et familles (Abitibi-Témiscamingue)", size: "Organisme régional", employees: "5-10", scope: "regional", importance: 3, type: "Association régionale", note: "Membre de la FQA et de Répit Québec, gardiennage spécialisé TSA", utility: { parentNouveau: 6, parentEtabli: 7, adulteAutiste: 4, fratrie: 5, etudiant: 4, intervenant: 4, proSante: 3, enseignant: 3, chercheur: 2, gestionnaire: 3 }, analyse: "La Société de l'autisme de l'Abitibi-Témiscamingue offre services d'information, accompagnement, gardiennage spécialisé et activités de socialisation aux personnes autistes et leurs familles dans une région éloignée. Développement de services de répit de fin de semaine et gardiennage durant les congés scolaires.", forces: "Seul organisme dédié TSA en Abitibi-Témiscamingue, gardiennage spécialisé adapté, connaissance terrain région éloignée.", limites: "Très vaste territoire avec petite équipe, éloignement des grands centres, financement limité." },
+  161: { dateAdded: "2026-03-13", founded: 1948, clientele: "Enfants et adultes avec DI, TSA, déficience auditive, multihandicap", size: "Camp certifié ACQ", employees: "20-40 (saisonnier)", scope: "provincial", importance: 4, type: "Camp adapté", note: "Certifié ACQ depuis 1948, camp de jour Arc-en-ciel ratio 1:2 ou 1:1, 30 min de Montréal", utility: { parentNouveau: 5, parentEtabli: 8, adulteAutiste: 6, fratrie: 6, etudiant: 6, intervenant: 5, proSante: 5, enseignant: 4, chercheur: 2, gestionnaire: 5 }, analyse: "Centre Notre-Dame-de-Fatima camp certifié ACQ depuis 1948 à Notre-Dame-de-l'Île-Perrot. Accueille enfants et adultes avec besoins particuliers (DI, TSA, déficience auditive, multihandicap) en camps résidentiels et de jour. Camp Arc-en-ciel offre ratios d'encadrement exceptionnels (1:2 ou 1:1). Cadre naturel à 30 minutes de Montréal.", forces: "75+ ans d'expérience, proximité Montréal, ratios d'encadrement exceptionnels, multi-clientèle, infrastructure adaptée complète.", limites: "Coûts pouvant être élevés (775$-1150$/semaine), places limitées été, pas exclusivement TSA." },
+  162: { dateAdded: "2026-03-13", founded: 1987, clientele: "Adultes avec DI et/ou TSA", size: "Camp certifié ACQ ouvert à l'année", employees: "10-20", scope: "provincial", importance: 3, type: "Camp adapté", note: "Certifié ACQ, ouvert à l'année, infirmerie 24h/24, Laurentides", utility: { parentNouveau: 3, parentEtabli: 7, adulteAutiste: 6, fratrie: 5, etudiant: 5, intervenant: 5, proSante: 4, enseignant: 3, chercheur: 2, gestionnaire: 4 }, analyse: "Le Domaine des Prés d'Or est un camp de vacances ouvert à l'année depuis 1987 à Lac-des-Îles dans les Laurentides, spécialisé pour adultes avec DI et/ou TSA. Offre hébergement, repas, activités adaptées et accompagnement personnalisé. Infirmerie 24h/24 avec personnel infirmier sur place. Camps été, automne et services de répit.", forces: "Ouvert à l'année (rare), spécialisé adultes (créneau sous-desservi), infirmerie 24h/24, cadre naturel exceptionnel Laurentides.", limites: "Focus adultes seulement, éloignement de Montréal, pas spécifiquement TSA (DI et TSA combinés)." },
+  163: { dateAdded: "2026-03-13", founded: 1965, clientele: "Enfants, adolescents et adultes avec déficience physique, intellectuelle ou TSA", size: "Camp certifié ACQ", employees: "15-30 (saisonnier)", scope: "provincial", importance: 4, type: "Camp adapté", note: "Certifié ACQ, fondé par le Club Rotary de Québec en 1965, séjours 6 ou 10 jours", utility: { parentNouveau: 5, parentEtabli: 8, adulteAutiste: 6, fratrie: 6, etudiant: 6, intervenant: 5, proSante: 5, enseignant: 4, chercheur: 2, gestionnaire: 5 }, analyse: "Le Grand Village, fondé en 1965 par le Club Rotary de Québec, offre des expériences stimulantes à des enfants, adolescents et adultes vivant avec une déficience physique, intellectuelle ou un TSA. Camps d'été résidentiels de 6 ou 10 jours, répit de fin de semaine et camps de jour adaptés. Installations modernes et sécuritaires dans la région de Lévis.", forces: "60+ ans d'expérience, séjours longs (6-10 jours = vrai répit pour familles), multi-âge, installations modernes, ancrage communautaire Rotary.", limites: "Clientèle mixte (pas exclusivement TSA), places limitées, coûts des séjours prolongés." },
+  164: { dateAdded: "2026-03-13", founded: 1970, clientele: "Enfants vulnérables et personnes avec DI/TSA", size: "Grand camp certifié ACQ (300 places)", employees: "30-50 (saisonnier)", scope: "provincial", importance: 4, type: "Camp plein air adapté", note: "Certifié ACQ, 542 acres avec 5 lacs, programme répit gratuit sur référence CISSS/CIUSSS", utility: { parentNouveau: 5, parentEtabli: 8, adulteAutiste: 6, fratrie: 5, etudiant: 6, intervenant: 5, proSante: 5, enseignant: 4, chercheur: 2, gestionnaire: 6 }, analyse: "Base de plein air Bon départ est un OBNL à Wentworth-Nord (Laurentides) offrant camp de vacances, sports et plein air sur un site exceptionnel de 542 acres avec 5 lacs. Peut héberger 300 personnes. Programme répit pour jeunes (7-21 ans) et adultes (22+) avec DI/TSA, gratuit sur référence CISSS/CIUSSS. Fondation Bon départ de Canadian Tire contribue au financement.", forces: "Site naturel exceptionnel (542 acres, 5 lacs), programme répit gratuit sur référence, grande capacité d'accueil (300 places), soutien Canadian Tire.", limites: "Accès gratuit nécessite référence CISSS/CIUSSS, éloignement (Laurentides nord), pas exclusivement TSA." },
+  165: { dateAdded: "2026-03-13", founded: 1970, clientele: "Enfants et adultes 5+ avec DI, déficience physique, TSA ou autres limitations", size: "Camp certifié ACQ", employees: "15-30 (saisonnier)", scope: "provincial", importance: 3, type: "Camp adapté", note: "Certifié ACQ, pas de diagnostic requis, ratios 1:1 à 1:5, Drummondville", utility: { parentNouveau: 5, parentEtabli: 7, adulteAutiste: 6, fratrie: 5, etudiant: 5, intervenant: 5, proSante: 4, enseignant: 3, chercheur: 2, gestionnaire: 4 }, analyse: "Centre Normand-Léveillé camp à Drummondville accueillant depuis 1970 enfants et adultes de 5 ans et plus avec besoins particuliers, sans exiger de diagnostic formel. Camps de vacances été et répit toute l'année en forêt. Ratios d'encadrement adaptés de 1:1 à 1:5. Programmation thématique saisonnière. Milieu inclusif accessible.", forces: "Pas de diagnostic requis (accès facilité), répit toute l'année (pas seulement été), ratios d'encadrement flexibles, cadre forestier apaisant.", limites: "Clientèle mixte (pas spécifiquement TSA), capacité limitée, Centre-du-Québec (distance pour certaines familles)." },
 };
